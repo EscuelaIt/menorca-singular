@@ -20,12 +20,28 @@
       <div class="site-header__inner">
         <a class="site-header__brand" href="./" aria-label="Menorca Singular, inicio">
           <img
-            src="images/logo-menorca-singular.svg"
-            alt="Menorca Singular"
-            width="180"
-            height="61"
+            src="images/logo-menorca-singular-simbolo.svg"
+            alt=""
+            width="52"
+            height="35"
           >
+          <span class="site-header__wordmark">Menorca<br>Singular</span>
         </a>
+
+        <details class="mobile-menu">
+          <summary class="mobile-menu__toggle">
+            <span class="visually-hidden">Menú principal</span>
+            <span class="mobile-menu__icon" aria-hidden="true"></span>
+          </summary>
+          <nav class="mobile-menu__nav" aria-label="Navegación principal">
+            <ul class="site-nav__list">
+              <li><a href="#rutas">Rutas culturales</a></li>
+              <li><a href="#guias">Nuestros guías</a></li>
+              <li><a href="#panel-usuario">Panel de usuario</a></li>
+              <li><a href="#reservar">Reservar plaza</a></li>
+            </ul>
+          </nav>
+        </details>
 
         <a class="button button--header" href="#reservar">Reservar plaza</a>
 
@@ -48,7 +64,10 @@
             arquitectos y expertos locales. Explora el patrimonio balear en
             grupos de máximo 8 personas y a un ritmo pausado.
           </p>
-          <a class="button" href="#rutas">Explorar rutas</a>
+          <a class="button hero__button" href="#rutas">
+            Explorar rutas
+            <span class="hero__button-arrow" aria-hidden="true">→</span>
+          </a>
           <p class="hero__note">Disponibilidad limitada para esta temporada.</p>
         </div>
 
