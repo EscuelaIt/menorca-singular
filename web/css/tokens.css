@@ -5,6 +5,7 @@
   --color-verde-olivo: #4e5d42;
   --color-piedra-mares: #d8c7b0;
   --color-terracota: #c2785c;
+  --color-grafito-profundo: #1a1a18; /* texto sobre terracota: 5.1:1 */
 
   /* Aplicaciones semánticas */
   --color-fondo-principal: var(--color-blanco-cal);

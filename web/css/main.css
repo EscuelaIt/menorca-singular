@@ -26,12 +26,14 @@ h2 {
   line-height: 1.2;
 }
 
+/* El terracota sobre blanco cal no alcanza 4.5:1: los enlaces de texto van en oliva */
 a {
-  color: var(--color-interactivo);
+  color: var(--color-jerarquia);
 }
 
-a:focus-visible {
-  outline: 2px solid currentColor;
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-jerarquia);
   outline-offset: 4px;
 }
 
@@ -174,7 +176,7 @@ a:focus-visible {
   border: 1px solid var(--color-interactivo);
   border-radius: 0.15rem;
   background: var(--color-interactivo);
-  color: var(--color-grafito);
+  color: var(--color-grafito-profundo);
   font-family: var(--font-interfaz);
   font-size: 0.8125rem;
   font-weight: 500;
@@ -183,12 +185,17 @@ a:focus-visible {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .button:hover {
-  background: transparent;
-  color: var(--color-interactivo);
+  border-color: var(--color-jerarquia);
+  background: var(--color-jerarquia);
+  color: var(--color-blanco-cal);
+}
+
+.button:focus-visible {
+  outline-offset: 3px;
 }
 
 .button--header {
@@ -223,7 +230,15 @@ a:focus-visible {
 }
 
 .site-nav__list a:hover {
-  color: var(--color-interactivo);
+  text-decoration: underline;
+  text-decoration-color: var(--color-interactivo);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
+}
+
+/* Oliva sobre piedra no llega a 4.5:1; en el panel móvil, grafito */
+.mobile-menu__nav .site-nav__list a {
+  color: var(--color-texto);
 }
 
 .hero {
@@ -246,9 +261,9 @@ a:focus-visible {
 
 .hero__description {
   max-width: 36rem;
-  margin: 1.35rem 0 1.45rem;
-  font-size: 1.0625rem;
-  line-height: 1.55;
+  margin: 1.35rem 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .hero__button {
@@ -268,7 +283,7 @@ a:focus-visible {
   margin: 0.75rem 0 0;
   color: var(--color-texto);
   font-family: var(--font-interfaz);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -279,6 +294,11 @@ a:focus-visible {
   overflow: hidden;
   aspect-ratio: 1.28;
   background: var(--color-fondo-secundario);
+}
+
+.hero__image picture {
+  display: block;
+  height: 100%;
 }
 
 .hero__image img {
@@ -295,72 +315,130 @@ a:focus-visible {
   }
 
   .site-header__inner {
+    padding: 1rem 2.5rem;
+  }
+
+  .site-header__brand img {
+    width: 3.5rem;
+  }
+
+  .site-header__wordmark {
+    font-size: 1.75rem;
+  }
+
+  .mobile-menu__nav {
+    right: -2.5rem;
+  }
+
+  .hero__copy {
+    padding: 3rem 2.5rem 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.4rem, 8vw, 4.5rem);
+  }
+
+  .hero__description {
+    font-size: 1.125rem;
+  }
+
+  .hero__button {
+    display: inline-flex;
+    width: auto;
+    min-height: 3rem;
+    padding-inline: 2.25rem;
+  }
+
+  .hero__image {
+    width: calc(100% - 5rem);
+    margin: 0 2.5rem 3rem;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (min-width: 64rem) {
+  .site-header__inner {
     grid-template-columns: auto 1fr auto;
-    gap: 2rem;
-    padding: 1.4rem 2.5rem;
+    gap: 2.5rem;
+    width: calc(100% - 5rem);
+    padding: 1.1rem 0;
   }
 
   .mobile-menu {
     display: none;
   }
 
+  .site-header__brand {
+    gap: 1rem;
+  }
+
   .site-header__brand img {
-    width: 3.25rem;
+    width: 4.25rem;
   }
 
   .site-header__wordmark {
-    font-size: 1.55rem;
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+  }
+
+  .site-header__wordmark br {
+    display: none;
   }
 
   .site-nav {
     display: block;
-    margin: 0;
-    overflow: visible;
+    justify-self: end;
   }
 
   .site-nav__list {
-    justify-content: center;
-    gap: clamp(1.1rem, 2.5vw, 2.5rem);
+    gap: clamp(1.5rem, 2.5vw, 2.25rem);
     padding: 0;
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .site-nav__list a {
+    color: var(--color-texto);
   }
 
   .button--header {
     display: inline-flex;
-    min-height: 3rem;
-    padding-inline: 1.2rem;
+    min-height: 2.875rem;
+    padding-inline: 1.1rem;
   }
 
   .hero {
     display: grid;
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
     align-items: center;
-    gap: clamp(2rem, 5vw, 5rem);
-    padding: 2.5rem 2.5rem 4rem;
+    gap: clamp(2.5rem, 4vw, 4rem);
+    width: calc(100% - 5rem);
+    padding: 2rem 0 3.5rem;
   }
 
   .hero__copy {
-    padding: 1.5rem 0;
+    padding: 0;
   }
 
   .hero h1 {
-    max-width: 13ch;
-    font-size: clamp(3.2rem, 6vw, 5.25rem);
-  }
-
-  .hero__button {
-    display: inline-flex;
-    width: auto;
+    max-width: 12ch;
+    font-size: clamp(3.75rem, 5.6vw, 5.25rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
   }
 
   .hero__description {
-    margin-top: 1.6rem;
-    font-size: 1.05rem;
+    max-width: 32rem;
+    margin: 2rem 0 1.75rem;
+    font-size: 1.1875rem;
   }
 
   .hero__image {
     width: 100%;
     margin: 0;
-    aspect-ratio: 0.82;
+    aspect-ratio: 1.1;
   }
 }
 

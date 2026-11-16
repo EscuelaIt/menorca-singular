@@ -25,7 +25,7 @@
             width="52"
             height="35"
           >
-          <span class="site-header__wordmark">Menorca<br>Singular</span>
+          <span class="site-header__wordmark">Menorca<br> Singular</span>
         </a>
 
         <details class="mobile-menu">
@@ -43,8 +43,6 @@
           </nav>
         </details>
 
-        <a class="button button--header" href="#reservar">Reservar plaza</a>
-
         <nav class="site-nav" aria-label="Navegación principal">
           <ul class="site-nav__list">
             <li><a href="#rutas">Rutas culturales</a></li>
@@ -52,6 +50,8 @@
             <li><a href="#panel-usuario">Panel de usuario</a></li>
           </ul>
         </nav>
+
+        <a class="button button--header" href="#reservar">Reservar plaza</a>
       </div>
     </header>
 
@@ -72,18 +72,28 @@
         </div>
 
         <figure class="hero__image">
-          <img
-            src="images/hero-image/hero-image-mobile-800w.jpg"
-            srcset="
-              images/hero-image/hero-image-mobile-800w.jpg 800w,
-              images/hero-image/hero-image-desktop-1920w.jpg 1920w
-            "
-            sizes="(min-width: 60rem) 52vw, 100vw"
-            alt="Calle histórica de Menorca, flanqueada por casas de piedra y balcones"
-            width="800"
-            height="537"
-            fetchpriority="high"
-          >
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                images/hero-image/hero-image-mobile-800w.webp 800w,
+                images/hero-image/hero-image-desktop-1920w.webp 1920w
+              "
+              sizes="(min-width: 64rem) 50vw, 100vw"
+            >
+            <img
+              src="images/hero-image/hero-image-mobile-800w.jpg"
+              srcset="
+                images/hero-image/hero-image-mobile-800w.jpg 800w,
+                images/hero-image/hero-image-desktop-1920w.jpg 1920w
+              "
+              sizes="(min-width: 64rem) 50vw, 100vw"
+              alt="Calle histórica de Menorca, flanqueada por casas de piedra y balcones"
+              width="800"
+              height="537"
+              fetchpriority="high"
+            >
+          </picture>
         </figure>
       </section>
     </main>
