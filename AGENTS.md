@@ -22,6 +22,15 @@ Este sitio web es para **Menorca Singular**, una empresa que organiza paseos tur
 ## Criterios de implementación
 
 - Usa HTML semántico y estructura clara.
+- Diseña siempre con enfoque **mobile-first**: comienza por móvil y amplía progresivamente para tabletas y escritorio mediante media queries.
 - Mantén los estilos en CSS y procura que la experiencia funcione en móvil y escritorio.
 - Cuida la accesibilidad básica: jerarquía de encabezados, textos alternativos para imágenes informativas y controles comprensibles.
 - Mantén el código sencillo y fácil de mantener, sin añadir complejidad que no requiera el contenido estático.
+
+## Guía tipográfica
+
+- Usa **Playfair Display SemiBold (600)** para los titulares, para transmitir el carácter cultural de la marca.
+- Los títulos de sección **H2** deben medir **28 px en móvil** y **32 px en escritorio**, con interlineado de **120 %**.
+- Usa **Inter Regular (400)** para el cuerpo de texto e **Inter Medium (500)** para elementos de interfaz.
+- Las etiquetas de interfaz y los botones deben medir **13 px**, usar peso **500**, ir en mayúsculas y tener un espaciado entre letras de **1.5 px**.
+- Si no hay archivos de estas fuentes en el proyecto, conserva sus familias en la pila tipográfica CSS con alternativas adecuadas; no añadas un proveedor externo sin proponerlo antes para evaluación.
