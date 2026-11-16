@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-fondo-principal);
+  color: var(--color-texto);
+  font-family: Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-interactivo);
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.site-header {
+  position: relative;
+  z-index: 1;
+  background: var(--color-fondo-principal);
+}
+
+.site-header__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.9rem 0.75rem;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 1rem 1.25rem 0.75rem;
+}
+
+.site-header__brand {
+  display: block;
+  width: clamp(7.5rem, 38vw, 10rem);
+  line-height: 0;
+}
+
+.site-header__brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--color-interactivo);
+  border-radius: 0.15rem;
+  background: var(--color-interactivo);
+  color: var(--color-blanco-cal);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--color-interactivo);
+}
+
+.button--header {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.site-nav {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin-inline: -1.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.site-nav__list {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0.2rem 1.25rem 0.35rem;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+
+.site-nav__list a {
+  color: var(--color-jerarquia);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav__list a:hover {
+  color: var(--color-interactivo);
+}
+
+.hero {
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.hero__copy {
+  padding: 2.4rem 1.25rem 2rem;
+}
+
+.hero h1 {
+  max-width: 13ch;
+  margin: 0;
+  color: var(--color-jerarquia);
+  font-size: clamp(2.8rem, 12vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.99;
+}
+
+.hero__description {
+  max-width: 36rem;
+  margin: 1.35rem 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.hero__note {
+  margin: 0.85rem 0 0;
+  color: var(--color-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.hero__image {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 1.42;
+  background: var(--color-fondo-secundario);
+}
+
+.hero__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+}
+
+@media (min-width: 48rem) {
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    padding: 1.4rem 2.5rem;
+  }
+
+  .site-header__brand {
+    width: 10.5rem;
+  }
+
+  .site-nav {
+    grid-column: auto;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .site-nav__list {
+    justify-content: center;
+    gap: clamp(1.1rem, 2.5vw, 2.5rem);
+    padding: 0;
+    font-size: 0.85rem;
+  }
+
+  .button--header {
+    min-height: 3rem;
+    padding-inline: 1.2rem;
+    font-size: 0.875rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+    padding: 2.5rem 2.5rem 4rem;
+  }
+
+  .hero__copy {
+    padding: 1.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 6vw, 5.25rem);
+  }
+
+  .hero__description {
+    margin-top: 1.6rem;
+    font-size: 1.05rem;
+  }
+
+  .hero__image {
+    aspect-ratio: 0.82;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

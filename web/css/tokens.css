@@ -1,0 +1,15 @@
+:root {
+  /* Paleta */
+  --color-blanco-cal: #f7f4ef;
+  --color-grafito: #262624;
+  --color-verde-olivo: #4e5d42;
+  --color-piedra-mares: #d8c7b0;
+  --color-terracota: #c2785c;
+
+  /* Aplicaciones semánticas */
+  --color-fondo-principal: var(--color-blanco-cal);
+  --color-texto: var(--color-grafito);
+  --color-jerarquia: var(--color-verde-olivo);
+  --color-fondo-secundario: var(--color-piedra-mares);
+  --color-interactivo: var(--color-terracota);
+}
