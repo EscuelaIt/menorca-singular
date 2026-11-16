@@ -309,6 +309,178 @@ summary:focus-visible {
   object-position: center 54%;
 }
 
+/* Manifiesto y propuesta diferencial */
+.manifesto {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 2.75rem 1.5rem 3.5rem;
+}
+
+.manifesto h2 {
+  max-width: 18ch;
+  margin: 0;
+  color: var(--color-jerarquia);
+  letter-spacing: -0.01em;
+}
+
+.manifesto__pillars {
+  display: grid;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pillar {
+  padding: 1.75rem 0;
+}
+
+.pillar + .pillar {
+  border-top: 1px solid var(--color-fondo-secundario);
+}
+
+.pillar:last-child {
+  padding-bottom: 0;
+}
+
+.pillar__icon {
+  display: block;
+  width: auto;
+  height: 2.75rem;
+}
+
+.pillar__title {
+  margin: 1.1rem 0 0.5rem;
+  color: var(--color-texto);
+  font-family: var(--font-titulares);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.pillar__text {
+  max-width: 34rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Selección de rutas destacadas */
+.routes {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+.routes h2 {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--color-jerarquia);
+  letter-spacing: -0.01em;
+}
+
+.routes__list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.route-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-fondo-secundario);
+}
+
+.route-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.route-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.route-card__tags,
+.route-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.route-card__tags {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.route-card__tags li + li {
+  margin-left: 0.45em;
+  padding-left: 0.45em;
+  border-left: 1px solid currentColor;
+}
+
+.route-card__title {
+  margin: 0.6rem 0 0;
+  color: var(--color-texto);
+  font-family: var(--font-titulares);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/*
+ * Cada dato lleva su separador a la izquierda. La lista se desplaza a la
+ * izquierda y recorta 1px, así el separador del primer dato de cada línea
+ * nunca se ve, aunque la fila se parta en pantallas estrechas.
+ */
+.route-card__meta {
+  row-gap: 0.5rem;
+  margin: 1.1rem 0 0 calc(-0.75rem - 1px);
+  clip-path: inset(0 0 0 1px);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.route-card__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 0.75rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgb(38 38 36 / 0.35);
+}
+
+.route-card__meta img {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.route-card__price {
+  font-weight: 600;
+}
+
+.route-card__text {
+  margin: 1rem 0 1.5rem;
+  line-height: 1.6;
+}
+
+.route-card__button {
+  gap: 1rem;
+  width: 100%;
+  margin-top: auto;
+}
+
+.button__arrow {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
 @media (min-width: 48rem) {
   h2 {
     font-size: 2rem;
@@ -353,6 +525,32 @@ summary:focus-visible {
     width: calc(100% - 5rem);
     margin: 0 2.5rem 3rem;
     aspect-ratio: 16 / 9;
+  }
+
+  .manifesto {
+    padding: 3rem 2.5rem 4.5rem;
+  }
+
+  .pillar__title {
+    font-size: 1.5rem;
+  }
+
+  .routes {
+    padding: 1rem 2.5rem 5rem;
+  }
+
+  .routes__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .route-card__body {
+    padding: 1.5rem;
+  }
+
+  .route-card__button {
+    align-self: flex-start;
+    width: auto;
+    padding-inline: 2.25rem;
   }
 }
 
@@ -439,6 +637,74 @@ summary:focus-visible {
     width: 100%;
     margin: 0;
     aspect-ratio: 1.1;
+  }
+
+  .manifesto {
+    width: calc(100% - 5rem);
+    padding: 0 0 5.5rem;
+  }
+
+  .manifesto h2 {
+    max-width: none;
+    padding-top: 3rem;
+    border-top: 1px solid var(--color-jerarquia);
+  }
+
+  .manifesto__pillars {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 2.75rem;
+  }
+
+  .pillar,
+  .pillar:last-child {
+    padding: 0.25rem 2.5rem;
+    text-align: center;
+  }
+
+  .pillar + .pillar {
+    border-top: 0;
+    border-left: 1px solid var(--color-jerarquia);
+  }
+
+  .pillar__icon {
+    margin-inline: auto;
+  }
+
+  .pillar__text {
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+
+  .routes {
+    width: calc(100% - 5rem);
+    padding: 0 0 6rem;
+  }
+
+  .routes__list {
+    margin-top: 2.5rem;
+  }
+
+  .route-card__body {
+    padding: 1.75rem;
+  }
+
+  .route-card__title {
+    font-size: 1.875rem;
+  }
+
+  .route-card__meta {
+    margin: 1.4rem 0 0 calc(-1rem - 1px);
+    font-size: 1rem;
+  }
+
+  .route-card__meta li {
+    margin-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .route-card__text {
+    margin: 1.25rem 0 1.75rem;
+    font-size: 1.0625rem;
   }
 }
 
