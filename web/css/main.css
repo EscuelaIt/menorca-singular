@@ -499,6 +499,86 @@ summary:focus-visible {
   width: 100%;
 }
 
+/* Guías: quienes te acompañan */
+.guides {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.guides h2 {
+  margin: 0;
+  color: var(--color-jerarquia);
+  letter-spacing: -0.01em;
+}
+
+.guides__lead {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  line-height: 1.6;
+}
+
+.guides__list {
+  display: grid;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide {
+  padding: 1.75rem 0;
+}
+
+.guide:first-child {
+  padding-top: 0;
+}
+
+.guide:last-child {
+  padding-bottom: 0;
+}
+
+.guide + .guide {
+  border-top: 1px solid var(--color-fondo-secundario);
+}
+
+.guide picture {
+  display: block;
+}
+
+.guide__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--color-fondo-secundario);
+}
+
+.guide__name {
+  margin: 1.25rem 0 0;
+  color: var(--color-jerarquia);
+  font-family: var(--font-titulares);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.guide__role {
+  margin: 0.6rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.guide__text {
+  max-width: 34rem;
+  margin: 0.85rem 0 0;
+  line-height: 1.6;
+}
+
 @media (min-width: 48rem) {
   h2 {
     font-size: 2rem;
@@ -578,6 +658,48 @@ summary:focus-visible {
   .routes__more {
     width: auto;
     padding-inline: 2.25rem;
+  }
+
+  .guides {
+    padding: 0 2.5rem 5rem;
+  }
+
+  .guides__lead {
+    font-size: 1.125rem;
+  }
+
+  .guides__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .guide,
+  .guide:first-child,
+  .guide:last-child {
+    padding: 0;
+  }
+
+  .guide + .guide {
+    border-top: 0;
+  }
+
+  .guide__image {
+    aspect-ratio: 1.6;
+  }
+
+  .guide__name {
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .guide__role {
+    margin-top: 0.75rem;
+  }
+
+  .guide__text {
+    margin-top: 1.25rem;
+    font-size: 1.0625rem;
   }
 }
 
@@ -732,6 +854,36 @@ summary:focus-visible {
   .route-card__text {
     margin: 1.25rem 0 1.75rem;
     font-size: 1.0625rem;
+  }
+
+  /* Titular y entradilla en una fila, separados por un filete vertical */
+  .guides {
+    width: calc(100% - 5rem);
+    padding: 0 0 6rem;
+  }
+
+  .guides__intro {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .guides h2 {
+    max-width: 11ch;
+  }
+
+  .guides__lead {
+    max-width: 40rem;
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 2.5rem;
+    border-left: 1px solid var(--color-fondo-secundario);
+    font-size: 1.1875rem;
+  }
+
+  .guides__list {
+    gap: 3rem;
+    margin-top: 3.5rem;
   }
 }
 
