@@ -481,6 +481,24 @@ summary:focus-visible {
   line-height: 1;
 }
 
+/* Botón secundario: contorno oliva, sin competir con el terracota de las fichas */
+.button--secondary {
+  border-color: var(--color-jerarquia);
+  background: transparent;
+  color: var(--color-jerarquia);
+}
+
+.routes__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.routes__more {
+  gap: 1rem;
+  width: 100%;
+}
+
 @media (min-width: 48rem) {
   h2 {
     font-size: 2rem;
@@ -549,6 +567,15 @@ summary:focus-visible {
 
   .route-card__button {
     align-self: flex-start;
+    width: auto;
+    padding-inline: 2.25rem;
+  }
+
+  .routes__footer {
+    margin-top: 2.5rem;
+  }
+
+  .routes__more {
     width: auto;
     padding-inline: 2.25rem;
   }
