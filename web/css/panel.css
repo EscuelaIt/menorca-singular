@@ -1,0 +1,581 @@
+/* Panel de usuario (área del viajero) */
+
+/* Cabecera simplificada: marca y cierre de sesión */
+.panel-header__logout {
+  justify-self: end;
+  color: var(--color-jerarquia);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration-color: var(--color-interactivo);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.panel-header__logout:hover {
+  color: var(--color-texto);
+}
+
+.panel {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+/*
+ * Enlaces de texto: el terracota sobre blanco cal no alcanza 4.5:1,
+ * así que el texto va en oliva y el terracota queda en el subrayado
+ * y en los iconos de acción.
+ */
+.panel-link,
+.panel__back {
+  color: var(--color-jerarquia);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration-color: var(--color-interactivo);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.panel-link:hover,
+.panel__back:hover {
+  color: var(--color-texto);
+  text-decoration-thickness: 2px;
+}
+
+.panel__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.panel__back::before,
+.panel-link--arrow::after,
+.panel-link--external::after {
+  flex-shrink: 0;
+  background-color: var(--color-interactivo);
+  content: "";
+}
+
+.panel__back::before,
+.panel-link--arrow::after {
+  width: 1.125rem;
+  height: 0.75rem;
+  -webkit-mask: url("../images/icons/icono-flecha.svg") center / contain no-repeat;
+  mask: url("../images/icons/icono-flecha.svg") center / contain no-repeat;
+}
+
+.panel__back::before {
+  transform: scaleX(-1);
+}
+
+.panel-link--arrow,
+.panel-link--external {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.panel-link--external::after {
+  width: 0.875rem;
+  height: 0.875rem;
+  -webkit-mask: url("../images/icons/icono-enlace-externo.svg") center / contain no-repeat;
+  mask: url("../images/icons/icono-enlace-externo.svg") center / contain no-repeat;
+}
+
+/* Etiquetas de interfaz */
+.panel__eyebrow,
+.booking-card__tags,
+.history__status {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.panel__eyebrow {
+  margin: 0;
+}
+
+/* Bienvenida */
+.panel-welcome {
+  margin-top: 1.75rem;
+}
+
+.panel-welcome h1 {
+  margin: 0.5rem 0 0;
+  color: var(--color-jerarquia);
+  font-size: clamp(2.125rem, 9vw, 2.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.panel-welcome__lead {
+  max-width: 44rem;
+  margin: 0.75rem 0 0;
+  line-height: 1.6;
+}
+
+/* Secciones */
+.panel-section {
+  margin-top: 2.5rem;
+}
+
+.panel-section h2 {
+  margin: 0 0 1.25rem;
+  color: var(--color-jerarquia);
+  letter-spacing: -0.01em;
+}
+
+.panel-section--ruled {
+  padding-top: 2rem;
+  border-top: 1px solid rgb(78 93 66 / 0.3);
+}
+
+.panel-section__intro {
+  max-width: 44rem;
+  margin: -0.5rem 0 1.5rem;
+  line-height: 1.6;
+}
+
+/* Tarjeta de reserva activa: aristas vivas sobre piedra marés */
+.booking-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem 1rem 1rem;
+  background: var(--color-fondo-secundario);
+}
+
+.booking-card__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.booking-card__ref {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.booking-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-card__tags li + li::before {
+  margin-inline: 0.5em;
+  content: "·";
+}
+
+.booking-card__title {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-titulares);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.booking-card__meta,
+.meeting-point__places,
+.meeting-point__links {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-card__meta {
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.booking-card__meta li,
+.meeting-point__places li {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  align-items: start;
+  gap: 0.85rem;
+}
+
+.booking-card__meta img,
+.meeting-point__places img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Bloque interno sobre blanco cal */
+.meeting-point {
+  padding: 1.25rem 1rem;
+  background: var(--color-fondo-principal);
+}
+
+.meeting-point__title {
+  margin: 0 0 1rem;
+  color: var(--color-jerarquia);
+  font-family: var(--font-titulares);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.meeting-point__places {
+  gap: 0.85rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-fondo-secundario);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+.meeting-point__tips {
+  margin: 1rem 0 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.meeting-point__links {
+  gap: 0.5rem;
+}
+
+/* Acordeón del día de la ruta */
+.day-tips {
+  margin-top: 1.25rem;
+  border-block: 1px solid rgb(78 93 66 / 0.3);
+}
+
+.day-tips summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  list-style: none;
+}
+
+.day-tips summary::-webkit-details-marker {
+  display: none;
+}
+
+.day-tips summary::before {
+  flex-shrink: 0;
+  width: 1rem;
+  color: var(--color-interactivo);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  content: "+";
+}
+
+.day-tips[open] summary::before {
+  content: "−";
+}
+
+.day-tips__list {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 1.25rem 2rem;
+}
+
+.day-tips__list dt {
+  font-weight: 500;
+}
+
+.day-tips__list dd {
+  max-width: 60ch;
+  margin: 0.25rem 0 0;
+  line-height: 1.6;
+}
+
+/* Acciones de la reserva */
+.booking-actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.booking-actions .button {
+  width: 100%;
+  min-height: 3.25rem;
+}
+
+/* Botón principal con desplegable sin JavaScript */
+.calendar-menu {
+  position: relative;
+}
+
+.calendar-menu summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.calendar-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.calendar-menu__options {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: grid;
+  margin: 0;
+  padding: 0.5rem 0;
+  border: 1px solid var(--color-jerarquia);
+  background: var(--color-fondo-principal);
+  list-style: none;
+}
+
+.calendar-menu__options a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--color-texto);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.calendar-menu__options a:hover {
+  background: var(--color-fondo-secundario);
+}
+
+/* Gestión autónoma */
+.booking-manage {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.booking-manage__links {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-manage__links li + li {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-texto);
+}
+
+.booking-manage__note {
+  max-width: 34rem;
+  margin: 0.85rem auto 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Historial */
+.history {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.history__item {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgb(78 93 66 / 0.3);
+}
+
+.history__status {
+  justify-self: start;
+  margin: 0;
+  padding: 0.45rem 0.85rem;
+  background: rgb(78 93 66 / 0.15);
+}
+
+.history__title {
+  margin: 0;
+  font-family: var(--font-interfaz);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.history__details {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.history__link {
+  justify-self: start;
+  font-size: 0.875rem;
+}
+
+/* Formulario de contacto: aristas vivas y borde oliva */
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact-form label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--color-jerarquia);
+  border-radius: 0;
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.contact-form select {
+  padding-right: 2.75rem;
+  background-image: url("../images/icons/icono-desplegable.svg");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  appearance: none;
+}
+
+.contact-form input:focus-visible,
+.contact-form select:focus-visible {
+  outline: 2px solid var(--color-jerarquia);
+  outline-offset: 2px;
+}
+
+.contact-form__submit {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Banda de ayuda previa al pie */
+.help-band {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.help-band p {
+  margin: 0;
+  padding: 1.25rem;
+  background: var(--color-fondo-secundario);
+  line-height: 1.6;
+}
+
+/* Oliva sobre piedra ronda 4.3:1: en la banda, enlaces en grafito */
+.help-band a {
+  color: var(--color-texto);
+  font-weight: 500;
+  text-decoration-color: var(--color-interactivo);
+  text-underline-offset: 0.25em;
+}
+
+@media (min-width: 48rem) {
+  .panel {
+    padding: 2rem 2.5rem 4rem;
+  }
+
+  .panel-welcome h1 {
+    font-size: 3.25rem;
+  }
+
+  .panel-section {
+    margin-top: 3rem;
+  }
+
+  .booking-card {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+    align-items: start;
+    gap: 1rem 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+  }
+
+  .booking-card__status {
+    grid-column: 1 / -1;
+  }
+
+  .booking-card__title {
+    font-size: 1.875rem;
+  }
+
+  .booking-card__meta {
+    gap: 1rem;
+    font-size: 1.0625rem;
+  }
+
+  .meeting-point {
+    margin-top: 2.25rem;
+    padding: 1.25rem;
+  }
+
+  .booking-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .booking-manage {
+    text-align: left;
+  }
+
+  .booking-manage__links {
+    justify-content: flex-start;
+  }
+
+  .booking-manage__note {
+    max-width: none;
+    margin-left: 0;
+  }
+
+  .history__item {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .history__link {
+    justify-self: end;
+  }
+
+  .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.5rem;
+  }
+
+  .contact-form__submit {
+    justify-self: start;
+    width: auto;
+    padding-inline: 2.25rem;
+  }
+
+  .help-band {
+    padding: 0 2.5rem 4rem;
+  }
+
+  .help-band p {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .booking-card {
+    gap: 1rem 3rem;
+  }
+}
