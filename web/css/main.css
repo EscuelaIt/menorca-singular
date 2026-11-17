@@ -274,11 +274,6 @@ summary:focus-visible {
   gap: 1rem;
 }
 
-.hero__button-arrow {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
 .hero__note {
   margin: 0.75rem 0 0;
   color: var(--color-texto);
@@ -476,9 +471,18 @@ summary:focus-visible {
   margin-top: auto;
 }
 
+/*
+ * La flecha es un SVG usado como máscara: toma el color del texto
+ * (currentColor), así cambia con el hover, y su trazo de ~1.75 px
+ * iguala el peso de las letras del botón.
+ */
 .button__arrow {
-  font-size: 1.35rem;
-  line-height: 1;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 0.875rem;
+  background-color: currentColor;
+  -webkit-mask: url("../images/icons/icono-flecha.svg") center / contain no-repeat;
+  mask: url("../images/icons/icono-flecha.svg") center / contain no-repeat;
 }
 
 /* Botón secundario: contorno oliva, sin competir con el terracota de las fichas */
