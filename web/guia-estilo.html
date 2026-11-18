@@ -483,6 +483,30 @@
 
             <div class="gs-componente">
               <div class="gs-componente__info">
+                <h3 class="gs-h3">Menú móvil <code class="gs-code">.mobile-menu</code></h3>
+                <p>Un índice de cuaderno que baja desde arriba sobre papel liso, con los enlaces numerados en mono y, al pie, las coordenadas de la isla y la taula como sello. Usa la API <code class="gs-code">popover</code>, sin JavaScript: se cierra con Escape, al pulsar fuera o con la X, que nace de la hamburguesa. Las animaciones se omiten si el sistema pide reducir el movimiento.</p>
+              </div>
+              <div class="gs-muestra gs-muestra--papel">
+                <div class="mobile-menu__bar">
+                  <p class="registro"><span class="taula" aria-hidden="true"></span> Índice</p>
+                  <span class="mobile-menu__toggle mobile-menu__toggle--close" aria-hidden="true">
+                    <span class="mobile-menu__icon"></span>
+                  </span>
+                </div>
+                <ol class="mobile-menu__list">
+                  <li><a href="./#rutas">Rutas culturales</a></li>
+                  <li><a href="./#guias">Nuestros guías</a></li>
+                  <li><a href="panel-usuario.html">Área del viajero</a></li>
+                </ol>
+                <p class="mobile-menu__pie" aria-hidden="true">
+                  <span class="pie__coord">Menorca · 39°57′ N · 4°03′ E</span>
+                  <span class="taula mobile-menu__sello"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
                 <h3 class="gs-h3">Itinerario <code class="gs-code">.itinerary</code></h3>
                 <p>Las etapas de una ruta como un trazado en un plano. La etapa principal puede marcarse con la taula (<code class="gs-code">.itinerary__step--taula</code>).</p>
               </div>

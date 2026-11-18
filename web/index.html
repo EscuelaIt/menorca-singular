@@ -62,20 +62,34 @@
           <span class="account-link__label">Área del viajero</span>
         </a>
 
-        <details class="mobile-menu">
-          <summary class="mobile-menu__toggle">
+        <div class="mobile-menu">
+          <button class="mobile-menu__toggle" type="button" popovertarget="menu-movil">
             <span class="visually-hidden">Menú principal</span>
             <span class="mobile-menu__icon" aria-hidden="true"></span>
-          </summary>
-          <nav class="mobile-menu__nav" aria-label="Menú móvil">
-            <ul class="site-nav__list">
+          </button>
+          <nav class="mobile-menu__panel" id="menu-movil" popover aria-label="Menú móvil">
+            <div class="mobile-menu__bar">
+              <p class="registro" aria-hidden="true">
+                <span class="taula"></span>
+                Índice
+              </p>
+              <button class="mobile-menu__toggle mobile-menu__toggle--close" type="button" popovertarget="menu-movil" popovertargetaction="hide">
+                <span class="visually-hidden">Cerrar menú</span>
+                <span class="mobile-menu__icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <ol class="mobile-menu__list">
               <li><a href="#rutas">Rutas culturales</a></li>
               <li><a href="#guias">Nuestros guías</a></li>
               <li><a href="panel-usuario.html">Área del viajero</a></li>
               <li><a href="#reservar">Reservar plaza</a></li>
-            </ul>
+            </ol>
+            <p class="mobile-menu__pie" aria-hidden="true">
+              <span class="pie__coord">Menorca · 39°57′ N · 4°03′ E</span>
+              <span class="taula mobile-menu__sello"></span>
+            </p>
           </nav>
-        </details>
+        </div>
 
         <a class="button button--header" href="#reservar">Reservar plaza</a>
       </div>
