@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Mapa del sitio · Menorca Singular · Clase 3</title>
+    <style>
+      /*
+        Entregable de la clase 3 (estrategia y estructura).
+        Estilo de wireframe deliberadamente neutro: en esta etapa todavía no
+        hay identidad visual, solo estructura. Se imprime en A4 apaisado.
+      */
+      :root {
+        --tinta: #1d1d1d;
+        --gris: #6b6b6b;
+        --linea: #9a9a9a;
+        --suave: #e6e6e6;
+        --fondo: #ffffff;
+        --resalte: #f2f2f2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--fondo);
+        color: var(--tinta);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        line-height: 1.45;
+      }
+
+      .doc {
+        max-width: 90rem;
+        margin-inline: auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+
+      .doc__meta {
+        margin: 0;
+        color: var(--gris);
+        font-size: 0.8125rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0.4rem 0 0;
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+        line-height: 1.1;
+      }
+
+      .doc__lead {
+        max-width: 70ch;
+        margin: 0.75rem 0 0;
+        color: #333;
+      }
+
+      h2 {
+        margin: 3rem 0 0;
+        padding-top: 1rem;
+        border-top: 2px solid var(--tinta);
+        font-size: 1.25rem;
+      }
+
+      h2 + p {
+        max-width: 70ch;
+        margin: 0.4rem 0 0;
+        color: #333;
+      }
+
+      /* Leyenda */
+      .leyenda {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
+        margin: 1.5rem 0 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.875rem;
+      }
+
+      .leyenda li {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .leyenda .muestra {
+        width: 1.75rem;
+        min-width: 0;
+        height: 1.1rem;
+        padding: 0;
+      }
+
+      /* Nodos */
+      .nodo {
+        display: block;
+        min-width: 8.5rem;
+        padding: 0.6rem 0.75rem;
+        border: 1px dashed var(--linea);
+        background: var(--fondo);
+        font-size: 0.875rem;
+        line-height: 1.3;
+        text-align: left;
+      }
+
+      .nodo strong {
+        display: block;
+        font-size: 0.9375rem;
+      }
+
+      .nodo small {
+        display: block;
+        overflow-wrap: anywhere;
+        margin-top: 0.2rem;
+        color: var(--gris);
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.75rem;
+      }
+
+      .nodo .etiquetas {
+        display: block;
+        margin-top: 0.35rem;
+        color: var(--gris);
+        font-size: 0.75rem;
+      }
+
+      /* Fase 1: diseñada y construida */
+      .nodo--fase1 {
+        border: 2px solid var(--tinta);
+        background: var(--resalte);
+      }
+
+      /* Plantilla: un mismo diseño sirve para varias páginas */
+      .nodo--plantilla {
+        box-shadow: 4px 4px 0 var(--fondo), 5px 5px 0 var(--tinta);
+      }
+
+      /* Interna: no se enlaza desde la web pública */
+      .nodo--interna {
+        border-style: dotted;
+        color: var(--gris);
+      }
+
+      .nodo--raiz {
+        min-width: 14rem;
+        text-align: center;
+      }
+
+      /*
+        Árbol: listas anidadas con conectores dibujados con bordes.
+        En móvil es una lista indentada; desde 64 rem, un organigrama.
+      */
+      .arbol {
+        margin: 2rem 0 0;
+        overflow-x: auto;
+      }
+
+      .arbol ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      /* Móvil: lista indentada con líneas guía */
+      .arbol ul ul {
+        margin-left: 1rem;
+        padding-left: 1rem;
+        border-left: 1px solid var(--linea);
+      }
+
+      .arbol li {
+        position: relative;
+        padding-top: 0.6rem;
+      }
+
+      .arbol ul ul > li::before {
+        position: absolute;
+        top: 1.6rem;
+        left: -1rem;
+        width: 1rem;
+        border-top: 1px solid var(--linea);
+        content: "";
+      }
+
+      @media (min-width: 64rem) {
+        .arbol > ul {
+          display: flex;
+          justify-content: center;
+          min-width: 78rem;
+        }
+
+        .arbol ul ul {
+          display: flex;
+          justify-content: center;
+          margin: 0;
+          padding: 1.5rem 0 0;
+          border: 0;
+          position: relative;
+        }
+
+        /* Línea vertical que baja del padre */
+        .arbol ul ul::before {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          height: 1.5rem;
+          border-left: 1px solid var(--tinta);
+          content: "";
+        }
+
+        .arbol li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 1.5rem 0.4rem 0;
+        }
+
+        .arbol > ul > li {
+          padding-top: 0;
+        }
+
+        /* Conectores: tramo horizontal y vertical hacia cada hijo */
+        .arbol ul ul > li::before,
+        .arbol ul ul > li::after {
+          position: absolute;
+          top: 0;
+          width: 50%;
+          height: 1.5rem;
+          border-top: 1px solid var(--tinta);
+          content: "";
+        }
+
+        .arbol ul ul > li::before {
+          left: 0;
+        }
+
+        .arbol ul ul > li::after {
+          right: 0;
+          left: auto;
+          border-left: 1px solid var(--tinta);
+        }
+
+        .arbol ul ul > li:first-child::before,
+        .arbol ul ul > li:last-child::after {
+          border-top: 0;
+        }
+
+        .arbol ul ul > li:last-child::before {
+          border-right: 1px solid var(--tinta);
+        }
+
+        .arbol ul ul > li:only-child::before {
+          display: none;
+        }
+
+        .arbol ul ul > li:only-child::after {
+          border-top: 0;
+        }
+
+        /* Los hijos de tercer nivel se apilan en columna para ahorrar ancho */
+        .arbol ul ul ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          padding-top: 1.5rem;
+        }
+
+        .arbol ul ul ul > li {
+          padding: 0;
+        }
+
+        .arbol ul ul ul > li::before,
+        .arbol ul ul ul > li::after {
+          display: none;
+        }
+
+        .arbol .nodo {
+          width: 10rem;
+        }
+
+        .arbol .nodo--raiz {
+          width: 16rem;
+        }
+      }
+
+      /* Bloques de navegación y flujos */
+      .rejilla {
+        display: grid;
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      @media (min-width: 48rem) {
+        .rejilla--2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .caja {
+        padding: 1rem 1.25rem;
+        border: 1px solid var(--linea);
+      }
+
+      .caja h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .caja ol,
+      .caja ul {
+        margin: 0.6rem 0 0;
+        padding-left: 1.2rem;
+        font-size: 0.9375rem;
+      }
+
+      .caja li + li {
+        margin-top: 0.25rem;
+      }
+
+      .flujo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 0.5rem;
+        margin: 0.75rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .flujo li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .flujo li + li::before {
+        color: var(--gris);
+        content: "→";
+      }
+
+      .flujo .nodo {
+        min-width: 0;
+      }
+
+      .flujo__nota {
+        margin: 0.6rem 0 0;
+        color: #333;
+        font-size: 0.875rem;
+      }
+
+      /* Inventario */
+      .tabla-wrap {
+        margin-top: 1.25rem;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        min-width: 52rem;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+      }
+
+      th,
+      td {
+        padding: 0.55rem 0.75rem 0.55rem 0;
+        border-bottom: 1px solid var(--suave);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        border-bottom: 1px solid var(--tinta);
+        color: var(--gris);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      td code {
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.8125rem;
+      }
+
+      .estado {
+        white-space: nowrap;
+      }
+
+      .notas {
+        max-width: 70ch;
+        margin: 1rem 0 0;
+        padding-left: 1.2rem;
+      }
+
+      .notas li + li {
+        margin-top: 0.4rem;
+      }
+
+      @media print {
+        @page {
+          size: A4 landscape;
+          margin: 12mm;
+        }
+
+        .doc {
+          max-width: none;
+          padding: 0;
+        }
+
+        /* Cada apartado empieza en una página nueva */
+        h2 {
+          break-before: page;
+          break-after: avoid;
+          margin-top: 0;
+        }
+
+        /* El organigrama se reduce para caber en el ancho de un A4 apaisado */
+        .arbol {
+          overflow: visible;
+          zoom: 0.78;
+        }
+
+        .arbol,
+        .caja,
+        tr {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="doc">
+      <p class="doc__meta">Menorca Singular · Clase 3 · Estrategia, estructura y contenido</p>
+      <h1>Mapa del sitio</h1>
+      <p class="doc__lead">
+        Estructura completa de la web, aunque en la fase 1 solo se diseñan tres
+        plantillas de referencia. El mapa sirve para decidir qué páginas hacen
+        falta, cómo se relacionan y por qué camino llega el visitante a
+        reservar. Está en blanco y negro a propósito: en esta etapa todavía no
+        hay identidad visual, solo estructura.
+      </p>
+
+      <ul class="leyenda" aria-label="Leyenda">
+        <li><span class="nodo nodo--fase1 muestra" aria-hidden="true"></span> Fase 1: se diseña y se construye</li>
+        <li><span class="nodo nodo--fase1 nodo--plantilla muestra" aria-hidden="true"></span> Plantilla: un diseño para varias páginas</li>
+        <li><span class="nodo muestra" aria-hidden="true"></span> Fases siguientes</li>
+        <li><span class="nodo nodo--interna muestra" aria-hidden="true"></span> Interna: no se enlaza desde la web pública</li>
+      </ul>
+
+      <!-- 1 · Jerarquía -->
+      <h2>1 · Jerarquía de páginas</h2>
+      <p>De la portada salen las seis secciones principales. Las fichas de ruta comparten una misma plantilla.</p>
+
+      <div class="arbol">
+        <ul>
+          <li>
+            <span class="nodo nodo--fase1 nodo--raiz">
+              <strong>Portada</strong>
+              <small>/</small>
+              <span class="etiquetas">Propuesta de valor · rutas destacadas · guías</span>
+            </span>
+            <ul>
+              <li>
+                <span class="nodo">
+                  <strong>Rutas culturales</strong>
+                  <small>/rutas</small>
+                  <span class="etiquetas">Catálogo con filtros</span>
+                </span>
+                <ul>
+                  <li>
+                    <span class="nodo nodo--fase1 nodo--plantilla">
+                      <strong>Ruta talayótica al atardecer</strong>
+                      <small>/ruta-talayotica</small>
+                      <span class="etiquetas">Plantilla de ficha</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="nodo">
+                      <strong>Ciutadella secreta</strong>
+                      <small>/ciutadella-secreta</small>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="nodo">
+                      <strong>Maó británico</strong>
+                      <small>/mao-britanico</small>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="nodo">
+                  <strong>Nuestros guías</strong>
+                  <small>/guias</small>
+                  <span class="etiquetas">Equipo y especialidades</span>
+                </span>
+                <ul>
+                  <li>
+                    <span class="nodo">
+                      <strong>Perfil de guía</strong>
+                      <small>/guias/aina-pons</small>
+                      <span class="etiquetas">Plantilla · sus rutas</span>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="nodo">
+                  <strong>Reserva</strong>
+                  <small>/reservar</small>
+                  <span class="etiquetas">Datos y pago</span>
+                </span>
+                <ul>
+                  <li>
+                    <span class="nodo">
+                      <strong>Confirmación</strong>
+                      <small>/reservar/confirmacion</small>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="nodo nodo--fase1">
+                  <strong>Área del viajero</strong>
+                  <small>/panel-usuario</small>
+                  <span class="etiquetas">Requiere sesión</span>
+                </span>
+                <ul>
+                  <li>
+                    <span class="nodo">
+                      <strong>Acceso</strong>
+                      <small>/acceso</small>
+                      <span class="etiquetas">Enlace por correo</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="nodo">
+                      <strong>Modificar reserva</strong>
+                      <small>/modificar-reserva</small>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="nodo">
+                  <strong>Ayuda</strong>
+                  <small>/preguntas-frecuentes</small>
+                  <span class="etiquetas">Preguntas frecuentes</span>
+                </span>
+                <ul>
+                  <li>
+                    <span class="nodo">
+                      <strong>Contacto</strong>
+                      <small>/contacto</small>
+                    </span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="nodo">
+                  <strong>Legal</strong>
+                  <span class="etiquetas">Enlazado desde el pie</span>
+                </span>
+                <ul>
+                  <li><span class="nodo"><strong>Aviso legal</strong><small>/aviso-legal</small></span></li>
+                  <li><span class="nodo"><strong>Privacidad</strong><small>/politica-privacidad</small></span></li>
+                  <li><span class="nodo"><strong>Condiciones</strong><small>/terminos-condiciones</small></span></li>
+                  <li><span class="nodo"><strong>Cookies</strong><small>/politica-cookies</small><span class="etiquetas">Solo si hay analítica</span></span></li>
+                </ul>
+              </li>
+              <li>
+                <span class="nodo nodo--interna">
+                  <strong>Guía de estilo</strong>
+                  <small>/guia-estilo</small>
+                  <span class="etiquetas">Equipo y cliente · noindex</span>
+                </span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2 · Navegación -->
+      <h2>2 · Navegación</h2>
+      <p>Qué se enlaza desde cada zona fija de la web. La cabecera prioriza explorar y reservar; el resto va al pie.</p>
+
+      <div class="rejilla rejilla--2">
+        <div class="caja">
+          <h3>Cabecera</h3>
+          <ol>
+            <li>Rutas culturales</li>
+            <li>Nuestros guías</li>
+            <li>Área del viajero (icono de cuenta; en móvil, solo el icono)</li>
+            <li><strong>Reservar plaza</strong> (botón principal)</li>
+          </ol>
+          <p class="flujo__nota">En el área del viajero la cabecera se simplifica: marca y «Cerrar sesión».</p>
+        </div>
+        <div class="caja">
+          <h3>Pie de página</h3>
+          <ul>
+            <li><strong>Explora:</strong> catálogo de rutas, guías, preguntas frecuentes</li>
+            <li><strong>Tu reserva:</strong> área del viajero, modificar reserva, contacto</li>
+            <li><strong>Legal:</strong> aviso legal, privacidad, condiciones</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3 · Flujos -->
+      <h2>3 · Flujos principales</h2>
+      <p>Los dos recorridos que más importan al negocio. Cada paso debe resolver la duda que impide dar el siguiente.</p>
+
+      <div class="rejilla">
+        <div class="caja">
+          <h3>A · Del interés a la reserva</h3>
+          <ol class="flujo">
+            <li><span class="nodo nodo--fase1"><strong>Portada</strong></span></li>
+            <li><span class="nodo"><strong>Catálogo</strong></span></li>
+            <li><span class="nodo nodo--fase1"><strong>Ficha de ruta</strong><span class="etiquetas">Elige fecha y plazas</span></span></li>
+            <li><span class="nodo"><strong>Reserva</strong><span class="etiquetas">Datos y pago</span></span></li>
+            <li><span class="nodo"><strong>Confirmación</strong></span></li>
+            <li><span class="nodo nodo--fase1"><strong>Área del viajero</strong></span></li>
+          </ol>
+          <p class="flujo__nota">
+            Atajo: desde las rutas destacadas de la portada se salta el
+            catálogo. En móvil, la ficha mantiene una barra fija con el precio
+            y «Ver fechas».
+          </p>
+        </div>
+        <div class="caja">
+          <h3>B · El viajero con una reserva</h3>
+          <ol class="flujo">
+            <li><span class="nodo"><strong>Correo de confirmación o recordatorio</strong></span></li>
+            <li><span class="nodo"><strong>Acceso</strong><span class="etiquetas">Enlace por correo</span></span></li>
+            <li><span class="nodo nodo--fase1"><strong>Área del viajero</strong><span class="etiquetas">Punto de encuentro y horario</span></span></li>
+            <li><span class="nodo"><strong>Modificar o cancelar</strong><span class="etiquetas">Hasta 24 h antes</span></span></li>
+          </ol>
+          <p class="flujo__nota">
+            Pensado para el móvil y para usarse ya en la isla: la información
+            del día de la ruta va primero.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 · Inventario -->
+      <h2>4 · Inventario de páginas</h2>
+      <p>Cada página con su objetivo y su contenido principal. Sirve de lista de control para los wireframes.</p>
+
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Página</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Objetivo</th>
+              <th scope="col">Contenido principal</th>
+              <th scope="col">Fase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Portada</strong></td>
+              <td><code>/</code></td>
+              <td>Explicar qué es Menorca Singular y llevar a una ruta.</td>
+              <td>Propuesta de valor, compromisos, rutas destacadas, guías, información práctica, cierre.</td>
+              <td class="estado">1 · Construida</td>
+            </tr>
+            <tr>
+              <td><strong>Ficha de ruta</strong> (plantilla)</td>
+              <td><code>/ruta-talayotica</code></td>
+              <td>Resolver todas las dudas y conseguir la reserva.</td>
+              <td>Datos clave, narrativa, itinerario, guía, qué incluye, nivel físico, preguntas, módulo de reserva, rutas relacionadas.</td>
+              <td class="estado">1 · Construida</td>
+            </tr>
+            <tr>
+              <td><strong>Área del viajero</strong></td>
+              <td><code>/panel-usuario</code></td>
+              <td>Que el viajero llegue al punto de encuentro sin dudas y gestione su reserva solo.</td>
+              <td>Reserva activa, horario, punto de encuentro, acciones, historial, datos de contacto.</td>
+              <td class="estado">1 · Construida</td>
+            </tr>
+            <tr>
+              <td><strong>Catálogo de rutas</strong></td>
+              <td><code>/rutas</code></td>
+              <td>Comparar rutas y elegir.</td>
+              <td>Fichas de ruta con filtros por tema, zona, nivel y duración.</td>
+              <td class="estado">2</td>
+            </tr>
+            <tr>
+              <td><strong>Nuestros guías</strong></td>
+              <td><code>/guias</code></td>
+              <td>Generar confianza en quién guía.</td>
+              <td>Equipo, especialidades, formación y rutas de cada guía.</td>
+              <td class="estado">2</td>
+            </tr>
+            <tr>
+              <td><strong>Reserva y confirmación</strong></td>
+              <td><code>/reservar</code></td>
+              <td>Cerrar la compra sin fricción.</td>
+              <td>Resumen, datos de los viajeros, pago, condiciones, confirmación.</td>
+              <td class="estado">2 · Con pasarela de pago</td>
+            </tr>
+            <tr>
+              <td><strong>Acceso y modificar reserva</strong></td>
+              <td><code>/acceso</code>, <code>/modificar-reserva</code></td>
+              <td>Entrar sin contraseña y cambiar de fecha o cancelar.</td>
+              <td>Enlace de acceso por correo, selector de nueva fecha, confirmación de cancelación.</td>
+              <td class="estado">2</td>
+            </tr>
+            <tr>
+              <td><strong>Preguntas frecuentes y contacto</strong></td>
+              <td><code>/preguntas-frecuentes</code>, <code>/contacto</code></td>
+              <td>Resolver dudas generales sin tener que escribir.</td>
+              <td>Preguntas agrupadas por tema, formulario, correo y teléfono.</td>
+              <td class="estado">2</td>
+            </tr>
+            <tr>
+              <td><strong>Textos legales</strong></td>
+              <td><code>/aviso-legal</code> y otras</td>
+              <td>Cumplir la normativa (LSSI y RGPD).</td>
+              <td>Aviso legal, privacidad, condiciones de reserva y, si hay analítica, cookies.</td>
+              <td class="estado">Antes de publicar</td>
+            </tr>
+            <tr>
+              <td><strong>Guía de estilo</strong></td>
+              <td><code>/guia-estilo</code></td>
+              <td>Mantener la coherencia en las fases siguientes.</td>
+              <td>Logotipo, color, tipografía, componentes, imagen, tono de voz.</td>
+              <td class="estado">Interna</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5 · Decisiones -->
+      <h2>5 · Decisiones de estructura</h2>
+      <ul class="notas">
+        <li><strong>Tres plantillas cubren casi toda la web.</strong> La ficha de ruta sirve para todas las rutas y el catálogo reutiliza sus fichas resumidas; por eso la fase 1 diseña portada, ficha y área del viajero.</li>
+        <li><strong>Sin páginas de destino por zona.</strong> Con pocas rutas, un catálogo con filtros es más claro que una página por cada pueblo.</li>
+        <li><strong>La reserva empieza en la ficha.</strong> Fecha y plazas se eligen junto a la información de la ruta, sin cambiar de página hasta el pago.</li>
+        <li><strong>Acceso sin contraseña.</strong> El viajero entra al área desde el enlace del correo; reservar no obliga a crear una cuenta.</li>
+        <li><strong>Lo legal, al pie.</strong> No compite con la navegación principal.</li>
+      </ul>
+    </main>
+  </body>
+</html>
