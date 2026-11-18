@@ -45,6 +45,8 @@ La identidad se apoya en el trabajo de campo de los guías (arqueólogos e histo
 - `.ficha`: tarjeta de ruta.
 - `.banda-cuadricula`: fondo de papel milimetrado, para bloques de catálogo.
 
+La guía de estilo viva está en `web/guia-estilo.html` (estilos propios en `web/css/guia.css`). Se construye con los mismos componentes y tokens que la web: si añades o cambias un componente, un color o una regla de tono, actualiza también la guía para que siga siendo la referencia visual del cliente.
+
 Criterios de texto: titulares sin punto final, datos concretos en lugar de promesas genéricas y sin fórmulas típicas de texto generado («No somos X, somos Y», «Sin X, Y ni Z», urgencias sin datos que las respalden).
 
 ## Guía tipográfica

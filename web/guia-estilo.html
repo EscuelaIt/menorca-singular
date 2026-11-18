@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Guía de estilo de Menorca Singular: logotipo, color, tipografía, componentes, imagen y tono de voz.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#f7f4ef">
+    <title>Guía de estilo | Menorca Singular</title>
+    <link rel="icon" href="images/favicon/favicon.ico" sizes="48x48">
+    <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/excursion.css">
+    <link rel="stylesheet" href="css/guia.css">
+  </head>
+  <body>
+    <header class="site-header gs-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="./" aria-label="Menorca Singular, ir a la web">
+          <img
+            src="images/logo-menorca-singular-taula.svg"
+            alt=""
+            width="40"
+            height="35"
+          >
+          <span class="site-header__wordmark">Menorca<br> Singular</span>
+        </a>
+        <p class="registro gs-header__label">Guía de estilo</p>
+      </div>
+    </header>
+
+    <main class="gs">
+      <div class="gs-intro">
+        <p class="registro">
+          <span class="taula" aria-hidden="true"></span>
+          Guía de estilo · Versión 1.0 · Noviembre 2026
+        </p>
+        <h1>Cómo se ve y cómo habla Menorca Singular</h1>
+        <p class="gs-lead">
+          Esta guía reúne las decisiones de identidad de la marca para que
+          cualquier persona las aplique igual: el equipo, el cliente, otro
+          diseñador o una herramienta de IA. Está construida con el mismo
+          código que la web, así que lo que ves aquí es exactamente lo que se
+          publica.
+        </p>
+        <ul class="gs-fuentes" aria-label="Fuentes de verdad">
+          <li><code class="gs-code">css/tokens.css</code> Colores y familias tipográficas</li>
+          <li><code class="gs-code">css/main.css</code> Componentes compartidos</li>
+          <li><code class="gs-code">AGENTS.md</code> Las mismas reglas, escritas para la IA</li>
+        </ul>
+      </div>
+
+      <div class="gs-layout">
+        <nav class="gs-toc" aria-label="Índice de la guía">
+          <p class="registro gs-toc__title">Índice</p>
+          <ol class="gs-toc__list">
+            <li><a href="#esencia">01 · Esencia de marca</a></li>
+            <li><a href="#logotipo">02 · Logotipo</a></li>
+            <li><a href="#color">03 · Color</a></li>
+            <li><a href="#tipografia">04 · Tipografía</a></li>
+            <li><a href="#componentes">05 · Componentes</a></li>
+            <li><a href="#imagen">06 · Imagen</a></li>
+            <li><a href="#tono">07 · Tono de voz</a></li>
+            <li><a href="#accesibilidad">08 · Accesibilidad</a></li>
+          </ol>
+        </nav>
+
+        <div class="gs-content">
+          <!-- 01 · Esencia ------------------------------------------------ -->
+          <section class="gs-section" id="esencia" aria-labelledby="esencia-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 01 · Esencia de marca</p>
+              <h2 id="esencia-title">Un cuaderno de campo de la isla</h2>
+            </div>
+            <p class="gs-lead">
+              Menorca Singular organiza rutas culturales guiadas por
+              arqueólogos e historiadores. La identidad toma prestados los
+              recursos de su trabajo: registros numerados, láminas con pie de
+              figura, coordenadas, fichas de catalogación y papel milimetrado.
+              El resultado tiene que parecer hecho por quien investiga la isla,
+              no por una agencia de viajes.
+            </p>
+
+            <div class="gs-grid gs-grid--2">
+              <div class="gs-card">
+                <h3 class="gs-h3">Personalidad</h3>
+                <dl class="datos datos--texto">
+                  <div><dt>Editorial</dt><dd>Se lee con calma, como un buen libro de viajes.</dd></div>
+                  <div><dt>Rigurosa</dt><dd>Datos concretos y fuentes, nunca exageraciones.</dd></div>
+                  <div><dt>Mediterránea</dt><dd>Piedra, cal, olivo y luz de tarde.</dd></div>
+                  <div><dt>Serena</dt><dd>Mucho aire, pocos elementos y ningún grito comercial.</dd></div>
+                </dl>
+              </div>
+              <div class="gs-card">
+                <h3 class="gs-h3">Lo que evitamos</h3>
+                <ul class="gs-lista gs-lista--no">
+                  <li>Clichés de agencia de viajes masiva: sol y playa, colores flúor, insignias de oferta.</li>
+                  <li>Urgencias sin datos que las respalden («plazas limitadas», «últimas unidades»).</li>
+                  <li>La estética «elegante por defecto» de las herramientas de IA: la misma serif, el mismo crema y las mismas tres columnas con iconos.</li>
+                  <li>Textos genéricos que servirían para cualquier destino.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 02 · Logotipo ----------------------------------------------- -->
+          <section class="gs-section" id="logotipo" aria-labelledby="logotipo-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 02 · Logotipo</p>
+              <h2 id="logotipo-title">La taula, dibujada a mano</h2>
+            </div>
+            <p class="gs-lead">
+              El símbolo es una taula, el monumento talayótico propio de
+              Menorca: un capitel horizontal sobre un único soporte vertical.
+              Se dibuja con un trazo grueso y redondeado, como hecho a mano, y
+              se acompaña del nombre en Brygada 1918.
+            </p>
+
+            <div class="gs-grid gs-grid--3">
+              <figure class="gs-logo-muestra gs-logo-muestra--cal">
+                <div class="gs-logo">
+                  <span class="gs-logo__simbolo" aria-hidden="true"></span>
+                  <span class="gs-logo__nombre">Menorca Singular</span>
+                </div>
+                <figcaption class="pie"><span>Sobre blanco cal · versión principal</span></figcaption>
+              </figure>
+              <figure class="gs-logo-muestra gs-logo-muestra--piedra">
+                <div class="gs-logo">
+                  <span class="gs-logo__simbolo" aria-hidden="true"></span>
+                  <span class="gs-logo__nombre">Menorca Singular</span>
+                </div>
+                <figcaption class="pie"><span>Sobre piedra de marés</span></figcaption>
+              </figure>
+              <figure class="gs-logo-muestra gs-logo-muestra--oliva">
+                <div class="gs-logo">
+                  <span class="gs-logo__simbolo" aria-hidden="true"></span>
+                  <span class="gs-logo__nombre">Menorca Singular</span>
+                </div>
+                <figcaption class="pie"><span>Sobre verde oliva · versión en negativo</span></figcaption>
+              </figure>
+            </div>
+
+            <div class="gs-grid gs-grid--3 gs-mt">
+              <figure class="gs-card gs-centrado">
+                <div class="gs-respeto">
+                  <img src="images/logo-menorca-singular-taula.svg" alt="" width="96" height="85">
+                </div>
+                <figcaption>
+                  <h3 class="gs-h3">Área de respeto</h3>
+                  <p>Deja alrededor del símbolo, como mínimo, el alto del capitel. Ningún texto ni borde entra en esa zona.</p>
+                </figcaption>
+              </figure>
+              <figure class="gs-card gs-centrado">
+                <div class="gs-minimo">
+                  <img src="images/logo-menorca-singular-taula.svg" alt="" width="27" height="24">
+                  <span class="gs-logo__nombre gs-logo__nombre--min">Menorca Singular</span>
+                </div>
+                <figcaption>
+                  <h3 class="gs-h3">Tamaño mínimo</h3>
+                  <p>Símbolo de 24 px de alto en pantalla. Por debajo, el trazo se empasta: usa el favicon.</p>
+                </figcaption>
+              </figure>
+              <figure class="gs-card gs-centrado">
+                <div class="gs-favicons">
+                  <img src="images/favicon/favicon.svg" alt="" width="64" height="64">
+                  <img src="images/favicon/favicon.svg" alt="" width="32" height="32">
+                  <img src="images/favicon/favicon.svg" alt="" width="16" height="16">
+                </div>
+                <figcaption>
+                  <h3 class="gs-h3">Favicon</h3>
+                  <p>Taula maciza en blanco cal sobre oliva. Para pestañas, accesos directos y tamaños pequeños.</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <h3 class="gs-h3 gs-mt">Usos incorrectos</h3>
+            <div class="gs-grid gs-grid--4">
+              <figure class="gs-incorrecto">
+                <div class="gs-incorrecto__muestra">
+                  <img class="gs-deformado" src="images/logo-menorca-singular-taula.svg" alt="" width="54" height="48">
+                </div>
+                <figcaption><strong>No lo deformes</strong> ni cambies sus proporciones.</figcaption>
+              </figure>
+              <figure class="gs-incorrecto">
+                <div class="gs-incorrecto__muestra">
+                  <span class="gs-logo__simbolo gs-fuera-paleta" aria-hidden="true"></span>
+                </div>
+                <figcaption><strong>No lo recolorees</strong> con colores ajenos a la paleta.</figcaption>
+              </figure>
+              <figure class="gs-incorrecto">
+                <div class="gs-incorrecto__muestra">
+                  <svg class="gs-dolmen" viewBox="0 0 210 140" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 34C60 16 150 16 196 34c6 3 6 12 0 14H14c-6-2-6-11 0-14z"/>
+                    <path d="M40 48 26 128h48L66 48M144 48l-8 80h48l-14-80"/>
+                  </svg>
+                </div>
+                <figcaption><strong>No lo dibujes con dos pilares:</strong> eso es un dolmen, no una taula.</figcaption>
+              </figure>
+              <figure class="gs-incorrecto">
+                <div class="gs-incorrecto__muestra gs-incorrecto__muestra--oliva">
+                  <img src="images/logo-menorca-singular-taula.svg" alt="" width="54" height="48">
+                </div>
+                <figcaption><strong>No lo uses en grafito sobre oliva:</strong> en fondos oscuros va en negativo.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- 03 · Color -------------------------------------------------- -->
+          <section class="gs-section" id="color" aria-labelledby="color-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 03 · Color</p>
+              <h2 id="color-title">Cinco colores sacados del paisaje</h2>
+            </div>
+            <p class="gs-lead">
+              Usa siempre las variables de <code class="gs-code">tokens.css</code>,
+              nunca el código de color escrito a mano. El blanco cal domina;
+              el resto aparece en proporciones cada vez menores.
+            </p>
+
+            <ul class="gs-colores">
+              <li class="gs-color">
+                <span class="gs-color__muestra" style="background: var(--color-blanco-cal)"></span>
+                <span class="gs-color__nombre">Blanco cal</span>
+                <code class="gs-code">--color-blanco-cal</code>
+                <span class="gs-color__hex">#F7F4EF</span>
+                <span class="gs-color__uso">Fondo principal. Las fachadas encaladas.</span>
+              </li>
+              <li class="gs-color">
+                <span class="gs-color__muestra" style="background: var(--color-piedra-mares)"></span>
+                <span class="gs-color__nombre">Piedra de marés</span>
+                <code class="gs-code">--color-piedra-mares</code>
+                <span class="gs-color__hex">#D8C7B0</span>
+                <span class="gs-color__uso">Fondos secundarios: módulo de reserva, bloques destacados.</span>
+              </li>
+              <li class="gs-color">
+                <span class="gs-color__muestra" style="background: var(--color-verde-olivo)"></span>
+                <span class="gs-color__nombre">Verde oliva</span>
+                <code class="gs-code">--color-verde-olivo</code>
+                <span class="gs-color__hex">#4E5D42</span>
+                <span class="gs-color__uso">Jerarquía: titulares, filetes, enlaces, etiquetas y pie de página.</span>
+              </li>
+              <li class="gs-color">
+                <span class="gs-color__muestra" style="background: var(--color-terracota)"></span>
+                <span class="gs-color__nombre">Terracota</span>
+                <code class="gs-code">--color-terracota</code>
+                <span class="gs-color__hex">#C2785C</span>
+                <span class="gs-color__uso">Acción: botones principales, numeraciones y la taula como marca.</span>
+              </li>
+              <li class="gs-color">
+                <span class="gs-color__muestra" style="background: var(--color-grafito)"></span>
+                <span class="gs-color__nombre">Grafito</span>
+                <code class="gs-code">--color-grafito</code>
+                <span class="gs-color__hex">#262624</span>
+                <span class="gs-color__uso">Texto de lectura. Su variante profunda (#1A1A18) es el texto de los botones.</span>
+              </li>
+            </ul>
+
+            <h3 class="gs-h3 gs-mt">Combinaciones permitidas</h3>
+            <p class="gs-nota">
+              Contraste según WCAG 2.1: el texto normal necesita al menos 4,5:1
+              y el texto grande (24 px o más, o 19 px en negrita) al menos 3:1.
+            </p>
+            <div class="gs-tabla-wrap">
+              <table class="gs-tabla">
+                <thead>
+                  <tr>
+                    <th scope="col">Muestra</th>
+                    <th scope="col">Texto sobre fondo</th>
+                    <th scope="col">Contraste</th>
+                    <th scope="col">Uso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-grafito); background: var(--color-blanco-cal)">Aa</span></td>
+                    <td>Grafito sobre blanco cal</td>
+                    <td class="gs-num">13,8:1</td>
+                    <td><span class="gs-si">Cualquier texto</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-verde-olivo); background: var(--color-blanco-cal)">Aa</span></td>
+                    <td>Oliva sobre blanco cal</td>
+                    <td class="gs-num">6,5:1</td>
+                    <td><span class="gs-si">Titulares, enlaces y etiquetas</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-grafito); background: var(--color-piedra-mares)">Aa</span></td>
+                    <td>Grafito sobre piedra</td>
+                    <td class="gs-num">9,2:1</td>
+                    <td><span class="gs-si">Cualquier texto</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-blanco-cal); background: var(--color-verde-olivo)">Aa</span></td>
+                    <td>Blanco cal sobre oliva</td>
+                    <td class="gs-num">6,5:1</td>
+                    <td><span class="gs-si">Pie de página y fondos oscuros</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-grafito-profundo); background: var(--color-terracota)">Aa</span></td>
+                    <td>Grafito profundo sobre terracota</td>
+                    <td class="gs-num">5,1:1</td>
+                    <td><span class="gs-si">Texto de los botones principales</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-verde-olivo); background: var(--color-piedra-mares)">Aa</span></td>
+                    <td>Oliva sobre piedra</td>
+                    <td class="gs-num">4,3:1</td>
+                    <td><span class="gs-limite">Solo texto grande (24 px o más)</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-terracota); background: var(--color-blanco-cal)">Aa</span></td>
+                    <td>Terracota sobre blanco cal</td>
+                    <td class="gs-num">3,1:1</td>
+                    <td><span class="gs-limite">Solo cifras y marcas grandes, nunca texto de lectura</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-blanco-cal); background: var(--color-terracota)">Aa</span></td>
+                    <td>Blanco cal sobre terracota</td>
+                    <td class="gs-num">3,1:1</td>
+                    <td><span class="gs-no">No usar en botones</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="gs-aa" style="color: var(--color-terracota); background: var(--color-verde-olivo)">Aa</span></td>
+                    <td>Terracota sobre oliva</td>
+                    <td class="gs-num">2,1:1</td>
+                    <td><span class="gs-no">Nunca</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 04 · Tipografía --------------------------------------------- -->
+          <section class="gs-section" id="tipografia" aria-labelledby="tipografia-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 04 · Tipografía</p>
+              <h2 id="tipografia-title">Tres familias, tres funciones</h2>
+            </div>
+            <p class="gs-lead">
+              Se cargan desde Google Fonts con un único enlace, igual en todas
+              las páginas, y se usan siempre a través de sus variables.
+            </p>
+
+            <div class="gs-grid gs-grid--3">
+              <div class="gs-card gs-familia">
+                <p class="registro">Titulares · <code class="gs-code">--font-titulares</code></p>
+                <p class="gs-familia__muestra gs-familia__muestra--serif">Brygada 1918</p>
+                <p class="gs-familia__glifos gs-familia__glifos--serif">Aa Bb Ññ 0123 € ·</p>
+                <p>Revival de una tipografía de imprenta clásica. Transmite rigor académico y poso histórico. Titulares, nombres de rutas y guías, y cifras destacadas.</p>
+              </div>
+              <div class="gs-card gs-familia">
+                <p class="registro">Texto e interfaz · <code class="gs-code">--font-interfaz</code></p>
+                <p class="gs-familia__muestra gs-familia__muestra--sans">IBM Plex Sans</p>
+                <p class="gs-familia__glifos gs-familia__glifos--sans">Aa Bb Ññ 0123 € ·</p>
+                <p>Muy legible en pantalla y en tamaños pequeños. Párrafos, formularios, botones y navegación.</p>
+              </div>
+              <div class="gs-card gs-familia">
+                <p class="registro">Registro · <code class="gs-code">--font-registro</code></p>
+                <p class="gs-familia__muestra gs-familia__muestra--mono">IBM Plex Mono</p>
+                <p class="gs-familia__glifos gs-familia__glifos--mono">Aa Bb Ññ 0123 € ·</p>
+                <p>Solo para el lenguaje de cuaderno: etiquetas de registro, coordenadas y etiquetas de datos. Nunca en párrafos ni botones.</p>
+              </div>
+            </div>
+
+            <h3 class="gs-h3 gs-mt">Escala</h3>
+            <div class="gs-escala">
+              <div class="gs-escala__fila">
+                <p class="gs-escala__meta">H1 · Brygada 600 · 42–84 px fluido · interlineado 100 %</p>
+                <p class="gs-escala__h1">Menorca se lee en la piedra</p>
+              </div>
+              <div class="gs-escala__fila">
+                <p class="gs-escala__meta">H2 · Brygada 600 · 28 px móvil / 32 px escritorio · 120 %</p>
+                <p class="gs-escala__h2">Tres compromisos en cada salida</p>
+              </div>
+              <div class="gs-escala__fila">
+                <p class="gs-escala__meta">H3 de ficha · Brygada 600 · 26 px / 32 px · 115 %</p>
+                <p class="gs-escala__h3">Ruta talayótica al atardecer</p>
+              </div>
+              <div class="gs-escala__fila">
+                <p class="gs-escala__meta">Texto · Plex Sans 400 · 16–19 px · 160 %</p>
+                <p class="gs-escala__texto">Recorre poblados talayóticos y palacios de Ciutadella con una arqueóloga y un historiador del arte que los estudian.</p>
+              </div>
+              <div class="gs-escala__fila">
+                <p class="gs-escala__meta">Botón · Plex Sans 500 · 13 px · mayúsculas · espaciado 1,5 px</p>
+                <p><span class="button">Reservar plaza</span></p>
+              </div>
+              <div class="gs-escala__fila">
+                <p class="gs-escala__meta">Registro · Plex Mono 500 · 13 px · mayúsculas · espaciado 0,5 px</p>
+                <p class="registro"><span class="taula" aria-hidden="true"></span> 02 · Rutas · 39°54′ N 4°07′ E</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 05 · Componentes -------------------------------------------- -->
+          <section class="gs-section" id="componentes" aria-labelledby="componentes-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 05 · Componentes</p>
+              <h2 id="componentes-title">Las piezas del cuaderno de campo</h2>
+            </div>
+            <p class="gs-lead">
+              Todas viven en <code class="gs-code">main.css</code> y se
+              reutilizan en cualquier página. Antes de crear una variante,
+              comprueba si una de estas resuelve el caso.
+            </p>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
+                <h3 class="gs-h3">Etiqueta de registro <code class="gs-code">.registro</code></h3>
+                <p>Numera y clasifica: secciones (<em>01 · La ruta</em>), rutas (<em>Ruta nº 01 · Arqueología</em>) o cargos. Puede llevar la taula delante.</p>
+              </div>
+              <div class="gs-muestra">
+                <p class="registro"><span class="taula" aria-hidden="true"></span> 01 · Cómo trabajamos</p>
+                <p class="registro">Ruta nº 02 · Arquitectura e historia</p>
+              </div>
+            </div>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
+                <h3 class="gs-h3">Cabecera de sección <code class="gs-code">.section-head</code></h3>
+                <p>Filete oliva, registro y H2. Abre cada bloque de contenido. Los titulares no llevan punto final.</p>
+              </div>
+              <div class="gs-muestra">
+                <div class="section-head">
+                  <p class="registro"><span class="taula" aria-hidden="true"></span> 04 · Antes de ir</p>
+                  <p class="gs-h2-muestra">Qué incluye y cómo prepararte</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
+                <h3 class="gs-h3">Lámina <code class="gs-code">.fig</code> y pie <code class="gs-code">.pie</code></h3>
+                <p>Las imágenes se tratan como láminas de un informe: marcas de registro en las esquinas y pie con lugar y coordenadas (<code class="gs-code">.pie__coord</code>).</p>
+              </div>
+              <div class="gs-muestra">
+                <figure class="gs-lamina">
+                  <div class="fig">
+                    <img src="images/rutas/ruta-talayotica-provisional.jpg" alt="Monumento megalítico rodeado de muros de piedra seca al atardecer" width="536" height="264" loading="lazy">
+                  </div>
+                  <figcaption class="pie">
+                    <span>Torre d'en Galmés, Alaior</span>
+                    <span class="pie__coord">39°54′ N · 4°07′ E</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
+                <h3 class="gs-h3">Rejilla de datos <code class="gs-code">.datos</code></h3>
+                <p>Datos como en una ficha de catalogación: etiqueta en mono y valor en serif. Con <code class="gs-code">.datos--texto</code> para valores largos y <code class="gs-code">.datos--4</code> para cuatro columnas en escritorio.</p>
+              </div>
+              <div class="gs-muestra">
+                <dl class="datos datos--4">
+                  <div><dt>Duración</dt><dd>3 h</dd></div>
+                  <div><dt>Grupo</dt><dd>Máx. 8</dd></div>
+                  <div><dt>Nivel</dt><dd>Fácil</dd></div>
+                  <div><dt>Precio</dt><dd>55 €</dd></div>
+                </dl>
+                <dl class="datos datos--texto gs-mt-s">
+                  <div><dt>Especialidad</dt><dd>Cultura talayótica</dd></div>
+                  <div><dt>Experiencia</dt><dd>Más de 10 años en excavaciones</dd></div>
+                </dl>
+              </div>
+            </div>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
+                <h3 class="gs-h3">Botones <code class="gs-code">.button</code></h3>
+                <p>El principal, en terracota, es la acción de la pantalla: uno por bloque. El secundario, <code class="gs-code">.button--secondary</code>, en contorno oliva. La flecha indica que se navega a otra página.</p>
+              </div>
+              <div class="gs-muestra gs-botones">
+                <span class="button">Reservar plaza</span>
+                <span class="button">Ver itinerario <span class="button__arrow" aria-hidden="true"></span></span>
+                <span class="button button--secondary">Ver todas las rutas <span class="button__arrow" aria-hidden="true"></span></span>
+              </div>
+            </div>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
+                <h3 class="gs-h3">Itinerario <code class="gs-code">.itinerary</code></h3>
+                <p>Las etapas de una ruta como un trazado en un plano. La etapa principal puede marcarse con la taula (<code class="gs-code">.itinerary__step--taula</code>).</p>
+              </div>
+              <div class="gs-muestra">
+                <ol class="itinerary gs-itinerario">
+                  <li class="itinerary__step">
+                    <p class="itinerary__time">18:30 h</p>
+                    <div>
+                      <p class="itinerary__title">La vida cotidiana en los círculos domésticos</p>
+                    </div>
+                  </li>
+                  <li class="itinerary__step itinerary__step--taula">
+                    <p class="itinerary__time">19:30 h</p>
+                    <div>
+                      <p class="itinerary__title">El recinto de taula y el mundo simbólico</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="gs-componente">
+              <div class="gs-componente__info">
+                <h3 class="gs-h3">Ficha de ruta <code class="gs-code">.ficha</code></h3>
+                <p>Combina lámina, registro, título, texto, datos y botón. Los datos se alinean al pie aunque el título ocupe dos líneas. Sobre <code class="gs-code">.banda-cuadricula</code>, el papel milimetrado, en los bloques de catálogo.</p>
+              </div>
+              <div class="gs-muestra banda-cuadricula gs-muestra--papel">
+                <article class="ficha">
+                  <figure class="ficha__figure">
+                    <div class="fig">
+                      <img src="images/rutas/ciutadella-secreta-provisional.jpg" alt="Claustro de piedra con arcos y un pozo central" width="508" height="264" loading="lazy">
+                    </div>
+                    <figcaption class="pie">
+                      <span>Casco antiguo, Ciutadella</span>
+                      <span class="pie__coord">40°00′ N · 3°50′ E</span>
+                    </figcaption>
+                  </figure>
+                  <div class="ficha__body">
+                    <p class="registro">Ruta nº 02 · Arquitectura e historia</p>
+                    <p class="ficha__title">Ciutadella secreta: palacios y claustros</p>
+                    <p class="ficha__text">Patios señoriales que no abren al público y fachadas de marés del siglo XVIII, leídas piedra a piedra con un historiador del arte.</p>
+                    <dl class="datos datos--4 ficha__datos">
+                      <div><dt>Duración</dt><dd>2,5 h</dd></div>
+                      <div><dt>Grupo</dt><dd>Máx. 8</dd></div>
+                      <div><dt>Nivel</dt><dd>Fácil</dd></div>
+                      <div><dt>Precio</dt><dd>45 €</dd></div>
+                    </dl>
+                    <span class="button ficha__button">Ver itinerario <span class="button__arrow" aria-hidden="true"></span></span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- 06 · Imagen ------------------------------------------------- -->
+          <section class="gs-section" id="imagen" aria-labelledby="imagen-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 06 · Imagen</p>
+              <h2 id="imagen-title">Fotografía de lugares y personas reales</h2>
+            </div>
+            <p class="gs-lead">
+              La fotografía tiene que poder verificarse: lugares reconocibles,
+              los guías de verdad y la luz real de la isla. En esta fase del
+              proyecto las imágenes son marcadores provisionales generados con
+              IA; el cliente aportará las definitivas.
+            </p>
+
+            <div class="gs-grid gs-grid--3">
+              <figure class="gs-lamina">
+                <div class="fig">
+                  <img src="images/hero-image/hero-image-mobile-800w.jpg" alt="Calle histórica de casas encaladas con balcones de hierro" width="800" height="537" loading="lazy">
+                </div>
+                <figcaption class="pie"><span>Luz de tarde, cálida y baja</span></figcaption>
+              </figure>
+              <figure class="gs-lamina">
+                <div class="fig">
+                  <img src="images/ruta-talayotica-optimized/ruta-talayotica-v2-mobile-800w.jpg" alt="Grandes losas de piedra entre matorral al atardecer" width="800" height="447" loading="lazy">
+                </div>
+                <figcaption class="pie"><span>Materia: piedra, cal y vegetación</span></figcaption>
+              </figure>
+              <figure class="gs-lamina">
+                <div class="fig">
+                  <img src="images/guias/aina.jpg" alt="Retrato de una arqueóloga junto a muros de piedra" width="456" height="312" loading="lazy">
+                </div>
+                <figcaption class="pie"><span>Personas reales, en su lugar de trabajo</span></figcaption>
+              </figure>
+            </div>
+
+            <div class="gs-grid gs-grid--2 gs-mt">
+              <div class="gs-card">
+                <h3 class="gs-h3">Sí</h3>
+                <ul class="gs-lista gs-lista--si">
+                  <li>Luz natural de primera o última hora, con sombras largas.</li>
+                  <li>Texturas de piedra, cal, madera y vegetación mediterránea.</li>
+                  <li>Grupos pequeños y gestos de conversación, no poses.</li>
+                  <li>Pie de figura con lugar y coordenadas: <em>Fig. 01 — Descripción</em>.</li>
+                </ul>
+              </div>
+              <div class="gs-card">
+                <h3 class="gs-h3">No</h3>
+                <ul class="gs-lista gs-lista--no">
+                  <li>Imágenes de banco genéricas o de sol y playa.</li>
+                  <li>Filtros saturados o virados que falseen el color de la piedra.</li>
+                  <li>Imágenes generadas que representen mal un monumento real.</li>
+                  <li>Textos alternativos que afirmen un lugar que la imagen no muestra.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- 07 · Tono de voz -------------------------------------------- -->
+          <section class="gs-section" id="tono" aria-labelledby="tono-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 07 · Tono de voz</p>
+              <h2 id="tono-title">Escribimos como quien investiga</h2>
+            </div>
+
+            <div class="gs-grid gs-grid--2">
+              <div class="gs-card">
+                <h3 class="gs-h3">Principios</h3>
+                <ul class="gs-lista">
+                  <li><strong>Concreto antes que evocador.</strong> Nombres de lugares, horas, distancias y precios.</li>
+                  <li><strong>Datos en lugar de promesas.</strong> Si algo es escaso, se dice cuánto.</li>
+                  <li><strong>Cercano y riguroso.</strong> Tuteamos al lector y contamos también lo que todavía se discute.</li>
+                  <li><strong>Frases cortas.</strong> Una idea por frase y titulares sin punto final.</li>
+                </ul>
+              </div>
+              <div class="gs-card">
+                <h3 class="gs-h3">Fórmulas que evitamos</h3>
+                <ul class="gs-lista gs-lista--no">
+                  <li>«No somos X. Somos Y.»</li>
+                  <li>«Sin X, Y ni Z.»</li>
+                  <li>«Descubre…», «Vive…», «Sumérgete…» como arranque de titular.</li>
+                  <li>Tríadas de adjetivos sin contenido: «único, auténtico y mágico».</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="gs-h3 gs-mt">Antes y después</h3>
+            <p class="gs-nota">Ejemplos reales de la revisión de esta web.</p>
+            <div class="gs-tabla-wrap">
+              <table class="gs-tabla gs-tabla--textos">
+                <thead>
+                  <tr>
+                    <th scope="col">Antes</th>
+                    <th scope="col">Después</th>
+                    <th scope="col">Por qué</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><s>Descubre la historia oculta de la isla.</s></td>
+                    <td>Menorca se lee en la piedra</td>
+                    <td>El original serviría para cualquier isla. El nuevo nombra el lugar y conecta con lo que hacen los guías.</td>
+                  </tr>
+                  <tr>
+                    <td><s>Disponibilidad limitada para esta temporada.</s></td>
+                    <td>Desde 45 € · Máx. 8 personas · Cancelación gratuita hasta 24 h antes</td>
+                    <td>Una urgencia sin datos genera desconfianza. Los datos resuelven dudas reales de compra.</td>
+                  </tr>
+                  <tr>
+                    <td><s>No somos animadores turísticos. Somos investigadores, divulgadores…</s></td>
+                    <td>Marc y Aina dedican su trabajo a estudiar el patrimonio de Menorca.</td>
+                    <td>Fórmula muy repetida. Mejor decir quién es quién que decir quién no eres.</td>
+                  </tr>
+                  <tr>
+                    <td><s>Sin prisas, guiones memorizados ni banderas en alto.</s></td>
+                    <td>Visitamos los yacimientos al final de la tarde, cuando se marchan los grupos grandes.</td>
+                    <td>Describe una decisión concreta en lugar de una actitud.</td>
+                  </tr>
+                  <tr>
+                    <td><s>Las plazas suelen completarse con varios días de antelación.</s></td>
+                    <td>Cada salida tiene ocho plazas.</td>
+                    <td>Un dato verificable en lugar de una presión que no se puede comprobar.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 08 · Accesibilidad ------------------------------------------ -->
+          <section class="gs-section" id="accesibilidad" aria-labelledby="accesibilidad-title">
+            <div class="section-head">
+              <p class="registro"><span class="taula" aria-hidden="true"></span> 08 · Accesibilidad y adaptación</p>
+              <h2 id="accesibilidad-title">Para leerse bien en cualquier pantalla</h2>
+            </div>
+
+            <dl class="gs-reglas">
+              <div class="gs-regla">
+                <dt>Móvil primero</dt>
+                <dd>Se diseña para móvil y se amplía en 48 rem (768 px, tableta) y 64 rem (1024 px, escritorio). Muchos viajeros reservan ya en la isla, desde el teléfono.</dd>
+              </div>
+              <div class="gs-regla">
+                <dt>Contraste</dt>
+                <dd>Mínimo 4,5:1 en texto normal y 3:1 en texto grande. Consulta la tabla de combinaciones de color.</dd>
+              </div>
+              <div class="gs-regla">
+                <dt>Zonas táctiles</dt>
+                <dd>Botones y enlaces de navegación de al menos 44 × 44 px. Los botones miden 48 px de alto.</dd>
+              </div>
+              <div class="gs-regla">
+                <dt>Foco visible</dt>
+                <dd>Contorno oliva de 2 px en todo elemento interactivo; en blanco cal sobre fondos oscuros.</dd>
+              </div>
+              <div class="gs-regla">
+                <dt>Estructura</dt>
+                <dd>Un único H1 por página, sin saltos en la jerarquía de encabezados y con HTML semántico: listas, tablas y formularios con sus etiquetas.</dd>
+              </div>
+              <div class="gs-regla">
+                <dt>Imágenes</dt>
+                <dd>Texto alternativo que describe lo que se ve. Las decorativas, como la taula de las etiquetas, se ocultan a los lectores de pantalla.</dd>
+              </div>
+              <div class="gs-regla">
+                <dt>Movimiento</dt>
+                <dd>Animaciones cortas y suaves, que desaparecen si el usuario ha pedido reducir el movimiento.</dd>
+              </div>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner gs-footer">
+        <div class="site-footer__brand">
+          <p class="site-footer__name">Menorca Singular</p>
+          <p class="site-footer__tagline">Guía de estilo · Versión 1.0 · Noviembre 2026</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,803 @@
+/*
+  Guía de estilo (guia-estilo.html)
+  ---------------------------------
+  Solo la maquetación de la propia guía. Los componentes que se muestran
+  (.registro, .fig, .datos, .ficha, .button, .itinerary...) son los reales
+  de main.css y excursion.css: si cambian en la web, cambian aquí.
+
+  Mobile-first: estilos base para móvil y media queries para ampliar.
+*/
+
+/* Cabecera: marca y título de la guía */
+.gs-header .site-header__inner {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.gs-header__label {
+  justify-self: end;
+}
+
+/* Contenedor */
+.gs {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.gs-intro {
+  padding: 2.5rem 0 2rem;
+}
+
+.gs-intro h1 {
+  max-width: 16ch;
+  margin: 1rem 0 0;
+  color: var(--color-jerarquia);
+  font-size: clamp(2.4rem, 10vw, 4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.gs-lead {
+  max-width: 62ch;
+  margin: 1.25rem 0 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.gs-nota {
+  max-width: 62ch;
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.gs-fuentes {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.gs-fuentes .gs-code {
+  margin-right: 0.5rem;
+}
+
+.gs-code {
+  padding: 0.1em 0.35em;
+  background: var(--papel);
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.85em;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+/* Índice: en móvil, una lista compacta; en escritorio, fija a la izquierda */
+.gs-toc {
+  padding: 1.25rem;
+  border: 1px solid var(--linea);
+  background: var(--color-blanco-cal);
+}
+
+.gs-toc__list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-registro);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.gs-toc__list a {
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+.gs-toc__list a:hover {
+  color: var(--color-jerarquia);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+/* Secciones */
+.gs-section {
+  padding-top: 3.5rem;
+  scroll-margin-top: 1rem;
+}
+
+.gs-h3 {
+  margin: 0;
+  color: var(--color-texto);
+  font-family: var(--font-titulares);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.gs-h3 .gs-code {
+  margin-left: 0.25rem;
+  font-size: 0.6em;
+  vertical-align: 0.2em;
+}
+
+.gs-mt {
+  margin-top: 2.5rem;
+}
+
+.gs-mt-s {
+  margin-top: 1.25rem;
+}
+
+/* Rejillas de la guía */
+.gs-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.gs-h3 + .gs-grid {
+  margin-top: 1rem;
+}
+
+.gs-card {
+  margin: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--linea-suave);
+  background: var(--color-blanco-cal);
+}
+
+.gs-card > .gs-h3 + * {
+  margin-top: 1rem;
+}
+
+.gs-card p {
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+}
+
+.gs-centrado {
+  text-align: center;
+}
+
+/* Listas con marca: cuadrado oliva (sí) o aspa terracota (no) */
+.gs-lista {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.55;
+}
+
+.gs-lista li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.gs-lista li::before {
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--color-jerarquia);
+  content: "";
+}
+
+.gs-lista--no li::before {
+  top: 0.05em;
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--color-interactivo);
+  font-weight: 600;
+  content: "✕";
+}
+
+.gs-lista--si li::before {
+  top: 0.05em;
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--color-jerarquia);
+  font-weight: 600;
+  content: "✓";
+}
+
+/* Logotipo: el símbolo como máscara toma el color del texto,
+   así sirve también para la versión en negativo */
+.gs-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.gs-logo__simbolo {
+  display: block;
+  width: 3.2rem;
+  height: 2.85rem;
+  background-color: currentColor;
+  -webkit-mask: url("../images/logo-menorca-singular-taula.svg") center / contain no-repeat;
+  mask: url("../images/logo-menorca-singular-taula.svg") center / contain no-repeat;
+}
+
+.gs-logo__nombre {
+  font-family: var(--font-titulares);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.gs-logo-muestra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 12rem;
+  margin: 0;
+  padding: 2rem 1.25rem 0.75rem;
+}
+
+.gs-logo-muestra .gs-logo {
+  margin: auto;
+}
+
+.gs-logo-muestra .gs-logo__simbolo {
+  width: 2.75rem;
+  height: 2.45rem;
+}
+
+.gs-logo-muestra .gs-logo__nombre {
+  font-size: 1.5rem;
+}
+
+.gs-logo-muestra .pie {
+  padding: 0;
+}
+
+.gs-logo-muestra--cal {
+  border: 1px solid var(--linea-suave);
+  background: var(--color-blanco-cal);
+  color: var(--color-jerarquia);
+}
+
+.gs-logo-muestra--cal .gs-logo__simbolo,
+.gs-logo-muestra--piedra .gs-logo__simbolo {
+  color: var(--color-grafito);
+}
+
+.gs-logo-muestra--piedra {
+  background: var(--color-piedra-mares);
+  color: var(--color-jerarquia);
+}
+
+.gs-logo-muestra--oliva {
+  background: var(--color-jerarquia);
+  color: var(--color-blanco-cal);
+}
+
+.gs-logo-muestra--oliva .pie {
+  color: var(--color-blanco-cal);
+}
+
+.gs-respeto {
+  display: inline-block;
+  margin: 0.5rem auto 1.25rem;
+  padding: 1.4rem;
+  outline: 1px dashed var(--color-interactivo);
+  background:
+    linear-gradient(var(--color-blanco-cal) 0 0) content-box,
+    repeating-linear-gradient(45deg, rgb(194 120 92 / 0.18) 0 2px, transparent 2px 7px);
+}
+
+.gs-respeto img {
+  display: block;
+}
+
+.gs-minimo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 8.6rem;
+  color: var(--color-jerarquia);
+}
+
+.gs-logo__nombre--min {
+  font-size: 1.05rem;
+}
+
+.gs-favicons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: 8.6rem;
+  padding-bottom: 1.6rem;
+}
+
+/* Usos incorrectos */
+.gs-incorrecto {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.gs-incorrecto__muestra {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 7rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--linea-suave);
+  background: var(--color-blanco-cal);
+  color: var(--color-grafito);
+}
+
+/* Aspa diagonal que tacha la muestra */
+.gs-incorrecto__muestra::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top right, transparent calc(50% - 1px), var(--color-interactivo) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px));
+  content: "";
+}
+
+.gs-incorrecto__muestra--oliva {
+  background: var(--color-jerarquia);
+}
+
+.gs-deformado {
+  transform: scaleX(1.7);
+}
+
+.gs-fuera-paleta {
+  color: #2f6fd6;
+}
+
+.gs-dolmen {
+  width: 4.5rem;
+  height: auto;
+}
+
+/* Color */
+.gs-colores {
+  display: grid;
+  gap: 1rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gs-color {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  grid-template-rows: auto auto auto 1fr;
+  column-gap: 1rem;
+  align-items: start;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.gs-color__muestra {
+  grid-row: 1 / -1;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px solid var(--linea);
+}
+
+.gs-color__nombre {
+  font-family: var(--font-titulares);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.gs-color .gs-code {
+  justify-self: start;
+  margin-top: 0.3rem;
+}
+
+.gs-color__hex {
+  margin-top: 0.2rem;
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.gs-color__uso {
+  margin-top: 0.3rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* Tablas */
+.gs-tabla-wrap {
+  margin-top: 1.25rem;
+  overflow-x: auto;
+  border-top: 1px solid var(--color-jerarquia);
+}
+
+.gs-tabla {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.gs-tabla th {
+  padding: 0.75rem 0.75rem 0.6rem 0;
+  border-bottom: 1px solid var(--linea);
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.gs-tabla td {
+  padding: 0.75rem 0.75rem 0.75rem 0;
+  border-bottom: 1px solid var(--linea-suave);
+  vertical-align: middle;
+}
+
+.gs-tabla--textos td {
+  vertical-align: top;
+}
+
+.gs-tabla--textos s {
+  color: rgb(38 38 36 / 0.75);
+  text-decoration-color: var(--color-interactivo);
+}
+
+.gs-aa {
+  display: inline-grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 2.5rem;
+  border: 1px solid var(--linea-suave);
+  font-family: var(--font-titulares);
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+.gs-num {
+  font-family: var(--font-registro);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Veredictos: la marca de color acompaña al texto, nunca lo sustituye */
+.gs-si,
+.gs-limite,
+.gs-no {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.gs-si::before,
+.gs-limite::before,
+.gs-no::before {
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.gs-si::before {
+  color: var(--color-jerarquia);
+  content: "✓";
+}
+
+.gs-limite::before {
+  color: var(--color-jerarquia);
+  content: "!";
+}
+
+.gs-no::before {
+  color: var(--color-interactivo);
+  content: "✕";
+}
+
+/* Tipografía */
+.gs-familia .registro {
+  flex-wrap: wrap;
+}
+
+.gs-familia__muestra {
+  margin: 1rem 0 0;
+  color: var(--color-jerarquia);
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.gs-familia__glifos {
+  margin: 0.4rem 0 0.75rem;
+  font-size: 1.25rem;
+}
+
+.gs-familia__muestra--serif,
+.gs-familia__glifos--serif {
+  font-family: var(--font-titulares);
+  font-weight: 600;
+}
+
+.gs-familia__muestra--sans,
+.gs-familia__glifos--sans {
+  font-family: var(--font-interfaz);
+  font-weight: 500;
+}
+
+.gs-familia__muestra--mono,
+.gs-familia__glifos--mono {
+  font-family: var(--font-registro);
+  font-weight: 500;
+}
+
+.gs-escala {
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-jerarquia);
+}
+
+.gs-escala__fila {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.gs-escala__fila > p {
+  margin: 0;
+}
+
+.gs-escala__fila > p + p {
+  margin-top: 0.6rem;
+}
+
+.gs-escala__meta {
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.gs-escala__h1,
+.gs-escala__h2,
+.gs-escala__h3 {
+  font-family: var(--font-titulares);
+  font-weight: 600;
+}
+
+.gs-escala__h1 {
+  color: var(--color-jerarquia);
+  font-size: clamp(2.65rem, 7vw, 5.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.gs-escala__h2 {
+  color: var(--color-jerarquia);
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.gs-escala__h3 {
+  font-size: 1.625rem;
+  line-height: 1.15;
+}
+
+.gs-escala__texto {
+  max-width: 62ch;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Componentes: descripción y muestra */
+.gs-componente {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--linea-suave);
+}
+
+.gs-componente:first-of-type {
+  margin-top: 1.75rem;
+}
+
+.gs-componente__info p {
+  max-width: 48ch;
+  margin: 0.6rem 0 0;
+  line-height: 1.6;
+}
+
+.gs-muestra {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--linea-suave);
+  background-color: var(--color-blanco-cal); /* longhand: conserva el papel milimetrado */
+}
+
+.gs-muestra--papel {
+  padding: 1.5rem 1rem;
+  background-color: var(--papel);
+}
+
+.gs-h2-muestra {
+  margin: 0;
+  color: var(--color-jerarquia);
+  font-family: var(--font-titulares);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.gs-lamina {
+  margin: 0;
+}
+
+.gs-lamina .fig img {
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+}
+
+.gs-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.gs-botones .button {
+  gap: 1rem;
+}
+
+.gs-itinerario {
+  margin: 0;
+}
+
+/* Reglas de accesibilidad */
+.gs-reglas {
+  margin: 1.5rem 0 0;
+}
+
+.gs-regla {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.gs-regla dt {
+  color: var(--color-jerarquia);
+  font-family: var(--font-titulares);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.gs-regla dd {
+  max-width: 62ch;
+  margin: 0.4rem 0 0;
+  line-height: 1.6;
+}
+
+/* Pie de la guía: solo la marca */
+.gs-footer {
+  grid-template-columns: 1fr;
+}
+
+.gs-footer .site-footer__brand {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* Tableta ------------------------------------------------------------------ */
+
+@media (min-width: 48rem) {
+  .gs {
+    padding: 0 2.5rem 5rem;
+  }
+
+  .gs-intro {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .gs-toc__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gs-grid--2,
+  .gs-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gs-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gs-colores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+  }
+
+  .gs-escala__h2 {
+    font-size: 2rem;
+  }
+
+  .gs-escala__h3 {
+    font-size: 2rem;
+  }
+
+  .gs-regla {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .gs-regla dd {
+    margin: 0;
+  }
+}
+
+/* Escritorio --------------------------------------------------------------- */
+
+@media (min-width: 64rem) {
+  .gs-header .site-header__inner {
+    grid-template-columns: auto 1fr;
+  }
+
+  .gs {
+    width: calc(100% - 5rem);
+    padding: 0 0 6rem;
+  }
+
+  /* Índice fijo a la izquierda y contenido a la derecha */
+  .gs-layout {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    align-items: start;
+    gap: 4rem;
+  }
+
+  .gs-toc {
+    position: sticky;
+    top: 1.5rem;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  .gs-toc__list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .gs-section:first-child {
+    padding-top: 0;
+  }
+
+  .gs-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .gs-componente {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .gs-footer {
+    width: calc(100% - 5rem);
+  }
+}
