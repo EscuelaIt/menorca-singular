@@ -95,6 +95,13 @@ Formulario minimalista con campos de aristas vivas (0px) y bordes en Verde Olivo
   * **Correo electrónico:** elena.martinez@ejemplo.com
   * **Teléfono móvil (con prefijo):** +34 612 345 678
   * **Idioma preferido para las comunicaciones:** Español *(Selector: Español / English)*
+* **Información básica sobre protección de datos** (recuadro bajo los campos, obligatorio por el RGPD; primera capa con enlace a la política completa):
+  * **Responsable:** Menorca Singular *(completar con la razón social y el NIF del cliente)*
+  * **Finalidad:** Gestionar tus reservas y avisarte de cambios o recordatorios de tus rutas.
+  * **Legitimación:** La ejecución del contrato de reserva.
+  * **Destinatarios:** No cedemos tus datos a terceros, salvo obligación legal.
+  * **Derechos:** Acceder, rectificar y suprimir tus datos, entre otros, escribiendo a hola@menorcasingular.com.
+  * **Más información:** Política de privacidad (enlace)
 * **Botón de guardado (Borde Verde Olivo):** Guardar cambios
 
 ---

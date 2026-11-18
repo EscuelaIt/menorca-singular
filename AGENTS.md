@@ -27,6 +27,9 @@ Este sitio web es para **Menorca Singular**, una empresa que organiza paseos tur
 - Mantén los estilos en CSS y procura que la experiencia funcione en móvil y escritorio.
 - Cuida la accesibilidad básica: jerarquía de encabezados, textos alternativos para imágenes informativas y controles comprensibles.
 - Mantén el código sencillo y fácil de mantener, sin añadir complejidad que no requiera el contenido estático.
+- Cada página empieza con el enlace `<a class="salto" href="#contenido">Saltar al contenido</a>` y su `main` lleva `id="contenido" tabindex="-1"`.
+- Las imágenes se sirven en WebP con JPG de respaldo (`<picture>`), en varios tamaños (`srcset`) y con un `sizes` que corresponda al ancho real en pantalla. La imagen principal de la primera pantalla lleva `fetchpriority="high"` y nunca `loading="lazy"`; el resto, `loading="lazy"`.
+- Ningún texto de menos de 24 px puede quedar por debajo de 4,5:1 de contraste: el oliva sobre piedra de marés solo sirve para texto grande.
 
 ## Imágenes
 
@@ -59,7 +62,7 @@ Dirección elegida: **«Editorial con oficio»**. Sustituye a la pareja Playfair
   - `--font-titulares`: **Brygada 1918**, revival de una tipografía de imprenta clásica. Para titulares, nombres de rutas y guías, y cifras destacadas. Transmite rigor académico y poso histórico.
   - `--font-interfaz`: **IBM Plex Sans**. Para el cuerpo de texto y la interfaz.
   - `--font-registro`: **IBM Plex Mono**. Solo para el lenguaje de «cuaderno de campo»: etiquetas de registro (`01 · Cómo trabajamos`, `Ruta nº 01`), coordenadas, pies de figura y etiquetas de datos. No la uses en párrafos ni en botones.
-- Las fuentes están alojadas en el propio proyecto (`web/fonts/`, licencia SIL OFL), no en Google Fonts: así no se envía la IP de los visitantes a terceros (RGPD). Se declaran en `web/css/fuentes.css`: Brygada 1918 (variable 400–700), IBM Plex Sans (variable 100–700) e IBM Plex Mono (400 y 500), subconjunto latino. Cada página carga, antes que `tokens.css`, la hoja `css/fuentes.css` y precarga (`rel="preload"`) Brygada 1918 e IBM Plex Sans. Si añades una página, copia esas tres líneas. No enlaces fuentes desde servicios externos.
+- Las fuentes están alojadas en el propio proyecto (`web/fonts/`, licencia SIL OFL), no en Google Fonts: así no se envía la IP de los visitantes a terceros (RGPD). Se declaran en `web/css/fuentes.css`: Brygada 1918 (solo SemiBold 600), IBM Plex Sans (variable limitada a 400–600) e IBM Plex Mono (400 y 500), subconjunto latino. Si hiciera falta otro peso, hay que generar de nuevo el archivo de la fuente. Cada página carga, antes que `tokens.css`, la hoja `css/fuentes.css` y precarga (`rel="preload"`) Brygada 1918 e IBM Plex Sans. Si añades una página, copia esas tres líneas. No enlaces fuentes desde servicios externos.
 - Titulares en **Brygada 1918 SemiBold (600)**.
 - Los títulos de sección **H2** deben medir **28 px en móvil** y **32 px en escritorio**, con interlineado de **120 %**.
 - Cuerpo de texto en **IBM Plex Sans Regular (400)** y elementos de interfaz en **IBM Plex Sans Medium (500)**.

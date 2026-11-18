@@ -292,6 +292,19 @@
   margin-bottom: 1rem;
 }
 
+/* Oliva sobre piedra no llega a 4.5:1 en texto pequeño: en el módulo, grafito */
+.booking .registro {
+  color: var(--color-texto);
+}
+
+/*
+ * La barra fija de reserva (móvil y tableta) no debe tapar el elemento que
+ * recibe el foco: el desplazamiento deja libre su altura.
+ */
+html {
+  scroll-padding-bottom: 6rem;
+}
+
 .booking {
   margin: 0 1.5rem 3rem;
   padding: 1.75rem 1.5rem;
@@ -505,6 +518,10 @@
 
 /* Escritorio: contenido a la izquierda y reserva fija en una columna lateral */
 @media (min-width: 64rem) {
+  html {
+    scroll-padding-bottom: 0;
+  }
+
   .page-excursion {
     padding-bottom: 0;
   }

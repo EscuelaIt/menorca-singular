@@ -10,14 +10,16 @@
     <link rel="icon" href="images/favicon/favicon.ico" sizes="48x48">
     <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-    <link rel="preload" href="fonts/brygada-1918/brygada-1918-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/ibm-plex-sans/ibm-plex-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/brygada-1918/brygada-1918-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ibm-plex-sans/ibm-plex-sans-latin-400-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/fuentes.css">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/panel.css">
   </head>
   <body class="page-panel">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
     <header class="site-header">
       <div class="site-header__inner panel-header">
         <a class="site-header__brand" href="./" aria-label="Menorca Singular, inicio">
@@ -34,7 +36,7 @@
       </div>
     </header>
 
-    <main class="panel">
+    <main id="contenido" tabindex="-1" class="panel">
       <a class="panel__back" href="./#rutas">Volver a rutas culturales</a>
 
       <section class="panel-welcome" aria-labelledby="panel-title">

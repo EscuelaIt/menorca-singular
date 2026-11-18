@@ -17,7 +17,7 @@
 * **Titular principal (H1):** Menorca se lee en la piedra  
 * **Subtítulo:** Recorre poblados talayóticos y palacios de Ciutadella con una arqueóloga y un historiador del arte que los estudian. En grupos de ocho personas y al ritmo de un paseo.  
 * **Botón CTA principal:** Explorar rutas  
-* **Datos clave (bajo el botón):** Desde 45 € · Máx. 8 personas · Cancelación gratuita hasta 24 h antes  
+* **Datos clave (bajo el botón):** Desde 40 € · Máx. 8 personas · Cancelación gratuita hasta 24 h antes  
 * **Pie de la imagen:** Fig. 01 — Casco antiguo con la luz de la tarde
 
 ## 

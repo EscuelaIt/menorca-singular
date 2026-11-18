@@ -10,14 +10,16 @@
     <link rel="icon" href="images/favicon/favicon.ico" sizes="48x48">
     <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
-    <link rel="preload" href="fonts/brygada-1918/brygada-1918-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/ibm-plex-sans/ibm-plex-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/brygada-1918/brygada-1918-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ibm-plex-sans/ibm-plex-sans-latin-400-600.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/fuentes.css">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/guia.css">
   </head>
   <body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
     <header class="site-header gs-header">
       <div class="site-header__inner">
         <a class="site-header__brand" href="./" aria-label="Menorca Singular, ir a la web">
@@ -33,7 +35,7 @@
       </div>
     </header>
 
-    <main class="gs">
+    <main id="contenido" tabindex="-1" class="gs">
       <div class="gs-intro">
         <p class="registro">
           <span class="taula" aria-hidden="true"></span>
@@ -264,7 +266,7 @@
               Contraste según WCAG 2.1: el texto normal necesita al menos 4,5:1
               y el texto grande (24 px o más, o 19 px en negrita) al menos 3:1.
             </p>
-            <div class="gs-tabla-wrap">
+            <div class="gs-tabla-wrap" tabindex="0" role="region" aria-label="Tabla de combinaciones de color">
               <table class="gs-tabla">
                 <thead>
                   <tr>
@@ -438,7 +440,7 @@
               <div class="gs-muestra">
                 <figure class="gs-lamina">
                   <div class="fig">
-                    <img src="images/rutas/ruta-talayotica-provisional.jpg" alt="Monumento megalítico rodeado de muros de piedra seca al atardecer" width="536" height="264" loading="lazy">
+                    <picture><source type="image/webp" srcset="images/rutas/ruta-talayotica-provisional.webp"><img src="images/rutas/ruta-talayotica-provisional.jpg" alt="Monumento megalítico rodeado de muros de piedra seca al atardecer" width="536" height="264" loading="lazy"></picture>
                   </div>
                   <figcaption class="pie">
                     <span>Torre d'en Galmés, Alaior</span>
@@ -511,7 +513,7 @@
                 <article class="ficha">
                   <figure class="ficha__figure">
                     <div class="fig">
-                      <img src="images/rutas/ciutadella-secreta-provisional.jpg" alt="Claustro de piedra con arcos y un pozo central" width="508" height="264" loading="lazy">
+                      <picture><source type="image/webp" srcset="images/rutas/ciutadella-secreta-provisional.webp"><img src="images/rutas/ciutadella-secreta-provisional.jpg" alt="Claustro de piedra con arcos y un pozo central" width="508" height="264" loading="lazy"></picture>
                     </div>
                     <figcaption class="pie">
                       <span>Casco antiguo, Ciutadella</span>
@@ -551,7 +553,7 @@
             <div class="gs-grid gs-grid--3">
               <figure class="gs-lamina">
                 <div class="fig">
-                  <img src="images/hero-image/hero-image-mobile-800w.jpg" alt="Calle histórica de casas encaladas con balcones de hierro" width="800" height="537" loading="lazy">
+                  <picture><source type="image/webp" srcset="images/hero-image/hero-image-mobile-800w.webp"><img src="images/hero-image/hero-image-mobile-800w.jpg" alt="Calle histórica de casas encaladas con balcones de hierro" width="800" height="537" loading="lazy"></picture>
                 </div>
                 <figcaption class="pie"><span>Luz de tarde, cálida y baja</span></figcaption>
               </figure>
@@ -621,7 +623,7 @@
 
             <h3 class="gs-h3 gs-mt">Antes y después</h3>
             <p class="gs-nota">Ejemplos reales de la revisión de esta web.</p>
-            <div class="gs-tabla-wrap">
+            <div class="gs-tabla-wrap" tabindex="0" role="region" aria-label="Tabla de textos antes y después">
               <table class="gs-tabla gs-tabla--textos">
                 <thead>
                   <tr>
@@ -638,7 +640,7 @@
                   </tr>
                   <tr>
                     <td><s>Disponibilidad limitada para esta temporada.</s></td>
-                    <td>Desde 45 € · Máx. 8 personas · Cancelación gratuita hasta 24 h antes</td>
+                    <td>Desde 40 € · Máx. 8 personas · Cancelación gratuita hasta 24 h antes</td>
                     <td>Una urgencia sin datos genera desconfianza. Los datos resuelven dudas reales de compra.</td>
                   </tr>
                   <tr>
@@ -687,7 +689,7 @@
               </div>
               <div class="gs-regla">
                 <dt>Estructura</dt>
-                <dd>Un único H1 por página, sin saltos en la jerarquía de encabezados y con HTML semántico: listas, tablas y formularios con sus etiquetas.</dd>
+                <dd>Un único H1 por página, sin saltos en la jerarquía de encabezados y con HTML semántico: listas, tablas y formularios con sus etiquetas. Un enlace «Saltar al contenido» como primer elemento de cada página.</dd>
               </div>
               <div class="gs-regla">
                 <dt>Imágenes</dt>

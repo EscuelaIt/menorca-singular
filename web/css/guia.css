@@ -426,6 +426,11 @@
   border-top: 1px solid var(--color-jerarquia);
 }
 
+.gs-tabla-wrap:focus-visible {
+  outline: 2px solid var(--color-jerarquia);
+  outline-offset: 4px;
+}
+
 .gs-tabla {
   width: 100%;
   min-width: 34rem;
