@@ -1269,6 +1269,7 @@ h1,
 
 /* Ficha de ruta */
 .ficha {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0.75rem 0.75rem 1.25rem;
@@ -1300,6 +1301,44 @@ h1,
   font-size: 1.625rem;
   font-weight: 600;
   line-height: 1.15;
+}
+
+/*
+ * El título enlaza a la ruta y su ::after se extiende sobre toda la
+ * tarjeta, así que se puede pulsar en la foto, el texto o los datos.
+ * El botón queda por encima, como acceso explícito.
+ */
+.ficha__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ficha__link::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.ficha:hover .ficha__link {
+  text-decoration: underline;
+  text-decoration-color: var(--color-interactivo);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* El foco dibuja el contorno de toda la tarjeta */
+.ficha__link:focus-visible {
+  outline: none;
+}
+
+.ficha__link:focus-visible::after {
+  outline: 2px solid var(--color-jerarquia);
+  outline-offset: 3px;
+}
+
+.ficha__button {
+  position: relative;
+  z-index: 1;
 }
 
 .ficha__text {
