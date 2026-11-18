@@ -55,6 +55,7 @@
   * Diseño *responsive* pensado primero para móvil, con puntos de corte en 768 px (tableta) y 1024 px (escritorio).
   * HTML y CSS estáticos, sin frameworks ni dependencias. JavaScript solo si una funcionalidad concreta lo requiere; en esta fase, menús, desplegables y animaciones se resuelven sin él.
   * Accesibilidad: contraste mínimo WCAG 2.1 AA, foco visible, HTML semántico y respeto a la preferencia de movimiento reducido.
+  * Privacidad: sin recursos de terceros que reciban datos de los visitantes; las fuentes se alojan en el propio servidor.
 
 ### **4\. Referencias y personalidad**
 
@@ -126,7 +127,6 @@ Este proyecto se desarrolla con **dirección de diseño asistida por inteligenci
 ### **8\. Pendiente antes de la publicación**
 
 * **Fotografía real** del cliente para sustituir todos los marcadores provisionales.
-* **Alojar las fuentes en el propio servidor.** Ahora se cargan desde Google Fonts, lo que transmite la IP de cada visitante a Google; en la Unión Europea ya hay resoluciones judiciales que lo consideran contrario al RGPD sin consentimiento previo.
 * **Textos legales:** aviso legal, política de privacidad, condiciones de reserva y, si se añade analítica, política de cookies.
 * **Revisión de calidad final:** auditoría de accesibilidad, rendimiento y SEO, y prueba en dispositivos reales.
 
@@ -137,3 +137,4 @@ Este proyecto se desarrolla con **dirección de diseño asistida por inteligenci
 | 11 nov 2026 | Logotipo: el dolmen se sustituye por una taula. Nuevo favicon. |
 | 11 nov 2026 | Tipografía: Playfair Display + Inter se sustituyen por Brygada 1918, IBM Plex Sans e IBM Plex Mono. |
 | 13 nov 2026 | Fotografía: los recursos generados con IA pasan a ser marcadores provisionales; el cliente aporta la fotografía real. |
+| 18 nov 2026 | Fuentes alojadas en el propio servidor en lugar de Google Fonts, para no transmitir la IP de los visitantes a terceros (RGPD). |

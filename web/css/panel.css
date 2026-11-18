@@ -579,6 +579,49 @@
   cursor: pointer;
 }
 
+/*
+ * Información básica sobre protección de datos (RGPD, art. 13):
+ * primera capa junto al formulario, con enlace a la política completa.
+ */
+.privacidad {
+  margin-top: 0.5rem;
+  padding: 1rem 1.25rem 1.25rem;
+  border: 1px solid var(--linea-suave);
+}
+
+.privacidad__titulo {
+  margin: 0;
+  font-family: var(--font-interfaz);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.privacidad__datos {
+  margin-top: 0.75rem;
+}
+
+/* En una columna en móvil: los textos son largos para dos */
+.privacidad__datos {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.privacidad__datos > div:nth-child(even) {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.privacidad__datos dd {
+  font-size: 0.875rem;
+}
+
+.privacidad a {
+  color: var(--color-jerarquia);
+  font-weight: 500;
+  text-decoration-color: var(--color-interactivo);
+  text-underline-offset: 0.25em;
+}
+
 /* Banda de ayuda previa al pie */
 .help-band {
   max-width: 64rem;
@@ -675,6 +718,19 @@
   .contact-form {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem 1.5rem;
+  }
+
+  .privacidad {
+    grid-column: 1 / -1;
+  }
+
+  .privacidad__datos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .privacidad__datos > div:not(:nth-child(3n + 1)) {
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--linea);
   }
 
   .contact-form__submit {
