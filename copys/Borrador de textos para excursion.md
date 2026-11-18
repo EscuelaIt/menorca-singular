@@ -89,7 +89,7 @@ Dos columnas claras que eliminan dudas de última hora antes del pago.
   ⚬ Qué traer: Agua y una prenda ligera de abrigo para cuando caiga el sol.
   ⚬ Punto de encuentro exacto: Recibirás las coordenadas GPS y una fotografía del punto de reunión 48 horas antes de la ruta.
 
-7. Preguntas Frecuentes de esta Excursión (Acordeón minimalista)
+7. Preguntas frecuentes de esta excursión (Acordeón minimalista)
 
 ⚬ Etiqueta de registro: 05 · Dudas
 ⚬ Titular de sección (H2): Preguntas frecuentes
@@ -120,3 +120,10 @@ Dos columnas claras que eliminan dudas de última hora antes del pago.
     ⚬ Descripción: Ventanas de guillotina, miradores y fachadas georgianas: el siglo XVIII británico que todavía se lee en las calles de Maó, desde el puerto hasta el centro, con un historiador del arte.
     ⚬ Datos: 2 h | Máx. 8 | Fácil | 40 €
   ⚬ Botón de cada ficha: Ver itinerario
+
+## Metadatos (buscadores y redes)
+
+* **Título de la página:** Ruta talayótica al atardecer | Menorca Singular  
+* **Descripción para buscadores:** Ruta talayótica al atardecer por Torre d'en Galmés, guiada por una arqueóloga especialista. 3 horas, grupos de máximo 8 personas, 55 € con entradas incluidas.  
+* **Título al compartir (Open Graph):** Ruta talayótica al atardecer · Menorca Singular  
+* **Descripción al compartir:** Torre d’en Galmés con una arqueóloga: 3 horas, ocho personas como máximo, 55 € con entradas incluidas.

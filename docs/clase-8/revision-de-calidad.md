@@ -128,20 +128,28 @@ Revisión de las cinco páginas de `web/` antes de la publicación: portada, fic
 ### Menores
 
 **M1 · Dos navegaciones con el mismo nombre.** La de escritorio y la del menú móvil se llaman las dos «Navegación principal». Conviene distinguir la segunda, por ejemplo «Menú móvil».
+* **Estado: corregido.** La navegación del menú desplegable se llama ahora «Menú móvil» en las tres páginas que lo tienen.
 
 **M2 · La barra fija queda fuera de las regiones de la página.** En la ficha, el lector de pantalla la encuentra fuera de `main` y del pie (axe, «region»). Puede ser un `aside` con nombre propio.
+* **Estado: corregido.** La barra es un `aside` con el nombre «Reserva rápida». axe ya no avisa de contenido fuera de las regiones.
 
 **M3 · Sin metadatos para compartir en redes.** Ni la portada ni la ficha tienen etiquetas Open Graph. Al compartir un enlace por WhatsApp o redes no sale imagen, título ni descripción cuidados.
+* **Estado: corregido.** La portada y la ficha llevan título, descripción, imagen de 1200 × 630 px (`images/og/`) con su texto alternativo, y `link rel="canonical"`. Las URL usan el dominio `menorcasingular.com`, que hay que confirmar con el cliente antes de publicar. El área del viajero no los lleva porque no se indexa.
 
 **M4 · La descripción de la portada para buscadores no sigue el tono.** Empieza por «Descubre Menorca…», una fórmula que la guía de estilo evita, y no menciona a la arqueóloga ni al historiador.
+* **Estado: corregido.** Nueva descripción: «Rutas culturales por Menorca en grupos de ocho personas como máximo, con una arqueóloga y un historiador del arte: talayots al atardecer y los palacios de Ciutadella.» Los metadatos se recogen también en los borradores de textos.
 
 **M5 · Mayúsculas innecesarias en el pie.** «Preguntas Frecuentes», «Aviso Legal», «Política de Privacidad», «Términos y Condiciones». En español solo va en mayúscula la primera palabra.
+* **Estado: corregido.** «Preguntas frecuentes», «Aviso legal», «Política de privacidad» y «Términos y condiciones» en todas las páginas y en los borradores de textos.
 
 **M6 · Los teléfonos se pueden partir en dos líneas.** «+34 971 00 00 00» usa espacios normales; con espacios de no separación se mantiene en una línea.
+* **Estado: corregido.** El teléfono del área del viajero usa `&nbsp;` entre los grupos de cifras.
 
 **M7 · Enlaces pequeños para el dedo.** Los enlaces del pie, de la cabecera y de texto miden 18–20 px de alto. Cumplen el mínimo de WCAG 2.5.8 por la separación entre ellos, pero en móvil son incómodos: lo recomendable son 44 px de zona táctil.
+* **Estado: corregido.** Los enlaces del pie y de la navegación de la cabecera tienen 44 px de alto de zona táctil (`min-height: 2.75rem`) sin cambiar el tamaño del texto. La cabecera mantiene su altura. Los enlaces dentro de un párrafo se dejan como están: WCAG los exime y agrandarlos rompería el interlineado.
 
 **M8 · El módulo de reserva llega tarde con el teclado.** En escritorio se ve arriba a la derecha, pero en el orden de tabulación aparece después de las preguntas frecuentes. No es un error, pero un enlace «Ir a la reserva» al principio de la ficha ayudaría.
+* **Estado: corregido.** Segundo enlace de salto en la ficha, «Ir a la reserva», justo después de «Saltar al contenido». Lleva el foco al módulo de reserva; el siguiente tabulador cae en el selector de fecha.
 
 ### Avisos que no son fallos
 
@@ -170,7 +178,8 @@ Para aplicar a cualquier proyecto del curso:
 * [ ] Lighthouse y axe sin errores (o con los falsos positivos justificados).
 * [ ] Contraste de 4,5:1 en texto normal y 3:1 en texto grande.
 * [ ] Todo funciona con el teclado, el foco siempre se ve y nunca queda tapado.
-* [ ] Enlace para saltar al contenido.
+* [ ] Enlace para saltar al contenido (y a la reserva, si la hay).
+* [ ] Cada navegación con un nombre distinto y todo el contenido dentro de una región.
 * [ ] Un H1 por página y encabezados sin saltos.
 * [ ] Texto alternativo en las imágenes con contenido; vacío en las decorativas.
 * [ ] Formularios con etiquetas y mensajes de error claros.
@@ -189,7 +198,7 @@ Para aplicar a cualquier proyecto del curso:
 
 **Contenido y SEO**
 * [ ] Título y descripción propios en cada página, en el tono de la marca.
-* [ ] Metadatos para compartir en redes.
+* [ ] Metadatos para compartir en redes (Open Graph con imagen de 1200 × 630) y URL canónica.
 * [ ] Datos coherentes entre páginas: precios, horarios y fechas.
 * [ ] Ortografía y mayúsculas revisadas.
 

@@ -30,6 +30,11 @@ Este sitio web es para **Menorca Singular**, una empresa que organiza paseos tur
 - Cada página empieza con el enlace `<a class="salto" href="#contenido">Saltar al contenido</a>` y su `main` lleva `id="contenido" tabindex="-1"`.
 - Las imágenes se sirven en WebP con JPG de respaldo (`<picture>`), en varios tamaños (`srcset`) y con un `sizes` que corresponda al ancho real en pantalla. La imagen principal de la primera pantalla lleva `fetchpriority="high"` y nunca `loading="lazy"`; el resto, `loading="lazy"`.
 - Ningún texto de menos de 24 px puede quedar por debajo de 4,5:1 de contraste: el oliva sobre piedra de marés solo sirve para texto grande.
+- Cada navegación tiene un nombre distinto (`aria-label`): «Navegación principal» para la de escritorio y «Menú móvil» para la del menú desplegable. Todo contenido visible va dentro de una región (`header`, `main`, `aside`, `footer`).
+- Los enlaces sueltos (cabecera, pie, menús) tienen una zona táctil mínima de 44 px de alto (`min-height: 2.75rem`), aunque el texto sea pequeño.
+- En las fichas de excursión, un segundo enlace de salto, «Ir a la reserva», lleva al módulo de reserva (`id="reserva" tabindex="-1"`).
+- Las páginas públicas llevan metadatos Open Graph (título, descripción, imagen de 1200 × 630 en `images/og/` con su texto alternativo) y `link rel="canonical"`. La descripción para buscadores sigue el tono de la marca: nada de «Descubre…».
+- Los textos en español van en mayúscula solo al principio («Aviso legal», no «Aviso Legal»), y los teléfonos llevan espacios de no separación (`&nbsp;`) para no partirse.
 
 ## Imágenes
 

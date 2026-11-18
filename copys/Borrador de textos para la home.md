@@ -102,6 +102,15 @@
 **Pie de página:**
 
 * **Columna 1 (Marca):** Menorca Singular \- Experiencias culturales y rutas de autor.  
-* **Columna 2 (Explora):** Catálogo de rutas \| Conoce a los guías \| Preguntas Frecuentes  
+* **Columna 2 (Explora):** Catálogo de rutas \| Conoce a los guías \| Preguntas frecuentes  
 * **Columna 3 (Tu reserva):** Área del viajero \| Modificar reserva \| Contacto  
-* **Columna 4 (Legal):** Aviso Legal \| Política de Privacidad \| Términos y Condiciones
+* **Columna 4 (Legal):** Aviso legal \| Política de privacidad \| Términos y condiciones
+
+## 
+
+## **8\. Metadatos (buscadores y redes)**
+
+* **Título de la página:** Menorca Singular | Menorca se lee en la piedra  
+* **Descripción para buscadores:** Rutas culturales por Menorca en grupos de ocho personas como máximo, con una arqueóloga y un historiador del arte: talayots al atardecer y los palacios de Ciutadella.  
+* **Título al compartir (Open Graph):** Menorca Singular · Menorca se lee en la piedra  
+* **Descripción al compartir:** Rutas culturales en grupos de ocho personas como máximo, guiadas por una arqueóloga y un historiador del arte.
