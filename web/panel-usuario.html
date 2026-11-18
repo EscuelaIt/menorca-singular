@@ -38,75 +38,102 @@
       <a class="panel__back" href="./#rutas">Volver a rutas culturales</a>
 
       <section class="panel-welcome" aria-labelledby="panel-title">
-        <p class="panel__eyebrow">Área del viajero</p>
+        <p class="registro">
+          <span class="taula" aria-hidden="true"></span>
+          Área del viajero
+        </p>
         <h1 id="panel-title">Hola, Elena Martínez</h1>
         <p class="panel-welcome__lead">
-          Aquí tienes los detalles prácticos, puntos de encuentro y opciones de
-          gestión de tus experiencias en Menorca.
+          Todo lo que necesitas para tus rutas en Menorca: cuándo, dónde y con
+          quién.
         </p>
+        <dl class="datos datos--texto panel-welcome__resumen">
+          <div><dt>Próxima ruta</dt><dd>Jueves, 20 de mayo · 18:00 h</dd></div>
+          <div><dt>Rutas realizadas</dt><dd>1 ruta</dd></div>
+        </dl>
       </section>
 
-      <!-- Próximas experiencias -->
+      <!-- Próximas rutas -->
       <section class="panel-section" aria-labelledby="upcoming-title">
-        <h2 id="upcoming-title">Tus próximas rutas (1)</h2>
+        <div class="section-head">
+          <p class="registro">
+            <span class="taula" aria-hidden="true"></span>
+            01 · Próximas rutas
+          </p>
+          <h2 id="upcoming-title">Tus próximas rutas (1)</h2>
+        </div>
 
         <article class="booking-card" aria-labelledby="booking-ms-2026-084">
           <div class="booking-card__status">
-            <p class="panel__eyebrow">Reserva confirmada</p>
-            <p class="booking-card__ref">Ref. #MS-2026-084</p>
+            <p class="booking-card__estado">Reserva confirmada</p>
+            <p class="booking-card__ref">Ref. MS-2026-084</p>
           </div>
 
           <div class="booking-card__main">
-
-            <ul class="booking-card__tags" aria-label="Categorías">
-              <li>Arqueología</li>
-              <li>Nivel fácil</li>
-            </ul>
+            <p class="registro">Ruta nº 01 · Arqueología · Nivel fácil</p>
             <h3 class="booking-card__title" id="booking-ms-2026-084">Ruta talayótica al atardecer</h3>
 
-            <ul class="booking-card__meta">
-              <li>
-                <img src="images/icons/icono-calendario.svg" alt="" width="20" height="20">
-                <span><span class="visually-hidden">Fecha y hora:</span> Jueves, 21 de mayo de 2026 · 18:00 h</span>
+            <dl class="datos booking-card__datos">
+              <div><dt>Fecha</dt><dd>Jue. 20 de mayo de 2027</dd></div>
+              <div><dt>Hora</dt><dd>18:00 h · 3 horas</dd></div>
+              <div><dt>Plazas</dt><dd>2 adultos</dd></div>
+              <div><dt>Guía</dt><dd>Aina Pons, arqueóloga</dd></div>
+              <div><dt>Importe abonado</dt><dd>110 €</dd></div>
+              <div><dt>Incluye</dt><dd>Entradas al yacimiento</dd></div>
+            </dl>
+
+            <h4 class="booking-card__subtitle">Tu tarde, hora a hora</h4>
+            <ol class="itinerary booking-card__itinerary">
+              <li class="itinerary__step">
+                <p class="itinerary__time">17:50 h</p>
+                <div>
+                  <p class="itinerary__title">Llegada al aparcamiento</p>
+                  <p class="itinerary__text">Te recomendamos llegar 10 minutos antes.</p>
+                </div>
               </li>
-              <li>
-                <img src="images/icons/icono-duracion.svg" alt="" width="20" height="20">
-                <span>Duración: 3 horas</span>
+              <li class="itinerary__step">
+                <p class="itinerary__time">18:00 h</p>
+                <div>
+                  <p class="itinerary__title">Encuentro con Aina en la entrada principal</p>
+                </div>
               </li>
-              <li>
-                <img src="images/icons/icono-personas.svg" alt="" width="20" height="20">
-                <span><span class="visually-hidden">Plazas reservadas:</span> 2 adultos · Grupo de máx. 8 personas</span>
+              <li class="itinerary__step itinerary__step--taula">
+                <p class="itinerary__time">19:30 h</p>
+                <div>
+                  <p class="itinerary__title">El recinto de taula</p>
+                </div>
               </li>
-              <li>
-                <img src="images/icons/icono-guia.svg" alt="" width="20" height="20">
-                <span><span class="visually-hidden">Guía asignada:</span> Aina Pons · Arqueóloga e investigadora</span>
+              <li class="itinerary__step">
+                <p class="itinerary__time">21:00 h</p>
+                <div>
+                  <p class="itinerary__title">Regreso al punto de inicio</p>
+                </div>
               </li>
-              <li>
-                <img src="images/icons/icono-importe.svg" alt="" width="20" height="20">
-                <span>Importe abonado: 110 €</span>
-              </li>
-              <li>
-                <img src="images/icons/icono-entrada.svg" alt="" width="20" height="20">
-                <span>Entradas al yacimiento incluidas</span>
-              </li>
-            </ul>
+            </ol>
           </div>
 
           <section class="meeting-point" aria-labelledby="meeting-title">
-            <h4 class="meeting-point__title" id="meeting-title">Punto de encuentro y acceso</h4>
-            <ul class="meeting-point__places">
-              <li>
-                <img src="images/icons/icono-ubicacion.svg" alt="" width="20" height="20">
-                <span><span class="visually-hidden">Ubicación:</span> Entrada principal del Poblado de Torre d’en Galmés</span>
-              </li>
-              <li>
-                <img src="images/icons/icono-carretera.svg" alt="" width="20" height="20">
-                <span><span class="visually-hidden">Dirección:</span> Carretera de Son Bou, km 2, Alaior</span>
-              </li>
-            </ul>
+            <h4 class="meeting-point__title" id="meeting-title">Punto de encuentro</h4>
+
+            <figure class="meeting-point__croquis">
+              <div class="fig">
+                <div class="croquis banda-cuadricula">
+                  <span class="croquis__marca" aria-hidden="true"></span>
+                  <span class="croquis__etiqueta">Entrada principal</span>
+                </div>
+              </div>
+              <figcaption class="pie">
+                <span>Torre d’en Galmés, Alaior</span>
+                <span class="pie__coord">39°54′ N · 4°07′ E</span>
+              </figcaption>
+            </figure>
+
+            <dl class="datos datos--texto meeting-point__datos">
+              <div><dt>Lugar</dt><dd>Entrada principal del poblado de Torre d’en Galmés</dd></div>
+              <div><dt>Dirección</dt><dd>Carretera de Son Bou, km 2, Alaior</dd></div>
+            </dl>
             <p class="meeting-point__tips">
-              Aparcamiento gratuito junto al centro de recepción. Te
-              recomendamos llegar 10 minutos antes.
+              Hay aparcamiento gratuito junto al centro de recepción.
             </p>
             <ul class="meeting-point__links">
               <li>
@@ -116,7 +143,7 @@
                 </a>
               </li>
               <li>
-                <a class="panel-link" href="#">Ver fotografía del punto de encuentro</a>
+                <a class="panel-link" href="pagina-de-ejemplo.html">Ver fotografía del punto de encuentro</a>
               </li>
             </ul>
           </section>
@@ -128,8 +155,8 @@
             <div>
               <dt>Terreno y calzado</dt>
               <dd>
-                Senderos de tierra y roca calcárea irregular (aprox. 2 km a
-                ritmo pausado). Imprescindible calzado cerrado y cómodo.
+                Senderos de tierra y roca calcárea irregular, unos 2 km a ritmo
+                pausado. Imprescindible calzado cerrado y cómodo.
               </dd>
             </div>
             <div>
@@ -146,39 +173,45 @@
           <details class="calendar-menu">
             <summary class="button">Añadir al calendario</summary>
             <ul class="calendar-menu__options">
-              <li><a href="#">Google Calendar</a></li>
-              <li><a href="#">Apple Calendar (.ics)</a></li>
+              <li><a href="pagina-de-ejemplo.html">Google Calendar</a></li>
+              <li><a href="pagina-de-ejemplo.html">Apple Calendar (.ics)</a></li>
             </ul>
           </details>
-          <a class="button button--secondary" href="#">Compartir detalles con acompañantes</a>
+          <a class="button button--secondary" href="pagina-de-ejemplo.html">Compartir detalles con acompañantes</a>
         </div>
 
         <div class="booking-manage">
           <ul class="booking-manage__links">
-            <li><a class="panel-link" href="#">Modificar fecha</a></li>
-            <li><a class="panel-link" href="#">Cancelar reserva</a></li>
+            <li><a class="panel-link" href="pagina-de-ejemplo.html">Modificar fecha</a></li>
+            <li><a class="panel-link" href="pagina-de-ejemplo.html">Cancelar reserva</a></li>
           </ul>
           <p class="booking-manage__note">
-            Cancelación o cambio de fecha gratuito hasta el miércoles 20 de
-            mayo a las 18:00 h (24 h antes).
+            Puedes cambiar la fecha o cancelar sin coste hasta el miércoles 19
+            de mayo a las 18:00 h, 24 horas antes de la ruta.
           </p>
         </div>
       </section>
 
-      <!-- Historial -->
-      <section class="panel-section panel-section--ruled" aria-labelledby="history-title">
-        <h2 id="history-title">Experiencias realizadas</h2>
+      <!-- Rutas realizadas -->
+      <section class="panel-section" aria-labelledby="history-title">
+        <div class="section-head">
+          <p class="registro">
+            <span class="taula" aria-hidden="true"></span>
+            02 · Rutas realizadas
+          </p>
+          <h2 id="history-title">Tu cuaderno de rutas</h2>
+        </div>
 
         <ul class="history">
           <li class="history__item">
-            <p class="history__status">Completada</p>
+            <p class="history__fecha">14 · 10 · 2026</p>
             <div class="history__info">
+              <p class="registro history__registro">Ruta nº 02 · Arquitectura e historia</p>
               <h3 class="history__title">Ciutadella secreta: palacios y claustros</h3>
-              <p class="history__details">
-                14 de octubre de 2025 · 2 plazas · Guiada por Marc
-              </p>
+              <p class="history__details">2 plazas · Guiada por Marc, historiador del arte</p>
             </div>
-            <a class="panel-link panel-link--arrow history__link" href="ciutadella-secreta.html">
+            <p class="history__sello">Completada</p>
+            <a class="panel-link panel-link--arrow history__link" href="pagina-de-ejemplo.html">
               Ver ficha de la ruta
               <span class="visually-hidden">: Ciutadella secreta: palacios y claustros</span>
             </a>
@@ -188,13 +221,19 @@
 
       <!-- Datos de contacto -->
       <section class="panel-section" aria-labelledby="contact-title">
-        <h2 id="contact-title">Tus datos de contacto</h2>
+        <div class="section-head">
+          <p class="registro">
+            <span class="taula" aria-hidden="true"></span>
+            03 · Tus datos
+          </p>
+          <h2 id="contact-title">Tus datos de contacto</h2>
+        </div>
         <p class="panel-section__intro">
-          Utilizamos tu teléfono únicamente para enviarte recordatorios
-          prácticos o avisarte ante cualquier imprevisto meteorológico.
+          Usamos tu teléfono solo para enviarte recordatorios prácticos o
+          avisarte si el tiempo obliga a cambiar la ruta.
         </p>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="pagina-de-ejemplo.html" method="get">
           <div class="contact-form__field">
             <label for="contact-name">Nombre y apellidos</label>
             <input id="contact-name" name="nombre" type="text" autocomplete="name" value="Elena Martínez Soler">
@@ -219,6 +258,7 @@
       </section>
     </main>
 
+
     <aside class="help-band" aria-label="Ayuda con tu reserva">
       <p>
         ¿Necesitas hacer una consulta sobre tu reserva o tienes alguna
@@ -238,9 +278,9 @@
         <nav class="site-footer__group" aria-labelledby="footer-explora">
           <h2 class="site-footer__heading" id="footer-explora">Explora</h2>
           <ul class="site-footer__links">
-            <li><a href="rutas.html">Catálogo de rutas</a></li>
-            <li><a href="guias.html">Conoce a los guías</a></li>
-            <li><a href="preguntas-frecuentes.html">Preguntas Frecuentes</a></li>
+            <li><a href="pagina-de-ejemplo.html">Catálogo de rutas</a></li>
+            <li><a href="pagina-de-ejemplo.html">Conoce a los guías</a></li>
+            <li><a href="pagina-de-ejemplo.html">Preguntas Frecuentes</a></li>
           </ul>
         </nav>
 
@@ -248,17 +288,17 @@
           <h2 class="site-footer__heading" id="footer-reserva">Tu reserva</h2>
           <ul class="site-footer__links">
             <li><a href="panel-usuario.html" aria-current="page">Área del viajero</a></li>
-            <li><a href="modificar-reserva.html">Modificar reserva</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="pagina-de-ejemplo.html">Modificar reserva</a></li>
+            <li><a href="pagina-de-ejemplo.html">Contacto</a></li>
           </ul>
         </nav>
 
         <nav class="site-footer__group" aria-labelledby="footer-legal">
           <h2 class="site-footer__heading" id="footer-legal">Legal</h2>
           <ul class="site-footer__links">
-            <li><a href="aviso-legal.html">Aviso Legal</a></li>
-            <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
-            <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+            <li><a href="pagina-de-ejemplo.html">Aviso Legal</a></li>
+            <li><a href="pagina-de-ejemplo.html">Política de Privacidad</a></li>
+            <li><a href="pagina-de-ejemplo.html">Términos y Condiciones</a></li>
           </ul>
         </nav>
       </div>

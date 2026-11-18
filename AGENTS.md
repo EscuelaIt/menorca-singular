@@ -9,6 +9,7 @@ Este sitio web es para **Menorca Singular**, una empresa que organiza paseos tur
 - Construye los archivos del sitio web dentro de la carpeta `web/`.
 - La carpeta `copys/` contiene los textos del sitio; consúltala y reutiliza su contenido al crear páginas.
 - Organiza el contenido de `web/` de forma clara, creando carpetas específicas para cada tipo de asset cuando se incorporen. Por ejemplo, separa imágenes, fuentes y otros recursos en carpetas propias, en lugar de mezclarlos con los documentos HTML y CSS.
+- El proyecto es un ejemplo de curso con tres páginas de referencia (`index.html`, `ruta-talayotica.html` y `panel-usuario.html`) y la guía de estilo (`guia-estilo.html`). Los enlaces a páginas que quedan fuera de ese alcance (catálogo, otras rutas, reservas, contacto, textos legales…) apuntan a `pagina-de-ejemplo.html`, que lo explica. Si se construye una de esas páginas, cambia sus enlaces para que apunten a ella.
 
 ## Tecnologías y alcance
 
@@ -43,6 +44,7 @@ La identidad se apoya en el trabajo de campo de los guías (arqueólogos e histo
 - `.fig` y `.pie`: imágenes tratadas como láminas, con marcas de registro en las esquinas y pie de figura con lugar y coordenadas (`.pie__coord`).
 - `.datos`: datos en rejilla, como una ficha de catalogación (etiqueta en mono y valor en serif; `.datos--texto` para valores largos, `.datos--4` para cuatro columnas en escritorio).
 - `.ficha`: tarjeta de ruta.
+- `.itinerary`: etapas de una ruta como un trazado en un plano (línea discontinua y marcas; `.itinerary__step--taula` para la etapa principal).
 - `.banda-cuadricula`: fondo de papel milimetrado, para bloques de catálogo.
 
 La guía de estilo viva está en `web/guia-estilo.html` (estilos propios en `web/css/guia.css`). Se construye con los mismos componentes y tokens que la web: si añades o cambias un componente, un color o una regla de tono, actualiza también la guía para que siga siendo la referencia visual del cliente.

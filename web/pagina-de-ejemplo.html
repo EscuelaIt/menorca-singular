@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Página fuera del alcance del proyecto de ejemplo de Menorca Singular.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#f7f4ef">
+    <title>Página de ejemplo | Menorca Singular</title>
+    <link rel="icon" href="images/favicon/favicon.ico" sizes="48x48">
+    <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pagina-ejemplo.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="./" aria-label="Menorca Singular, inicio">
+          <img
+            src="images/logo-menorca-singular-taula.svg"
+            alt=""
+            width="40"
+            height="35"
+          >
+          <span class="site-header__wordmark">Menorca<br> Singular</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navegación principal">
+          <ul class="site-nav__list">
+            <li><a href="./#rutas">Rutas culturales</a></li>
+            <li><a href="./#guias">Nuestros guías</a></li>
+          </ul>
+        </nav>
+
+        <a class="account-link" href="panel-usuario.html">
+          <span class="account-link__icon" aria-hidden="true"></span>
+          <span class="account-link__label">Área del viajero</span>
+        </a>
+
+        <details class="mobile-menu">
+          <summary class="mobile-menu__toggle">
+            <span class="visually-hidden">Menú principal</span>
+            <span class="mobile-menu__icon" aria-hidden="true"></span>
+          </summary>
+          <nav class="mobile-menu__nav" aria-label="Navegación principal">
+            <ul class="site-nav__list">
+              <li><a href="./#rutas">Rutas culturales</a></li>
+              <li><a href="./#guias">Nuestros guías</a></li>
+              <li><a href="panel-usuario.html">Área del viajero</a></li>
+              <li><a href="ruta-talayotica.html#reserva">Reservar plaza</a></li>
+            </ul>
+          </nav>
+        </details>
+
+        <a class="button button--header" href="ruta-talayotica.html#reserva">Reservar plaza</a>
+      </div>
+    </header>
+
+    <main class="ejemplo">
+      <div class="ejemplo__intro">
+        <p class="registro">
+          <span class="taula" aria-hidden="true"></span>
+          Página de ejemplo · Fuera del alcance del proyecto
+        </p>
+        <h1>Esta página no forma parte del ejemplo</h1>
+        <p class="ejemplo__lead">
+          Menorca Singular es el proyecto de ejemplo de un curso de diseño web
+          asistido por IA. Para enseñar el proceso completo se han diseñado tres
+          páginas de referencia y la guía de estilo que las sostiene. El resto
+          de la web (catálogo, otras rutas, reservas, contacto y textos legales)
+          se construiría a partir de ellas.
+        </p>
+      </div>
+
+      <section class="ejemplo__seccion" aria-labelledby="paginas-title">
+        <div class="section-head">
+          <p class="registro">
+            <span class="taula" aria-hidden="true"></span>
+            Páginas disponibles
+          </p>
+          <h2 id="paginas-title">Lo que sí puedes visitar</h2>
+        </div>
+
+        <ul class="ejemplo__paginas">
+          <li class="ejemplo__pagina">
+            <p class="registro">01 · Portada</p>
+            <a class="ejemplo__enlace" href="./">Menorca se lee en la piedra</a>
+            <p>Propuesta de valor, rutas destacadas, guías y datos prácticos.</p>
+          </li>
+          <li class="ejemplo__pagina">
+            <p class="registro">02 · Ficha de excursión</p>
+            <a class="ejemplo__enlace" href="ruta-talayotica.html">Ruta talayótica al atardecer</a>
+            <p>Itinerario, guía, información práctica y módulo de reserva.</p>
+          </li>
+          <li class="ejemplo__pagina">
+            <p class="registro">03 · Área del viajero</p>
+            <a class="ejemplo__enlace" href="panel-usuario.html">Panel de usuario</a>
+            <p>Reserva activa, punto de encuentro y cuaderno de rutas realizadas.</p>
+          </li>
+          <li class="ejemplo__pagina">
+            <p class="registro">04 · Guía de estilo</p>
+            <a class="ejemplo__enlace" href="guia-estilo.html">Cómo se ve y cómo habla la marca</a>
+            <p>Logotipo, color, tipografía, componentes, imagen y tono de voz.</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <p class="site-footer__name">Menorca Singular</p>
+          <p class="site-footer__tagline">Experiencias culturales y rutas de autor.</p>
+        </div>
+
+        <nav class="site-footer__group" aria-labelledby="footer-explora">
+          <h2 class="site-footer__heading" id="footer-explora">Explora</h2>
+          <ul class="site-footer__links">
+            <li><a href="pagina-de-ejemplo.html">Catálogo de rutas</a></li>
+            <li><a href="pagina-de-ejemplo.html">Conoce a los guías</a></li>
+            <li><a href="pagina-de-ejemplo.html">Preguntas Frecuentes</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__group" aria-labelledby="footer-reserva">
+          <h2 class="site-footer__heading" id="footer-reserva">Tu reserva</h2>
+          <ul class="site-footer__links">
+            <li><a href="panel-usuario.html">Área del viajero</a></li>
+            <li><a href="pagina-de-ejemplo.html">Modificar reserva</a></li>
+            <li><a href="pagina-de-ejemplo.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__group" aria-labelledby="footer-legal">
+          <h2 class="site-footer__heading" id="footer-legal">Legal</h2>
+          <ul class="site-footer__links">
+            <li><a href="pagina-de-ejemplo.html">Aviso Legal</a></li>
+            <li><a href="pagina-de-ejemplo.html">Política de Privacidad</a></li>
+            <li><a href="pagina-de-ejemplo.html">Términos y Condiciones</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

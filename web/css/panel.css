@@ -1,4 +1,17 @@
-/* Panel de usuario (área del viajero) */
+/*
+  Panel de usuario (área del viajero)
+  -----------------------------------
+  Solo la maquetación propia del panel. Los componentes del lenguaje de
+  «cuaderno de campo» (.registro, .section-head, .datos, .fig, .pie,
+  .itinerary, .banda-cuadricula) vienen de main.css.
+
+  Idea: el área del viajero es su propio cuaderno de viaje. La reserva
+  activa es una ficha con sus datos en rejilla, la tarde hora a hora como
+  trazado de ruta y un croquis del punto de encuentro; las rutas realizadas
+  quedan registradas con fecha y sello.
+
+  Mobile-first: estilos base para móvil y media queries para ampliar.
+*/
 
 /* Cabecera simplificada: marca y cierre de sesión */
 .panel-header__logout {
@@ -82,28 +95,14 @@
   mask: url("../images/icons/icono-enlace-externo.svg") center / contain no-repeat;
 }
 
-/* Etiquetas de interfaz */
-.panel__eyebrow,
-.booking-card__tags,
-.history__status {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
+/* Bienvenida ---------------------------------------------------------------- */
 
-.panel__eyebrow {
-  margin: 0;
-}
-
-/* Bienvenida */
 .panel-welcome {
   margin-top: 1.75rem;
 }
 
 .panel-welcome h1 {
-  margin: 0.5rem 0 0;
+  margin: 0.75rem 0 0;
   color: var(--color-jerarquia);
   font-size: clamp(2.125rem, 9vw, 2.5rem);
   letter-spacing: -0.02em;
@@ -116,106 +115,153 @@
   line-height: 1.6;
 }
 
-/* Secciones */
+.panel-welcome__resumen {
+  max-width: 34rem;
+  margin-top: 1.5rem;
+}
+
+/* Secciones ---------------------------------------------------------------- */
+
 .panel-section {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
 }
 
-.panel-section h2 {
-  margin: 0 0 1.25rem;
-  color: var(--color-jerarquia);
-  letter-spacing: -0.01em;
-}
-
-.panel-section--ruled {
-  padding-top: 2rem;
-  border-top: 1px solid rgb(78 93 66 / 0.3);
+.panel-section .section-head {
+  margin-bottom: 1.5rem;
 }
 
 .panel-section__intro {
   max-width: 44rem;
-  margin: -0.5rem 0 1.5rem;
+  margin: -0.25rem 0 1.5rem;
   line-height: 1.6;
 }
 
-/* Tarjeta de reserva activa: aristas vivas sobre piedra marés */
+/* Reserva activa: una ficha de cuaderno sobre piedra de marés ---------------- */
+
 .booking-card {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1.25rem 1rem 1rem;
+  border-top: 3px solid var(--color-jerarquia);
   background: var(--color-fondo-secundario);
+}
+
+/* Sobre piedra, las líneas de la rejilla y los registros necesitan más contraste */
+.booking-card {
+  --linea: rgb(78 93 66 / 0.5);
+  --linea-suave: rgb(78 93 66 / 0.3);
+}
+
+/* Oliva sobre piedra ronda 4.3:1: en la ficha, registros en grafito */
+.booking-card .registro,
+.booking-card .datos dt,
+.booking-card .itinerary__time {
+  color: var(--color-texto);
 }
 
 .booking-card__status {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 0.25rem 1rem;
+  gap: 0.5rem 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+/* Estado: marca cuadrada oliva, como en las listas del cuaderno */
+.booking-card__estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.booking-card__estado::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--color-jerarquia);
+  content: "";
 }
 
 .booking-card__ref {
   margin: 0;
+  font-family: var(--font-registro);
   font-size: 0.875rem;
   font-weight: 500;
-}
-
-.booking-card__tags {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0.5rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.booking-card__tags li + li::before {
-  margin-inline: 0.5em;
-  content: "·";
+  font-variant-numeric: tabular-nums;
 }
 
 .booking-card__title {
-  margin: 0.35rem 0 0;
+  margin: 0.5rem 0 0;
   font-family: var(--font-titulares);
-  font-size: 1.5rem;
+  font-size: 1.625rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
-.booking-card__meta,
-.meeting-point__places,
-.meeting-point__links {
-  display: grid;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.booking-card__meta {
-  gap: 0.85rem;
+.booking-card__datos {
   margin-top: 1.25rem;
+}
+
+.booking-card__datos dd {
+  font-size: 1.125rem;
+}
+
+.booking-card__subtitle {
+  margin: 2rem 0 1rem;
+  font-family: var(--font-titulares);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* El cuadradito de cada etapa se rellena con el color de la ficha */
+.booking-card__itinerary {
+  margin: 0;
+}
+
+.booking-card__itinerary .itinerary__step {
+  padding-bottom: 1.25rem;
+}
+
+.booking-card__itinerary .itinerary__step:last-child {
+  padding-bottom: 0;
+}
+
+.booking-card__itinerary .itinerary__step:not(.itinerary__step--taula)::after {
+  background: var(--color-fondo-secundario);
+}
+
+.booking-card__itinerary .itinerary__title {
+  font-size: 1.0625rem;
+}
+
+.booking-card__itinerary .itinerary__text {
+  margin-top: 0.2rem;
   font-size: 0.9375rem;
-  line-height: 1.4;
 }
 
-.booking-card__meta li,
-.meeting-point__places li {
-  display: grid;
-  grid-template-columns: 1.25rem minmax(0, 1fr);
-  align-items: start;
-  gap: 0.85rem;
-}
+/* Punto de encuentro: croquis sobre papel milimetrado ------------------------ */
 
-.booking-card__meta img,
-.meeting-point__places img {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-/* Bloque interno sobre blanco cal */
 .meeting-point {
   padding: 1.25rem 1rem;
   background: var(--color-fondo-principal);
+}
+
+/* Dentro del bloque blanco vuelven las líneas y los registros en oliva */
+.meeting-point {
+  --linea: rgb(78 93 66 / 0.35);
+}
+
+.meeting-point .datos dt {
+  color: var(--color-jerarquia);
 }
 
 .meeting-point__title {
@@ -227,12 +273,40 @@
   line-height: 1.2;
 }
 
-.meeting-point__places {
-  gap: 0.85rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-fondo-secundario);
-  font-size: 0.9375rem;
-  line-height: 1.4;
+.meeting-point__croquis {
+  margin: 0 0 1.25rem;
+}
+
+.croquis {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+}
+
+/* Marca del punto de encuentro: la taula en terracota */
+.croquis__marca {
+  width: 1.75rem;
+  height: 2.05rem;
+  background-color: var(--color-interactivo);
+  -webkit-mask: url("../images/icons/taula.svg") center / contain no-repeat;
+  mask: url("../images/icons/taula.svg") center / contain no-repeat;
+}
+
+.croquis__etiqueta {
+  position: absolute;
+  top: calc(50% + 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.2rem 0.5rem;
+  background: var(--color-blanco-cal);
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .meeting-point__tips {
@@ -242,13 +316,18 @@
 }
 
 .meeting-point__links {
+  display: grid;
   gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* Acordeón del día de la ruta */
+/* Acordeón del día de la ruta ------------------------------------------------ */
+
 .day-tips {
   margin-top: 1.25rem;
-  border-block: 1px solid rgb(78 93 66 / 0.3);
+  border-block: 1px solid var(--linea);
 }
 
 .day-tips summary {
@@ -297,7 +376,8 @@
   line-height: 1.6;
 }
 
-/* Acciones de la reserva */
+/* Acciones de la reserva --------------------------------------------------- */
+
 .booking-actions {
   display: grid;
   gap: 0.75rem;
@@ -377,47 +457,80 @@
   line-height: 1.5;
 }
 
-/* Historial */
+/* Cuaderno de rutas realizadas --------------------------------------------- */
+
 .history {
   margin: 0;
   padding: 0;
   list-style: none;
+  border-top: 1px solid var(--linea);
 }
 
 .history__item {
   display: grid;
-  gap: 0.75rem;
-  padding: 1rem;
-  border: 1px solid rgb(78 93 66 / 0.3);
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--linea);
 }
 
-.history__status {
-  justify-self: start;
+.history__fecha {
+  grid-column: 1;
   margin: 0;
-  padding: 0.45rem 0.85rem;
-  background: rgb(78 93 66 / 0.15);
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.history__info {
+  grid-column: 1 / -1;
+}
+
+.history__registro {
+  font-size: 0.75rem;
 }
 
 .history__title {
-  margin: 0;
-  font-family: var(--font-interfaz);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.4;
+  margin: 0.35rem 0 0;
+  font-family: var(--font-titulares);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .history__details {
-  margin: 0.25rem 0 0;
-  font-size: 0.875rem;
+  margin: 0.35rem 0 0;
+  font-size: 0.9375rem;
   line-height: 1.4;
 }
 
+/* Sello de «completada», como el de un pasaporte o un registro de archivo */
+.history__sello {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  border: 1.5px solid var(--color-jerarquia);
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+
 .history__link {
+  grid-column: 1 / -1;
   justify-self: start;
   font-size: 0.875rem;
 }
 
-/* Formulario de contacto: aristas vivas y borde oliva */
+/* Formulario de contacto: aristas vivas y borde oliva ----------------------- */
+
 .contact-form {
   display: grid;
   gap: 1rem;
@@ -488,6 +601,8 @@
   text-underline-offset: 0.25em;
 }
 
+/* Tableta ------------------------------------------------------------------ */
+
 @media (min-width: 48rem) {
   .panel {
     padding: 2rem 2.5rem 4rem;
@@ -498,14 +613,14 @@
   }
 
   .panel-section {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   .booking-card {
     grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
     align-items: start;
-    gap: 1rem 2rem;
-    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+    gap: 1.25rem 2rem;
+    padding: 1.5rem;
   }
 
   .booking-card__status {
@@ -513,17 +628,7 @@
   }
 
   .booking-card__title {
-    font-size: 1.875rem;
-  }
-
-  .booking-card__meta {
-    gap: 1rem;
-    font-size: 1.0625rem;
-  }
-
-  .meeting-point {
-    margin-top: 2.25rem;
-    padding: 1.25rem;
+    font-size: 2rem;
   }
 
   .booking-actions {
@@ -544,14 +649,27 @@
     margin-left: 0;
   }
 
+  /* Fecha, ficha, sello y enlace en una fila */
   .history__item {
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: 7.5rem minmax(0, 1fr) auto;
     align-items: center;
     gap: 1.5rem;
   }
 
+  .history__fecha,
+  .history__info {
+    grid-column: auto;
+  }
+
+  .history__sello {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: center;
+  }
+
   .history__link {
-    justify-self: end;
+    grid-column: 2 / -1;
+    margin-top: -0.75rem;
   }
 
   .contact-form {
@@ -574,8 +692,32 @@
   }
 }
 
+/* Escritorio --------------------------------------------------------------- */
+
 @media (min-width: 64rem) {
+  /* Cabecera con solo dos elementos: cierre de sesión alineado a la derecha */
+  .panel-header {
+    grid-template-columns: auto 1fr;
+  }
+
   .booking-card {
-    gap: 1rem 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 21rem);
+    gap: 1.25rem 3rem;
+    padding: 2rem;
+  }
+
+  .booking-card__datos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* En tres columnas, filete vertical entre todas las celdas de cada fila */
+  .booking-card__datos > div:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .booking-card__datos > div:not(:nth-child(3n + 1)) {
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--linea);
   }
 }
