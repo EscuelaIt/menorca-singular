@@ -7,8 +7,8 @@ Bloque superior despejado que sitúa al viajero y le ofrece salir o volver al ca
 * **Migas de pan / Enlace de retorno:** ← Volver a rutas culturales
 
 
-* **Etiqueta superior (Inter 13px, mayúsculas):** ÁREA DEL VIAJERO
-* **Titular principal (H1 - Playfair Display):** Hola, Elena Martínez
+* **Etiqueta superior (IBM Plex Sans 13px, mayúsculas):** ÁREA DEL VIAJERO
+* **Titular principal (H1 - Brygada 1918):** Hola, Elena Martínez
 * **Subtítulo de contexto:** Aquí tienes los detalles prácticos, puntos de encuentro y opciones de gestión de tus experiencias en Menorca.
 
 

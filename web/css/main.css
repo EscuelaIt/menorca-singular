@@ -65,8 +65,8 @@ summary:focus-visible {
 
 .site-header__brand img {
   display: block;
-  width: clamp(2.75rem, 13vw, 3.25rem);
-  height: auto;
+  width: auto;
+  height: 2.3rem; /* la taula es más alta que ancha: se dimensiona por altura */
 }
 
 .site-header__wordmark {
@@ -319,15 +319,6 @@ summary:focus-visible {
   gap: 1rem;
 }
 
-.hero__note {
-  margin: 0.75rem 0 0;
-  color: var(--color-texto);
-  font-family: var(--font-interfaz);
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
 .hero__image {
   width: calc(100% - 3rem);
   margin: 0 1.5rem;
@@ -349,60 +340,6 @@ summary:focus-visible {
   object-position: center 54%;
 }
 
-/* Manifiesto y propuesta diferencial */
-.manifesto {
-  max-width: 80rem;
-  margin-inline: auto;
-  padding: 2.75rem 1.5rem 3.5rem;
-}
-
-.manifesto h2 {
-  max-width: 18ch;
-  margin: 0;
-  color: var(--color-jerarquia);
-  letter-spacing: -0.01em;
-}
-
-.manifesto__pillars {
-  display: grid;
-  margin: 1.75rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.pillar {
-  padding: 1.75rem 0;
-}
-
-.pillar + .pillar {
-  border-top: 1px solid var(--color-fondo-secundario);
-}
-
-.pillar:last-child {
-  padding-bottom: 0;
-}
-
-.pillar__icon {
-  display: block;
-  width: auto;
-  height: 2.75rem;
-}
-
-.pillar__title {
-  margin: 1.1rem 0 0.5rem;
-  color: var(--color-texto);
-  font-family: var(--font-titulares);
-  font-size: 1.375rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.pillar__text {
-  max-width: 34rem;
-  margin: 0;
-  line-height: 1.6;
-}
-
 /* Selección de rutas destacadas */
 .routes {
   max-width: 80rem;
@@ -421,99 +358,6 @@ summary:focus-visible {
   display: grid;
   gap: 1.5rem;
   margin-top: 1.75rem;
-}
-
-.route-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-fondo-secundario);
-}
-
-.route-card__image {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 2 / 1;
-  object-fit: cover;
-}
-
-.route-card__body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 1.25rem 1.25rem 1.5rem;
-}
-
-.route-card__tags,
-.route-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.route-card__tags {
-  font-size: 0.875rem;
-  line-height: 1.4;
-}
-
-.route-card__tags li + li {
-  margin-left: 0.45em;
-  padding-left: 0.45em;
-  border-left: 1px solid currentColor;
-}
-
-.route-card__title {
-  margin: 0.6rem 0 0;
-  color: var(--color-texto);
-  font-family: var(--font-titulares);
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-/*
- * Cada dato lleva su separador a la izquierda. La lista se desplaza a la
- * izquierda y recorta 1px, así el separador del primer dato de cada línea
- * nunca se ve, aunque la fila se parta en pantallas estrechas.
- */
-.route-card__meta {
-  row-gap: 0.5rem;
-  margin: 1.1rem 0 0 calc(-0.75rem - 1px);
-  clip-path: inset(0 0 0 1px);
-  font-size: 0.875rem;
-  line-height: 1.3;
-}
-
-.route-card__meta li {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-right: 0.75rem;
-  padding-left: 0.75rem;
-  border-left: 1px solid rgb(38 38 36 / 0.35);
-}
-
-.route-card__meta img {
-  width: 1.125rem;
-  height: 1.125rem;
-}
-
-.route-card__price {
-  font-weight: 600;
-}
-
-.route-card__text {
-  margin: 1rem 0 1.5rem;
-  line-height: 1.6;
-}
-
-.route-card__button {
-  gap: 1rem;
-  width: 100%;
-  margin-top: auto;
 }
 
 /*
@@ -627,62 +471,6 @@ summary:focus-visible {
 .guide__text {
   max-width: 34rem;
   margin: 0.85rem 0 0;
-  line-height: 1.6;
-}
-
-/* Confianza y transparencia operativa */
-.trust {
-  max-width: 80rem;
-  margin-inline: auto;
-  padding: 0 1.5rem 4rem;
-}
-
-.trust h2 {
-  max-width: 20ch;
-  margin: 0;
-  color: var(--color-jerarquia);
-  letter-spacing: -0.01em;
-}
-
-.trust__list {
-  display: grid;
-  margin: 1.75rem 0 0;
-  padding: 0.25rem 1.25rem;
-  background: var(--color-fondo-secundario);
-  list-style: none;
-}
-
-.trust-item {
-  padding: 1.5rem 0;
-}
-
-.trust-item + .trust-item {
-  border-top: 1px solid rgb(78 93 66 / 0.4);
-}
-
-.trust-item__icon {
-  display: block;
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-/*
- * Oliva sobre piedra ronda 4.3:1: el titular mantiene 24 px como mínimo
- * para contar como texto grande (umbral 3:1).
- */
-.trust-item__title {
-  margin: 0.85rem 0 0;
-  color: var(--color-jerarquia);
-  font-family: var(--font-titulares);
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-.trust-item__text {
-  max-width: 34rem;
-  margin: 0.6rem 0 0;
   line-height: 1.6;
 }
 
@@ -811,7 +599,7 @@ summary:focus-visible {
   }
 
   .site-header__brand img {
-    width: 3.5rem;
+    height: 2.6rem;
   }
 
   .site-header__wordmark {
@@ -847,30 +635,12 @@ summary:focus-visible {
     aspect-ratio: 16 / 9;
   }
 
-  .manifesto {
-    padding: 3rem 2.5rem 4.5rem;
-  }
-
-  .pillar__title {
-    font-size: 1.5rem;
-  }
-
   .routes {
     padding: 1rem 2.5rem 5rem;
   }
 
   .routes__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .route-card__body {
-    padding: 1.5rem;
-  }
-
-  .route-card__button {
-    align-self: flex-start;
-    width: auto;
-    padding-inline: 2.25rem;
   }
 
   .routes__footer,
@@ -923,28 +693,6 @@ summary:focus-visible {
 
   .guide__text {
     margin-top: 1.25rem;
-    font-size: 1.0625rem;
-  }
-
-  .trust {
-    padding: 0 2.5rem 5rem;
-  }
-
-  .trust__list {
-    margin-top: 2.5rem;
-    padding: 0.5rem 2rem;
-  }
-
-  .trust-item {
-    padding: 2rem 0;
-  }
-
-  .trust-item__icon {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .trust-item__text {
     font-size: 1.0625rem;
   }
 
@@ -1001,7 +749,7 @@ summary:focus-visible {
   }
 
   .site-header__brand img {
-    width: 4.25rem;
+    height: 3rem;
   }
 
   .site-header__wordmark {
@@ -1069,42 +817,6 @@ summary:focus-visible {
     aspect-ratio: 1.1;
   }
 
-  .manifesto {
-    width: calc(100% - 5rem);
-    padding: 0 0 5.5rem;
-  }
-
-  .manifesto h2 {
-    max-width: none;
-    padding-top: 3rem;
-    border-top: 1px solid var(--color-jerarquia);
-  }
-
-  .manifesto__pillars {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: 2.75rem;
-  }
-
-  .pillar,
-  .pillar:last-child {
-    padding: 0.25rem 2.5rem;
-    text-align: center;
-  }
-
-  .pillar + .pillar {
-    border-top: 0;
-    border-left: 1px solid var(--color-jerarquia);
-  }
-
-  .pillar__icon {
-    margin-inline: auto;
-  }
-
-  .pillar__text {
-    max-width: 22rem;
-    margin-inline: auto;
-  }
-
   .routes {
     width: calc(100% - 5rem);
     padding: 0 0 6rem;
@@ -1112,29 +824,6 @@ summary:focus-visible {
 
   .routes__list {
     margin-top: 2.5rem;
-  }
-
-  .route-card__body {
-    padding: 1.75rem;
-  }
-
-  .route-card__title {
-    font-size: 1.875rem;
-  }
-
-  .route-card__meta {
-    margin: 1.4rem 0 0 calc(-1rem - 1px);
-    font-size: 1rem;
-  }
-
-  .route-card__meta li {
-    margin-right: 1rem;
-    padding-left: 1rem;
-  }
-
-  .route-card__text {
-    margin: 1.25rem 0 1.75rem;
-    font-size: 1.0625rem;
   }
 
   /* Titular y entradilla en una fila, separados por un filete vertical */
@@ -1165,45 +854,6 @@ summary:focus-visible {
   .guides__list {
     gap: 3rem;
     margin-top: 3.5rem;
-  }
-
-  /* Tres columnas dentro del bloque piedra, con filetes verticales */
-  .trust {
-    width: calc(100% - 5rem);
-    padding: 0 0 6rem;
-  }
-
-  .trust h2 {
-    max-width: 22ch;
-  }
-
-  .trust__list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: 3rem;
-    padding: 2rem 0;
-  }
-
-  .trust-item {
-    padding: 0.5rem clamp(2rem, 3vw, 3rem);
-  }
-
-  .trust-item + .trust-item {
-    border-top: 0;
-    border-left: 1px solid rgb(78 93 66 / 0.4);
-  }
-
-  .trust-item__icon {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .trust-item__title {
-    margin-top: 1.25rem;
-    font-size: 1.625rem;
-  }
-
-  .trust-item__text {
-    margin-top: 1rem;
   }
 
   .closing {
@@ -1252,5 +902,278 @@ summary:focus-visible {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   Lenguaje de «cuaderno de campo»
+   --------------------------------------------------------------------------
+   Componentes de identidad compartidos por todas las páginas. La marca la
+   forman arqueólogos e historiadores, así que el lenguaje visual toma
+   recursos de su trabajo de campo:
+   - .registro      Etiqueta de registro numerada (01 · Cómo trabajamos).
+   - .taula         La taula como marca gráfica recurrente.
+   - .fig / .pie    Imágenes tratadas como láminas: marcas de registro en las
+                    esquinas y pie de figura con lugar y coordenadas.
+   - .section-head  Cabecera de sección: filete, registro y titular.
+   - .datos         Datos en rejilla, como una ficha de catalogación.
+   - .ficha         Tarjeta de ruta.
+   - .banda-cuadricula  Fondo de papel milimetrado.
+   ========================================================================== */
+
+:root {
+  --linea: rgb(78 93 66 / 0.35);
+  --linea-suave: rgb(78 93 66 / 0.18);
+  --papel: #efe8dc; /* piedra de marés diluida en blanco cal */
+}
+
+/* Titulares equilibrados: sin palabras huérfanas en la última línea */
+h1,
+.section-head h2,
+.closing h2,
+.ficha__title {
+  text-wrap: balance;
+}
+
+/* Etiqueta de registro */
+.registro {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.5px; /* la mono ya es espaciada: basta un tracking leve */
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+/* La taula: símbolo de la isla, usado como marca gráfica */
+.taula {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 0.9rem;
+  height: 1.05rem;
+  background-color: currentColor;
+  -webkit-mask: url("../images/icons/taula.svg") center / contain no-repeat;
+  mask: url("../images/icons/taula.svg") center / contain no-repeat;
+}
+
+.closing__taula {
+  width: 1.75rem;
+  height: 2.05rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-interactivo);
+}
+
+/* Lámina: marcas de registro en las cuatro esquinas */
+.fig {
+  --marca: var(--color-jerarquia);
+  --largo: 0.875rem;
+  position: relative;
+  padding: 0.5rem;
+  background:
+    linear-gradient(var(--marca) 0 0) top left / var(--largo) 1px,
+    linear-gradient(var(--marca) 0 0) top left / 1px var(--largo),
+    linear-gradient(var(--marca) 0 0) top right / var(--largo) 1px,
+    linear-gradient(var(--marca) 0 0) top right / 1px var(--largo),
+    linear-gradient(var(--marca) 0 0) bottom left / var(--largo) 1px,
+    linear-gradient(var(--marca) 0 0) bottom left / 1px var(--largo),
+    linear-gradient(var(--marca) 0 0) bottom right / var(--largo) 1px,
+    linear-gradient(var(--marca) 0 0) bottom right / 1px var(--largo);
+  background-repeat: no-repeat;
+}
+
+.fig img {
+  display: block;
+  width: 100%;
+}
+
+/* Pie de figura */
+.pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-top: 0.35rem;
+  padding-inline: 0.5rem;
+  color: var(--color-texto);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.pie__coord {
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-weight: 500;
+}
+
+/* Cabecera de sección: filete, registro y titular */
+.section-head {
+  display: grid;
+  gap: 0.9rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-jerarquia);
+}
+
+.section-head h2 {
+  margin: 0;
+  color: var(--color-jerarquia);
+  letter-spacing: -0.01em;
+}
+
+/* Datos en rejilla: etiqueta en mono y valor en serif */
+.datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid var(--linea);
+}
+
+.datos > div {
+  padding: 0.6rem 0.75rem 0.65rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.datos > div:nth-child(even) {
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--linea);
+}
+
+.datos dt {
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.datos dd {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-titulares);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: lining-nums;
+}
+
+/* Variante para valores largos: texto de interfaz en lugar de cifra */
+.datos--texto dd {
+  font-family: var(--font-interfaz);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Papel milimetrado */
+.banda-cuadricula {
+  background-color: var(--papel);
+  background-image:
+    linear-gradient(rgb(78 93 66 / 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(78 93 66 / 0.1) 1px, transparent 1px),
+    linear-gradient(rgb(78 93 66 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(78 93 66 / 0.045) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+  background-position: -1px -1px;
+}
+
+/* Ficha de ruta */
+.ficha {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0.75rem 1.25rem;
+  border: 1px solid var(--linea);
+  background: var(--color-blanco-cal);
+}
+
+.ficha__figure {
+  margin: 0;
+}
+
+.ficha__figure img {
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.ficha__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.25rem 0.5rem 0;
+}
+
+.ficha__title {
+  margin: 0.5rem 0 0;
+  color: var(--color-texto);
+  font-family: var(--font-titulares);
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.ficha__text {
+  margin: 0.85rem 0 1.25rem;
+  line-height: 1.6;
+}
+
+/* Los datos se alinean al pie de la ficha aunque el título ocupe dos líneas */
+.ficha__datos {
+  margin-top: auto;
+}
+
+.ficha__button {
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .ficha {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  .ficha__body {
+    padding-inline: 0.5rem;
+  }
+
+  .ficha__button {
+    align-self: flex-start;
+    width: auto;
+    padding-inline: 2.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  /* Cuatro datos en una fila */
+  .datos--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .datos--4 > div + div {
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--linea);
+  }
+
+  .ficha {
+    padding: 1.25rem 1.25rem 2rem;
+  }
+
+  .ficha__body {
+    padding: 1.75rem 0.75rem 0;
+  }
+
+  .ficha__title {
+    font-size: 2rem;
+  }
+
+  .ficha__text {
+    font-size: 1.0625rem;
   }
 }

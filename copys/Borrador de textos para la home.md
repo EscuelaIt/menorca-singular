@@ -1,90 +1,107 @@
 # Borrador de textos para la home
 
+*Textos de la portada, con el lenguaje visual de «cuaderno de campo» (`web/index.html`). Las etiquetas de registro numeradas forman parte del lenguaje visual de la marca.*
+
 ## **1\. Cabecera de navegación (Header)**
 
 * **Enlace 1:** Rutas culturales  
 * **Enlace 2:** Nuestros guías  
-* **Enlace 3 (Acceso a cuenta):** Panel de usuario  
+* **Enlace 3 (Acceso a cuenta):** Área del viajero  
 * **Botón CTA principal (Terracota):** Reservar plaza
 
 ## 
 
 ## **2\. Hero editorial (Propuesta de valor)**
 
-* **Titular principal (H1):** Descubre la historia oculta de la isla.  
-* **Subtítulo:** Experiencias culturales en Menorca guiadas por historiadores, arquitectos y expertos locales. Explora el patrimonio balear en grupos de máximo 8 personas y a un ritmo pausado.  
+* **Etiqueta de registro:** Rutas culturales en Menorca  
+* **Titular principal (H1):** Menorca se lee en la piedra  
+* **Subtítulo:** Recorre poblados talayóticos y palacios de Ciutadella con una arqueóloga y un historiador del arte que los estudian. En grupos de ocho personas y al ritmo de un paseo.  
 * **Botón CTA principal:** Explorar rutas  
-* **Microtexto de apoyo (bajo el botón):** Disponibilidad limitada para esta temporada.
+* **Datos clave (bajo el botón):** Desde 45 € · Máx. 8 personas · Cancelación gratuita hasta 24 h antes  
+* **Pie de la imagen:** Fig. 01 — Casco antiguo con la luz de la tarde
 
 ## 
 
-## **3\. Manifiesto y propuesta diferencial**
+## **3\. Cómo trabajamos (Propuesta diferencial)**
 
-* **Titular de bloque (H2):** Una mirada distinta al Mediterráneo.  
-* **Pilar 1 (Icono de grupo pequeño):** **Intimidad garantizada.** Huimos de las aglomeraciones. Grupos de máximo 8 personas para asegurar un diálogo real con el experto y el entorno.  
-* **Pilar 2 (Icono de llave/puerta):** **Acceso exclusivo.** Abrimos puertas cerradas. Desde el silencio de los yacimientos megalíticos hasta los patios señoriales privados que no aparecen en las guías convencionales.  
-* **Pilar 3 (Icono de reloj de arena):** **Rigor y pausa.** Sin prisas, guiones memorizados ni banderas en alto. Nuestras rutas son curadas para mentes curiosas que buscan profundizar en la identidad de Menorca.
+* **Etiqueta de registro:** 01 · Cómo trabajamos  
+* **Titular de bloque (H2):** Tres compromisos en cada salida  
+* **Compromiso 01:** **Ocho personas como máximo.** Es el tamaño que permite preguntar, detenerse donde haga falta y escuchar al guía sin micrófono.  
+* **Compromiso 02:** **Puertas que suelen estar cerradas.** Entramos en patios señoriales privados de Ciutadella y en rincones que no aparecen en las guías convencionales.  
+* **Compromiso 03:** **La hora justa.** Visitamos los yacimientos al final de la tarde, cuando se marchan los grupos grandes y la luz baja revela relieves que a mediodía no se ven.
 
 ## 
 
 ## **4\. Selección de rutas destacadas (Catálogo)**
 
-* **Titular de bloque (H2):** Itinerarios curados para viajeros curiosos.
+* **Etiqueta de registro:** 02 · Rutas  
+* **Titular de bloque (H2):** Elige por dónde empezar
 
-**Tarjeta de Ruta 1:**
+**Ficha de Ruta 1:**
 
-* **Etiquetas:** Arqueología \| Nivel fácil  
+* **Pie de la imagen:** Torre d'en Galmés, Alaior · 39°54′ N · 4°07′ E  
+* **Etiqueta de registro:** Ruta nº 01 · Arqueología  
 * **Título:** Ruta talayótica al atardecer  
-* **Datos clave:** 3 horas \| Máx. 8 personas \| 55 €  
-* **Descripción breve:** El silencio de la prehistoria. Visitamos los yacimientos megalíticos más imponentes de la isla acompañados por la luz dorada de la tarde, comprendiendo la vida de los primeros pobladores.  
+* **Descripción breve:** Recorremos Torre d'en Galmés cuando el yacimiento se vacía: las casas prehistóricas, el recinto de taula y la puesta de sol sobre la costa sur.  
+* **Datos:** Duración: 3 h | Grupo: Máx. 8 | Nivel: Fácil | Precio: 55 €  
 * **Botón CTA:** Ver itinerario
 
-**Tarjeta de Ruta 2:**
+**Ficha de Ruta 2:**
 
-* **Etiquetas:** Arquitectura e Historia \| Nivel fácil  
+* **Pie de la imagen:** Casco antiguo, Ciutadella · 40°00′ N · 3°50′ E  
+* **Etiqueta de registro:** Ruta nº 02 · Arquitectura e historia  
 * **Título:** Ciutadella secreta: palacios y claustros  
-* **Datos clave:** 2.5 horas \| Máx. 8 personas \| 45 €  
-* **Descripción breve:** Un recorrido a puerta cerrada por la aristocracia menorquina. Descubre la intimidad de los patios señoriales y la influencia británica grabada en la piedra de sus calles más silenciosas.  
+* **Descripción breve:** Patios señoriales que no abren al público y fachadas de marés del siglo XVIII, leídas piedra a piedra con un historiador del arte.  
+* **Datos:** Duración: 2,5 h | Grupo: Máx. 8 | Nivel: Fácil | Precio: 45 €  
 * **Botón CTA:** Ver itinerario
+
+* **Botón secundario:** Ver todas las rutas
 
 ## 
 
 ## **5\. Presentación de los guías**
 
-* **Titular de bloque (H2):** Quienes te acompañan.  
-* **Texto introductorio:** No somos animadores turísticos. Somos investigadores, divulgadores y enamorados del patrimonio insular, dedicados a traducir la historia en un relato fascinante.
+* **Etiqueta de registro:** 03 · Guías  
+* **Titular de bloque (H2):** Te guían quienes lo investigan  
+* **Texto introductorio:** Marc y Aina dedican su trabajo a estudiar el patrimonio de Menorca. En cada salida cuentan lo que se sabe y también lo que todavía se discute.
 
 **Perfil 1:**
 
-* **Nombre:** Marc (Historiador del Arte)  
-* **Descripción:** Especialista en arquitectura del siglo XVIII. Te ayudará a leer las fachadas de Ciutadella y Maó como si fueran un libro abierto, revelando los secretos que esconde la piedra de marés.
+* **Etiqueta:** Historiador del arte  
+* **Nombre:** Marc  
+* **Descripción:** Especialista en arquitectura del siglo XVIII. Enseña a leer las fachadas de Ciutadella y Maó: qué cuenta cada escudo, cada balcón y cada sillar de marés.  
+* **Datos:** Especialidad: Arquitectura señorial | Guía en: Ciutadella secreta
 
 **Perfil 2:**
 
-* **Nombre:** Aina (Arqueóloga)  
-* **Descripción:** Con más de diez años excavando en yacimientos talayóticos, Aina transforma las estructuras milenarias en historias vivas sobre nuestros antepasados mediterráneos.
+* **Etiqueta:** Arqueóloga  
+* **Nombre:** Aina Pons  
+* **Descripción:** Lleva más de diez años en campañas de excavación en yacimientos talayóticos. Explica cada muro a partir de lo que se ha encontrado en él.  
+* **Datos:** Especialidad: Cultura talayótica | Guía en: Ruta talayótica
+
+* **Botón secundario:** Conocer a todo el equipo
 
 ## 
 
-## **6\. Confianza y transparencia operativa**
+## **6\. Antes de reservar (Confianza y transparencia)**
 
-* **Titular de bloque (H2):** Viaja con la tranquilidad de tenerlo todo claro.  
-* **Punto 1:** **Puntos de encuentro precisos.** Recibirás las coordenadas exactas y fotografías del lugar de inicio 48 horas antes. Siempre en ubicaciones céntricas y de fácil acceso.  
-* **Punto 2:** **Exigencia física transparente.** Nuestras rutas están pensadas para caminar sin prisa, pero detallamos el nivel de esfuerzo (cuestas, escalones o terreno irregular) de forma honesta en cada ficha de actividad.  
-* **Punto 3:** **Cancelación flexible.** Sabemos que en los viajes los planes cambian. Modifica o cancela tu reserva sin coste alguno hasta 24 horas antes del inicio de la experiencia.
+* **Etiqueta de registro:** 04 · Antes de reservar  
+* **Titular de bloque (H2):** Lo práctico, claro desde el principio  
+* **Nota 1:** **Punto de encuentro.** Recibirás las coordenadas GPS y una fotografía del lugar 48 horas antes. Siempre en ubicaciones céntricas y de fácil acceso.  
+* **Nota 2:** **Esfuerzo físico.** Caminamos sin prisa, pero cada ficha detalla las cuestas, los escalones y el tipo de terreno para que sepas qué esperar.  
+* **Nota 3:** **Cancelación.** Gratuita hasta 24 horas antes del inicio. También puedes cambiar la fecha desde tu área del viajero.
 
 ## 
 
 ## **7\. Cierre de conversión y Pie de página (Footer)**
 
-* **Titular CTA (H2):** ¿Listo para redescubrir Menorca?  
-* **Subtítulo CTA:** Consulta la disponibilidad de nuestros guías para los próximos días y asegura tu plaza en un grupo reducido.  
+* **Titular CTA (H2):** Reserva tu plaza en el próximo grupo  
+* **Subtítulo CTA:** Cada salida tiene ocho plazas. Consulta las fechas de las próximas semanas y elige la que mejor te encaje.  
 * **Botón CTA:** Consultar fechas disponibles
 
 **Pie de página:**
 
 * **Columna 1 (Marca):** Menorca Singular \- Experiencias culturales y rutas de autor.  
 * **Columna 2 (Explora):** Catálogo de rutas \| Conoce a los guías \| Preguntas Frecuentes  
-* **Columna 3 (Tu reserva):** Panel de usuario \| Modificar reserva \| Contacto  
+* **Columna 3 (Tu reserva):** Área del viajero \| Modificar reserva \| Contacto  
 * **Columna 4 (Legal):** Aviso Legal \| Política de Privacidad \| Términos y Condiciones
-

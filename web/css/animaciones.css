@@ -36,10 +36,6 @@
     animation-delay: 400ms;
   }
 
-  .hero__note {
-    animation-delay: 520ms;
-  }
-
   /* La fotografía se descubre como una cortina que sube */
   .hero__image {
     animation: descubrir 1200ms var(--anim-ease) 200ms both;
@@ -52,14 +48,9 @@
   /* 2. Revelado progresivo al hacer scroll ------------------------ */
 
   @supports (animation-timeline: view()) {
-    .manifesto h2,
-    .pillar,
     .routes h2,
-    .route-card,
     .guides__intro,
     .guide,
-    .trust h2,
-    .trust-item,
     .closing > * {
       animation: aparecer linear both;
       animation-timeline: view();
@@ -67,29 +58,13 @@
     }
 
     /* Escalonado: cada elemento de una lista entra un poco después */
-    .pillar:nth-child(2),
-    .route-card:nth-child(2),
     .guide:nth-child(2),
-    .trust-item:nth-child(2),
     .closing > :nth-child(2) {
       animation-range: entry 15% cover 30%;
     }
 
-    .pillar:nth-child(3),
-    .trust-item:nth-child(3),
     .closing > :nth-child(3) {
       animation-range: entry 25% cover 35%;
-    }
-
-    /* La imagen de cada ruta se asienta mientras la tarjeta aparece */
-    .route-card {
-      overflow: hidden;
-    }
-
-    .route-card__image {
-      animation: asentar linear both;
-      animation-timeline: view();
-      animation-range: entry 0% cover 40%;
     }
   }
 }

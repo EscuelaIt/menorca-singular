@@ -59,25 +59,6 @@
   padding: 1rem 1.5rem 1.5rem;
 }
 
-.excursion-hero__tags {
-  display: inline-flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0.35rem 0.6rem;
-  background: var(--color-fondo-secundario);
-  list-style: none;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.excursion-hero__tags li + li::before {
-  margin-inline: 0.45em;
-  content: "·";
-}
-
 .excursion-hero h1 {
   margin: 0.85rem 0 0;
   color: var(--color-jerarquia);
@@ -92,40 +73,24 @@
   line-height: 1.6;
 }
 
-.excursion-hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  margin: 1.25rem 0 0;
-  padding: 0 0 1.25rem;
-  border-bottom: 1px solid var(--color-fondo-secundario);
-  list-style: none;
-  font-size: 0.875rem;
-  line-height: 1.3;
+.excursion-hero__datos {
+  margin-top: 1.5rem;
 }
 
-.excursion-hero__meta li {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.excursion-hero__meta img {
-  flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
+/* La lámina (.fig, en main.css) lleva las marcas; la figura, los márgenes */
+.excursion-hero__figure {
+  margin: 0 1.5rem;
 }
 
 .excursion-hero__image {
-  margin: 0 1.5rem;
-  overflow: hidden;
   aspect-ratio: 16 / 11;
-  background: var(--color-fondo-secundario);
 }
 
 .excursion-hero__image picture {
   display: block;
   height: 100%;
+  overflow: hidden;
+  background: var(--color-fondo-secundario);
 }
 
 .excursion-hero__image img {
@@ -145,29 +110,15 @@
   padding: 2.5rem 0;
 }
 
-.excursion-section + .excursion-section {
-  border-top: 1px solid rgb(78 93 66 / 0.2);
-}
-
 .excursion-section h2 {
   margin: 0;
   color: var(--color-jerarquia);
   letter-spacing: -0.01em;
 }
 
-/* Etiqueta de interfaz con función de encabezado de sección */
-.excursion-section .excursion-section__label {
-  font-family: var(--font-interfaz);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  line-height: 1.3;
-  text-transform: uppercase;
-  color: var(--color-texto);
-}
-
 .excursion-section__prose {
   max-width: 65ch;
+  margin-top: 1.5rem;
   line-height: 1.6;
 }
 
@@ -184,54 +135,117 @@
   line-height: 1.2;
 }
 
-/* Puntos clave de la ruta */
+/* Puntos clave: numerados en serif terracota, como los compromisos de la home */
 .highlights {
   display: grid;
-  gap: 1rem;
   max-width: 65ch;
   margin: 1rem 0 0;
   padding: 0;
   list-style: none;
   line-height: 1.6;
+  counter-reset: punto;
 }
 
 .highlights li {
-  padding-left: 1rem;
-  border-left: 2px solid var(--color-interactivo);
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  padding: 1rem 0;
+  border-top: 1px solid var(--linea-suave);
+  counter-increment: punto;
+}
+
+.highlights li::before {
+  grid-row: span 2;
+  content: counter(punto, decimal-leading-zero);
+  color: var(--color-interactivo);
+  font-family: var(--font-titulares);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: lining-nums;
 }
 
 .highlights strong {
   display: block;
+  color: var(--color-texto);
+  font-family: var(--font-titulares);
+  font-size: 1.1875rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
-/* Itinerario con filetes oliva al 20 % */
+/*
+ * Itinerario como trazado de ruta: una línea discontinua une las etapas,
+ * marcadas como puntos de un plano. La etapa del recinto de taula lleva la
+ * taula como marca.
+ */
 .itinerary {
-  margin: 1.5rem 0 0;
+  margin: 1.75rem 0 0;
   padding: 0;
-  border-bottom: 1px solid rgb(78 93 66 / 0.2);
   list-style: none;
 }
 
 .itinerary__step {
+  position: relative;
   display: grid;
   gap: 0.35rem;
-  padding: 1.1rem 0;
-  border-top: 1px solid rgb(78 93 66 / 0.2);
+  padding: 0 0 2rem 2.25rem;
+}
+
+.itinerary__step:last-child {
+  padding-bottom: 0;
+}
+
+/* Trazado entre etapas */
+.itinerary__step:not(:last-child)::before {
+  position: absolute;
+  top: 1.1rem;
+  bottom: 0.15rem;
+  left: 0.5rem;
+  border-left: 1px dashed var(--color-jerarquia);
+  content: "";
+}
+
+/* Marca de cada etapa */
+.itinerary__step::after {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.125rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1.5px solid var(--color-jerarquia);
+  background: var(--color-fondo-principal);
+  content: "";
+}
+
+.itinerary__step--taula::after {
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1.15rem;
+  border: 0;
+  background-color: var(--color-interactivo);
+  -webkit-mask: url("../images/icons/taula.svg") center / contain no-repeat;
+  mask: url("../images/icons/taula.svg") center / contain no-repeat;
 }
 
 .itinerary__time {
   margin: 0;
+  color: var(--color-jerarquia);
+  font-family: var(--font-registro);
+  font-size: 0.875rem;
   font-weight: 500;
+  line-height: 1.3;
   font-variant-numeric: tabular-nums;
 }
 
 .itinerary__title {
   margin: 0;
-  font-family: var(--font-interfaz);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.4;
+  color: var(--color-texto);
+  font-family: var(--font-titulares);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 .itinerary__text {
@@ -242,14 +256,27 @@
 
 /* Guía de la ruta: reutiliza .guide y solo ajusta el espaciado */
 .excursion-guide {
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
   padding: 0;
+}
+
+.excursion-guide .registro {
+  margin-top: 1.25rem;
+}
+
+.excursion-guide .guide__name {
+  margin-top: 0.4rem;
+}
+
+.excursion-guide__datos {
+  margin-top: 1.25rem;
 }
 
 /* Información práctica */
 .practical {
   display: grid;
   gap: 0.5rem;
+  margin-top: 1.75rem;
 }
 
 .practical .excursion-section__subtitle {
@@ -264,12 +291,31 @@
   display: grid;
   gap: 0.75rem;
   margin: 1rem 0 0;
-  padding-left: 1.1rem;
+  padding: 0;
+  list-style: none;
   line-height: 1.6;
 }
 
-.practical__list li::marker {
-  color: var(--color-interactivo);
+/* Marca cuadrada, como los datos del hero de la home */
+.practical__list li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.practical__list li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  background: var(--color-jerarquia);
+  content: "";
+}
+
+.practical__list .practical__item--no::before {
+  background: transparent;
+  outline: 1px solid var(--color-jerarquia);
+  outline-offset: -1px;
 }
 
 .practical__list strong {
@@ -322,6 +368,10 @@
 }
 
 /* Módulo de reserva */
+.booking__registro {
+  margin-bottom: 1rem;
+}
+
 .booking {
   margin: 0 1.5rem 3rem;
   padding: 1.75rem 1.5rem;
@@ -482,7 +532,7 @@
     font-size: 1.0625rem;
   }
 
-  .excursion-hero__image {
+  .excursion-hero__figure {
     margin: 0 2.5rem;
   }
 
@@ -504,13 +554,12 @@
   }
 
   .itinerary__step {
-    grid-template-columns: 5.5rem minmax(0, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: 1.25rem;
   }
 
-  .itinerary__time,
   .itinerary__title {
-    font-size: 1.0625rem;
+    font-size: 1.375rem;
   }
 
   .excursion-guide {
@@ -520,7 +569,7 @@
     gap: 2rem;
   }
 
-  .excursion-guide .guide__name {
+  .excursion-guide .registro {
     margin-top: 0;
   }
 
@@ -576,7 +625,7 @@
     padding: 0 0 2rem;
   }
 
-  .excursion-hero__image {
+  .excursion-hero__figure {
     margin: 0;
   }
 
@@ -616,17 +665,49 @@
     font-size: clamp(3rem, 4.2vw, 4rem);
   }
 
-  .excursion-hero__meta {
-    border-bottom: 0;
+  /* La lámina ocupa toda la altura disponible junto al texto */
+  .excursion-hero__figure {
+    display: flex;
+    flex-direction: column;
   }
 
   .excursion-hero__image {
+    flex: 1;
     aspect-ratio: auto;
     min-height: 26rem;
   }
 
   .excursion__body {
     margin-top: 2rem;
-    border-top: 1px solid rgb(78 93 66 / 0.2);
+  }
+}
+
+/* Rutas relacionadas, sobre papel milimetrado como en la home */
+.excursion-related {
+  padding-top: 3rem;
+}
+
+.excursion-related .section-head {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.excursion-related .routes__list {
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 48rem) {
+  .excursion-related {
+    padding-top: 4rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .excursion-related {
+    padding: 5rem 0 5.5rem;
+  }
+
+  .excursion-related .routes__list {
+    margin-top: 2.5rem;
   }
 }

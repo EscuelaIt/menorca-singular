@@ -1,0 +1,385 @@
+/*
+  Cuaderno de campo · home
+  ------------------------
+  Maquetación propia de la home (index.html). Los componentes del
+  lenguaje de cuaderno de campo (.registro, .taula, .fig, .pie, .datos,
+  .ficha, .section-head...) son compartidos y viven en main.css.
+
+  Mobile-first: estilos base para móvil y media queries para ampliar.
+*/
+
+/* Hero ------------------------------------------------------------------ */
+
+.hero__registro {
+  margin-bottom: 1.25rem;
+}
+
+.hero__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.hero__datos li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Cada dato lleva su marca: si la línea se parte, ningún separador queda suelto */
+.hero__datos li::before {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--color-jerarquia);
+  content: "";
+}
+
+.hero__figure {
+  margin: 0 1rem;
+}
+
+/* La lámina sustituye al fondo y los márgenes que main.css daba a la imagen */
+.hero .hero__image {
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+}
+
+.hero__image picture {
+  height: 100%;
+  overflow: hidden; /* la imagen se asienta (scale) sin tapar las marcas */
+}
+
+/* Cómo trabajamos -------------------------------------------------------- */
+
+.principios {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 3rem 1.5rem 3.5rem;
+}
+
+.principios__lista {
+  display: grid;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: principio;
+}
+
+.principio {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--linea-suave);
+  counter-increment: principio;
+}
+
+.principio:first-child {
+  border-top: 0;
+  padding-top: 0.5rem;
+}
+
+/* Numeración grande en serif: el terracota, en cuerpo grande, cumple 3:1 */
+.principio::before {
+  grid-row: span 2;
+  content: counter(principio, decimal-leading-zero);
+  color: var(--color-interactivo);
+  font-family: var(--font-titulares);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+
+.principio h3 {
+  margin: 0;
+  color: var(--color-texto);
+  font-family: var(--font-titulares);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.principio p {
+  max-width: 34rem;
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+}
+
+/* Rutas ----------------------------------------------------------------- */
+
+.rutas {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 3rem 1.5rem 3.5rem;
+}
+
+.rutas .section-head {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.rutas__lista {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+/* Guías ----------------------------------------------------------------- */
+
+.guides {
+  padding-top: 3.5rem;
+}
+
+.guides .guides__intro {
+  display: grid;
+  gap: 1rem;
+}
+
+.guides .section-head h2 {
+  max-width: 16ch;
+}
+
+.guides .guides__lead {
+  margin: 0;
+}
+
+.guide .fig img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.guide__datos {
+  margin-top: 1.25rem;
+}
+
+.guide__registro {
+  margin-top: 1.25rem;
+}
+
+.guide .guide__name {
+  margin-top: 0.4rem;
+}
+
+/* Antes de reservar ------------------------------------------------------ */
+
+.notas {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.notas__lista {
+  margin: 1.5rem 0 0;
+}
+
+.nota {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.nota:last-child {
+  border-bottom: 0;
+}
+
+.nota dt {
+  color: var(--color-jerarquia);
+  font-family: var(--font-titulares);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.nota dd {
+  max-width: 40rem;
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+}
+
+/* Cierre ---------------------------------------------------------------- */
+
+.closing {
+  padding-top: 2rem;
+}
+
+/* Tableta --------------------------------------------------------------- */
+
+@media (min-width: 48rem) {
+  .hero__figure {
+    margin: 0 2rem 3rem;
+  }
+
+  .principios {
+    padding: 4rem 2.5rem 4.5rem;
+  }
+
+  .rutas {
+    padding: 4rem 2.5rem 4.5rem;
+  }
+
+  .rutas__lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guides {
+    padding-top: 4.5rem;
+  }
+
+  .guides .guides__lead {
+    font-size: 1.125rem;
+  }
+
+  .notas {
+    padding: 0 2.5rem 5rem;
+  }
+
+  .nota {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .nota dd {
+    margin: 0;
+    font-size: 1.0625rem;
+  }
+}
+
+/* Escritorio ------------------------------------------------------------- */
+
+@media (min-width: 64rem) {
+  .hero__figure {
+    margin: 0;
+  }
+
+  .hero .hero__image {
+    aspect-ratio: 1.1;
+  }
+
+  .hero h1 {
+    max-width: 13ch;
+  }
+
+  .principios {
+    width: calc(100% - 5rem);
+    padding: 1rem 0 6rem;
+  }
+
+  .principios__lista {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .principio,
+  .principio:first-child {
+    grid-template-columns: 1fr;
+    padding: 0;
+    border-top: 0;
+  }
+
+  .principio::before {
+    grid-row: auto;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+
+  .principio h3 {
+    font-size: 1.5rem;
+  }
+
+  .principio p {
+    margin-top: 0.75rem;
+    font-size: 1.0625rem;
+  }
+
+  .rutas {
+    width: calc(100% - 5rem);
+    padding: 5rem 0 5.5rem;
+  }
+
+  .rutas__lista {
+    gap: 2.5rem;
+    margin-top: 2.75rem;
+  }
+
+  .guides {
+    padding-top: 6rem;
+  }
+
+  .guides .guides__intro {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: end;
+    gap: 4rem;
+  }
+
+  .guides .section-head h2 {
+    max-width: 14ch;
+  }
+
+  .guides .guides__lead {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .notas {
+    width: calc(100% - 5rem);
+    padding: 0 0 6rem;
+  }
+
+  .notas__lista {
+    margin-top: 2.5rem;
+  }
+
+  .nota {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 4rem;
+    padding: 1.75rem 0;
+  }
+
+  .nota dt {
+    font-size: 1.625rem;
+  }
+
+  .nota dd {
+    font-size: 1.125rem;
+  }
+}
+
+/* Animaciones: misma lógica que animaciones.css, aplicada a los bloques nuevos */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__figure .pie {
+    animation: aparecer 900ms var(--anim-ease) 900ms both;
+  }
+
+  @supports (animation-timeline: view()) {
+    .section-head,
+    .principio,
+    .ficha,
+    .nota {
+      animation: aparecer linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 25%;
+    }
+
+    /* Reveal corto: así no quedan columnas a medio aparecer al hacer scroll */
+    .principio:nth-child(2),
+    .ficha:nth-child(2),
+    .nota:nth-child(2) {
+      animation-range: entry 10% cover 25%;
+    }
+
+    .principio:nth-child(3),
+    .nota:nth-child(3) {
+      animation-range: entry 15% cover 25%;
+    }
+  }
+}

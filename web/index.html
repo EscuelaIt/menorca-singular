@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <meta
       name="description"
       content="Descubre Menorca con experiencias culturales en grupos reducidos, guiadas por historiadores y expertos locales."
     >
     <meta name="theme-color" content="#f7f4ef">
-    <title>Menorca Singular | Historia y cultura a otro ritmo</title>
+    <title>Menorca Singular | Menorca se lee en la piedra</title>
+    <link rel="icon" href="images/favicon/favicon.ico" sizes="48x48">
+    <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animaciones.css">
+    <link rel="stylesheet" href="css/cuaderno.css">
   </head>
   <body>
     <header class="site-header">
       <div class="site-header__inner">
         <a class="site-header__brand" href="./" aria-label="Menorca Singular, inicio">
           <img
-            src="images/logo-menorca-singular-simbolo.svg"
+            src="images/logo-menorca-singular-taula.svg"
             alt=""
-            width="52"
+            width="40"
             height="35"
           >
           <span class="site-header__wordmark">Menorca<br> Singular</span>
@@ -63,242 +67,260 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__copy">
-          <h1 id="hero-title">Descubre la historia oculta de la isla.</h1>
+          <p class="registro hero__registro">
+            <span class="taula" aria-hidden="true"></span>
+            Rutas culturales en Menorca
+          </p>
+          <h1 id="hero-title">Menorca se lee en la piedra</h1>
           <p class="hero__description">
-            Experiencias culturales en Menorca guiadas por historiadores,
-            arquitectos y expertos locales. Explora el patrimonio balear en
-            grupos de máximo 8 personas y a un ritmo pausado.
+            Recorre poblados talayóticos y palacios de Ciutadella con una
+            arqueóloga y un historiador del arte que los estudian. En grupos
+            de ocho personas y al ritmo de un paseo.
           </p>
           <a class="button hero__button" href="#rutas">
             Explorar rutas
             <span class="button__arrow" aria-hidden="true"></span>
           </a>
-          <p class="hero__note">Disponibilidad limitada para esta temporada.</p>
+          <ul class="hero__datos" aria-label="Datos clave">
+            <li>Desde 45 €</li>
+            <li>Máx. 8 personas</li>
+            <li>Cancelación gratuita hasta 24 h antes</li>
+          </ul>
         </div>
 
-        <figure class="hero__image">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="
-                images/hero-image/hero-image-mobile-800w.webp 800w,
-                images/hero-image/hero-image-desktop-1920w.webp 1920w
-              "
-              sizes="(min-width: 64rem) 50vw, 100vw"
-            >
-            <img
-              src="images/hero-image/hero-image-mobile-800w.jpg"
-              srcset="
-                images/hero-image/hero-image-mobile-800w.jpg 800w,
-                images/hero-image/hero-image-desktop-1920w.jpg 1920w
-              "
-              sizes="(min-width: 64rem) 50vw, 100vw"
-              alt="Calle histórica de Menorca, flanqueada por casas de piedra y balcones"
-              width="800"
-              height="537"
-              fetchpriority="high"
-            >
-          </picture>
+        <figure class="hero__figure">
+          <div class="hero__image fig">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="
+                  images/hero-image/hero-image-mobile-800w.webp 800w,
+                  images/hero-image/hero-image-desktop-1920w.webp 1920w
+                "
+                sizes="(min-width: 64rem) 50vw, 100vw"
+              >
+              <img
+                src="images/hero-image/hero-image-mobile-800w.jpg"
+                srcset="
+                  images/hero-image/hero-image-mobile-800w.jpg 800w,
+                  images/hero-image/hero-image-desktop-1920w.jpg 1920w
+                "
+                sizes="(min-width: 64rem) 50vw, 100vw"
+                alt="Calle histórica de Menorca, flanqueada por casas de piedra y balcones"
+                width="800"
+                height="537"
+                fetchpriority="high"
+              >
+            </picture>
+          </div>
+          <figcaption class="pie">
+            <span>Fig. 01 — Casco antiguo con la luz de la tarde</span>
+          </figcaption>
         </figure>
       </section>
 
-      <section class="manifesto" aria-labelledby="manifesto-title">
-        <h2 id="manifesto-title">Una mirada distinta al Mediterráneo.</h2>
-
-        <ul class="manifesto__pillars">
-          <li class="pillar">
-            <img
-              class="pillar__icon"
-              src="images/icons/icono-grupo.svg"
-              alt=""
-              width="64"
-              height="48"
-            >
-            <h3 class="pillar__title">Intimidad garantizada.</h3>
-            <p class="pillar__text">
-              Huimos de las aglomeraciones. Grupos de máximo 8 personas para
-              asegurar un diálogo real con el experto y el entorno.
-            </p>
-          </li>
-          <li class="pillar">
-            <img
-              class="pillar__icon"
-              src="images/icons/icono-llave.svg"
-              alt=""
-              width="48"
-              height="48"
-            >
-            <h3 class="pillar__title">Acceso exclusivo.</h3>
-            <p class="pillar__text">
-              Abrimos puertas cerradas. Desde el silencio de los yacimientos
-              megalíticos hasta los patios señoriales privados que no aparecen
-              en las guías convencionales.
-            </p>
-          </li>
-          <li class="pillar">
-            <img
-              class="pillar__icon"
-              src="images/icons/icono-reloj.svg"
-              alt=""
-              width="48"
-              height="48"
-            >
-            <h3 class="pillar__title">Rigor y pausa.</h3>
-            <p class="pillar__text">
-              Sin prisas, guiones memorizados ni banderas en alto. Nuestras
-              rutas son curadas para mentes curiosas que buscan profundizar en
-              la identidad de Menorca.
-            </p>
-          </li>
-        </ul>
-      </section>
-
-      <section class="routes" id="rutas" aria-labelledby="routes-title">
-        <h2 id="routes-title">Itinerarios curados para viajeros curiosos.</h2>
-
-        <div class="routes__list">
-          <article class="route-card">
-            <img
-              class="route-card__image"
-              src="images/rutas/ruta-talayotica-provisional.jpg"
-              alt="Taula talayótica rodeada de muros de piedra seca al atardecer"
-              width="536"
-              height="264"
-              loading="lazy"
-            >
-            <div class="route-card__body">
-              <ul class="route-card__tags" aria-label="Categorías">
-                <li>Arqueología</li>
-                <li>Nivel fácil</li>
-              </ul>
-              <h3 class="route-card__title">Ruta talayótica al atardecer</h3>
-              <ul class="route-card__meta">
-                <li>
-                  <img src="images/icons/icono-duracion.svg" alt="" width="20" height="20">
-                  <span class="visually-hidden">Duración:</span> 3 horas
-                </li>
-                <li>
-                  <img src="images/icons/icono-personas.svg" alt="" width="20" height="20">
-                  Máx. 8 personas
-                </li>
-                <li class="route-card__price">
-                  <span class="visually-hidden">Precio:</span> 55 €
-                </li>
-              </ul>
-              <p class="route-card__text">
-                El silencio de la prehistoria. Visitamos los yacimientos
-                megalíticos más imponentes de la isla acompañados por la luz
-                dorada de la tarde, comprendiendo la vida de los primeros
-                pobladores.
-              </p>
-              <a class="button route-card__button" href="ruta-talayotica.html">
-                Ver itinerario
-                <span class="visually-hidden">: Ruta talayótica al atardecer</span>
-                <span class="button__arrow" aria-hidden="true"></span>
-              </a>
-            </div>
-          </article>
-
-          <article class="route-card">
-            <img
-              class="route-card__image"
-              src="images/rutas/ciutadella-secreta-provisional.jpg"
-              alt="Claustro de piedra con arcos y un pozo central en Ciutadella"
-              width="508"
-              height="264"
-              loading="lazy"
-            >
-            <div class="route-card__body">
-              <ul class="route-card__tags" aria-label="Categorías">
-                <li>Arquitectura e Historia</li>
-                <li>Nivel fácil</li>
-              </ul>
-              <h3 class="route-card__title">Ciutadella secreta: palacios y claustros</h3>
-              <ul class="route-card__meta">
-                <li>
-                  <img src="images/icons/icono-duracion.svg" alt="" width="20" height="20">
-                  <span class="visually-hidden">Duración:</span> 2.5 horas
-                </li>
-                <li>
-                  <img src="images/icons/icono-personas.svg" alt="" width="20" height="20">
-                  Máx. 8 personas
-                </li>
-                <li class="route-card__price">
-                  <span class="visually-hidden">Precio:</span> 45 €
-                </li>
-              </ul>
-              <p class="route-card__text">
-                Un recorrido a puerta cerrada por la aristocracia menorquina.
-                Descubre la intimidad de los patios señoriales y la influencia
-                británica grabada en la piedra de sus calles más silenciosas.
-              </p>
-              <a class="button route-card__button" href="#ciutadella-secreta">
-                Ver itinerario
-                <span class="visually-hidden">: Ciutadella secreta: palacios y claustros</span>
-                <span class="button__arrow" aria-hidden="true"></span>
-              </a>
-            </div>
-          </article>
+      <section class="principios" aria-labelledby="principios-title">
+        <div class="section-head">
+          <p class="registro">
+            <span class="taula" aria-hidden="true"></span>
+            01 · Cómo trabajamos
+          </p>
+          <h2 id="principios-title">Tres compromisos en cada salida</h2>
         </div>
 
-        <div class="routes__footer">
-          <a class="button button--secondary routes__more" href="rutas.html">
-            Ver todas las rutas
-            <span class="button__arrow" aria-hidden="true"></span>
-          </a>
-        </div>
+        <ol class="principios__lista">
+          <li class="principio">
+            <h3>Ocho personas como máximo</h3>
+            <p>
+              Es el tamaño que permite preguntar, detenerse donde haga falta
+              y escuchar al guía sin micrófono.
+            </p>
+          </li>
+          <li class="principio">
+            <h3>Puertas que suelen estar cerradas</h3>
+            <p>
+              Entramos en patios señoriales privados de Ciutadella y en
+              rincones que no aparecen en las guías convencionales.
+            </p>
+          </li>
+          <li class="principio">
+            <h3>La hora justa</h3>
+            <p>
+              Visitamos los yacimientos al final de la tarde, cuando se
+              marchan los grupos grandes y la luz baja revela relieves que a
+              mediodía no se ven.
+            </p>
+          </li>
+        </ol>
       </section>
+
+      <div class="banda-cuadricula">
+        <section class="rutas" id="rutas" aria-labelledby="rutas-title">
+          <div class="section-head">
+            <p class="registro">
+              <span class="taula" aria-hidden="true"></span>
+              02 · Rutas
+            </p>
+            <h2 id="rutas-title">Elige por dónde empezar</h2>
+          </div>
+
+          <div class="rutas__lista">
+            <article class="ficha">
+              <figure class="ficha__figure">
+                <div class="fig">
+                  <img
+                    src="images/rutas/ruta-talayotica-provisional.jpg"
+                    alt="Monumento megalítico rodeado de muros de piedra seca al atardecer"
+                    width="536"
+                    height="264"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption class="pie">
+                  <span>Torre d'en Galmés, Alaior</span>
+                  <span class="pie__coord">39°54′ N · 4°07′ E</span>
+                </figcaption>
+              </figure>
+
+              <div class="ficha__body">
+                <p class="registro ficha__registro">Ruta nº 01 · Arqueología</p>
+                <h3 class="ficha__title">Ruta talayótica al atardecer</h3>
+                <p class="ficha__text">
+                  Recorremos Torre d'en Galmés cuando el yacimiento se vacía:
+                  las casas prehistóricas, el recinto de taula y la puesta de
+                  sol sobre la costa sur.
+                </p>
+                <dl class="datos datos--4 ficha__datos">
+                  <div><dt>Duración</dt><dd>3 h</dd></div>
+                  <div><dt>Grupo</dt><dd>Máx. 8</dd></div>
+                  <div><dt>Nivel</dt><dd>Fácil</dd></div>
+                  <div><dt>Precio</dt><dd>55 €</dd></div>
+                </dl>
+                <a class="button ficha__button" href="ruta-talayotica.html">
+                  Ver itinerario
+                  <span class="visually-hidden">: Ruta talayótica al atardecer</span>
+                  <span class="button__arrow" aria-hidden="true"></span>
+                </a>
+              </div>
+            </article>
+
+            <article class="ficha">
+              <figure class="ficha__figure">
+                <div class="fig">
+                  <img
+                    src="images/rutas/ciutadella-secreta-provisional.jpg"
+                    alt="Claustro de piedra con arcos y un pozo central en Ciutadella"
+                    width="508"
+                    height="264"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption class="pie">
+                  <span>Casco antiguo, Ciutadella</span>
+                  <span class="pie__coord">40°00′ N · 3°50′ E</span>
+                </figcaption>
+              </figure>
+
+              <div class="ficha__body">
+                <p class="registro ficha__registro">Ruta nº 02 · Arquitectura e historia</p>
+                <h3 class="ficha__title">Ciutadella secreta: palacios y claustros</h3>
+                <p class="ficha__text">
+                  Patios señoriales que no abren al público y fachadas de
+                  marés del siglo XVIII, leídas piedra a piedra con un
+                  historiador del arte.
+                </p>
+                <dl class="datos datos--4 ficha__datos">
+                  <div><dt>Duración</dt><dd>2,5 h</dd></div>
+                  <div><dt>Grupo</dt><dd>Máx. 8</dd></div>
+                  <div><dt>Nivel</dt><dd>Fácil</dd></div>
+                  <div><dt>Precio</dt><dd>45 €</dd></div>
+                </dl>
+                <a class="button ficha__button" href="#ciutadella-secreta">
+                  Ver itinerario
+                  <span class="visually-hidden">: Ciutadella secreta: palacios y claustros</span>
+                  <span class="button__arrow" aria-hidden="true"></span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="routes__footer">
+            <a class="button button--secondary routes__more" href="rutas.html">
+              Ver todas las rutas
+              <span class="button__arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </section>
+      </div>
 
       <section class="guides" id="guias" aria-labelledby="guides-title">
-        <div class="guides__intro">
-          <h2 id="guides-title">Quienes te acompañan.</h2>
-          <p class="guides__lead">
-            No somos animadores turísticos. Somos investigadores, divulgadores
-            y enamorados del patrimonio insular, dedicados a traducir la
-            historia en un relato fascinante.
+        <div class="section-head">
+          <p class="registro">
+            <span class="taula" aria-hidden="true"></span>
+            03 · Guías
           </p>
+          <div class="guides__intro">
+            <h2 id="guides-title">Te guían quienes lo investigan</h2>
+            <p class="guides__lead">
+              Marc y Aina dedican su trabajo a estudiar el patrimonio de
+              Menorca. En cada salida cuentan lo que se sabe y también lo que
+              todavía se discute.
+            </p>
+          </div>
         </div>
 
         <ul class="guides__list">
           <li class="guide">
-            <picture>
-              <source type="image/webp" srcset="images/guias/marc.webp">
-              <img
-                class="guide__image"
-                src="images/guias/marc.jpg"
-                alt="Retrato de Marc frente a una fachada de piedra de marés"
-                width="509"
-                height="312"
-                loading="lazy"
-              >
-            </picture>
+            <div class="fig">
+              <picture>
+                <source type="image/webp" srcset="images/guias/marc.webp">
+                <img
+                  class="guide__image"
+                  src="images/guias/marc.jpg"
+                  alt="Retrato de Marc frente a una fachada de piedra de marés"
+                  width="509"
+                  height="312"
+                  loading="lazy"
+                >
+              </picture>
+            </div>
+            <p class="registro guide__registro">Historiador del arte</p>
             <h3 class="guide__name">Marc</h3>
-            <p class="guide__role">Historiador del Arte</p>
             <p class="guide__text">
-              Especialista en arquitectura del siglo XVIII. Te ayudará a leer
-              las fachadas de Ciutadella y Maó como si fueran un libro abierto,
-              revelando los secretos que esconde la piedra de marés.
+              Especialista en arquitectura del siglo XVIII. Enseña a leer las
+              fachadas de Ciutadella y Maó: qué cuenta cada escudo, cada
+              balcón y cada sillar de marés.
             </p>
+            <dl class="datos datos--texto guide__datos">
+              <div><dt>Especialidad</dt><dd>Arquitectura señorial</dd></div>
+              <div><dt>Guía en</dt><dd>Ciutadella secreta</dd></div>
+            </dl>
           </li>
           <li class="guide">
-            <picture>
-              <source type="image/webp" srcset="images/guias/aina.webp">
-              <img
-                class="guide__image"
-                src="images/guias/aina.jpg"
-                alt="Retrato de Aina junto a un monumento talayótico de piedra"
-                width="456"
-                height="312"
-                loading="lazy"
-              >
-            </picture>
-            <h3 class="guide__name">Aina</h3>
-            <p class="guide__role">Arqueóloga</p>
+            <div class="fig">
+              <picture>
+                <source type="image/webp" srcset="images/guias/aina.webp">
+                <img
+                  class="guide__image"
+                  src="images/guias/aina.jpg"
+                  alt="Retrato de Aina junto a un monumento talayótico de piedra"
+                  width="456"
+                  height="312"
+                  loading="lazy"
+                >
+              </picture>
+            </div>
+            <p class="registro guide__registro">Arqueóloga</p>
+            <h3 class="guide__name">Aina Pons</h3>
             <p class="guide__text">
-              Con más de diez años excavando en yacimientos talayóticos, Aina
-              transforma las estructuras milenarias en historias vivas sobre
-              nuestros antepasados mediterráneos.
+              Lleva más de diez años en campañas de excavación en yacimientos
+              talayóticos. Explica cada muro a partir de lo que se ha
+              encontrado en él.
             </p>
+            <dl class="datos datos--texto guide__datos">
+              <div><dt>Especialidad</dt><dd>Cultura talayótica</dd></div>
+              <div><dt>Guía en</dt><dd>Ruta talayótica</dd></div>
+            </dl>
           </li>
         </ul>
 
@@ -310,63 +332,46 @@
         </div>
       </section>
 
-      <section class="trust" aria-labelledby="trust-title">
-        <h2 id="trust-title">Viaja con la tranquilidad de tenerlo todo claro.</h2>
+      <section class="notas" aria-labelledby="notas-title">
+        <div class="section-head">
+          <p class="registro">
+            <span class="taula" aria-hidden="true"></span>
+            04 · Antes de reservar
+          </p>
+          <h2 id="notas-title">Lo práctico, claro desde el principio</h2>
+        </div>
 
-        <ul class="trust__list">
-          <li class="trust-item">
-            <img
-              class="trust-item__icon"
-              src="images/icons/icono-ubicacion.svg"
-              alt=""
-              width="48"
-              height="48"
-            >
-            <h3 class="trust-item__title">Puntos de encuentro precisos.</h3>
-            <p class="trust-item__text">
-              Recibirás las coordenadas exactas y fotografías del lugar de
-              inicio 48 horas antes. Siempre en ubicaciones céntricas y de
-              fácil acceso.
-            </p>
-          </li>
-          <li class="trust-item">
-            <img
-              class="trust-item__icon"
-              src="images/icons/icono-pasos.svg"
-              alt=""
-              width="48"
-              height="48"
-            >
-            <h3 class="trust-item__title">Exigencia física transparente.</h3>
-            <p class="trust-item__text">
-              Nuestras rutas están pensadas para caminar sin prisa, pero
-              detallamos el nivel de esfuerzo (cuestas, escalones o terreno
-              irregular) de forma honesta en cada ficha de actividad.
-            </p>
-          </li>
-          <li class="trust-item">
-            <img
-              class="trust-item__icon"
-              src="images/icons/icono-calendario.svg"
-              alt=""
-              width="48"
-              height="48"
-            >
-            <h3 class="trust-item__title">Cancelación flexible.</h3>
-            <p class="trust-item__text">
-              Sabemos que en los viajes los planes cambian. Modifica o cancela
-              tu reserva sin coste alguno hasta 24 horas antes del inicio de la
-              experiencia.
-            </p>
-          </li>
-        </ul>
+        <dl class="notas__lista">
+          <div class="nota">
+            <dt>Punto de encuentro</dt>
+            <dd>
+              Recibirás las coordenadas GPS y una fotografía del lugar 48
+              horas antes. Siempre en ubicaciones céntricas y de fácil acceso.
+            </dd>
+          </div>
+          <div class="nota">
+            <dt>Esfuerzo físico</dt>
+            <dd>
+              Caminamos sin prisa, pero cada ficha detalla las cuestas, los
+              escalones y el tipo de terreno para que sepas qué esperar.
+            </dd>
+          </div>
+          <div class="nota">
+            <dt>Cancelación</dt>
+            <dd>
+              Gratuita hasta 24 horas antes del inicio. También puedes
+              cambiar la fecha desde tu área del viajero.
+            </dd>
+          </div>
+        </dl>
       </section>
 
       <section class="closing" id="reservar" aria-labelledby="closing-title">
-        <h2 id="closing-title">¿Listo para redescubrir Menorca?</h2>
+        <span class="taula closing__taula" aria-hidden="true"></span>
+        <h2 id="closing-title">Reserva tu plaza en el próximo grupo</h2>
         <p class="closing__text">
-          Consulta la disponibilidad de nuestros guías para los próximos días
-          y asegura tu plaza en un grupo reducido.
+          Cada salida tiene ocho plazas. Consulta las fechas de las próximas
+          semanas y elige la que mejor te encaje.
         </p>
         <a class="button closing__button" href="reservar.html">
           Consultar fechas disponibles

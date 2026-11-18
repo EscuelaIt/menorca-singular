@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <meta
       name="description"
       content="Ruta talayótica al atardecer por Torre d'en Galmés, guiada por una arqueóloga especialista. 3 horas, grupos de máximo 8 personas, 55 € con entradas incluidas."
     >
     <meta name="theme-color" content="#f7f4ef">
     <title>Ruta talayótica al atardecer | Menorca Singular</title>
+    <link rel="icon" href="images/favicon/favicon.ico" sizes="48x48">
+    <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/excursion.css">
@@ -21,9 +24,9 @@
       <div class="site-header__inner">
         <a class="site-header__brand" href="./" aria-label="Menorca Singular, inicio">
           <img
-            src="images/logo-menorca-singular-simbolo.svg"
+            src="images/logo-menorca-singular-taula.svg"
             alt=""
-            width="52"
+            width="40"
             height="35"
           >
           <span class="site-header__wordmark">Menorca<br> Singular</span>
@@ -72,65 +75,66 @@
       <div class="excursion__layout">
         <div class="excursion-hero">
           <div class="excursion-hero__copy">
-            <ul class="excursion-hero__tags" aria-label="Categorías">
-              <li>Arqueología</li>
-              <li>Nivel fácil</li>
-            </ul>
+            <p class="registro">
+              <span class="taula" aria-hidden="true"></span>
+              Ruta nº 01 · Arqueología · Nivel fácil
+            </p>
             <h1>Ruta talayótica al atardecer</h1>
             <p class="excursion-hero__lead">
-              Un recorrido pausado por los santuarios megalíticos más
-              enigmáticos de Menorca, guiado por un arqueólogo especialista
-              mientras la luz dorada transforma el paisaje de la isla.
+              Un paseo pausado por Torre d’en Galmés, uno de los grandes
+              poblados talayóticos de Menorca, con una arqueóloga que ha
+              excavado en yacimientos como este. Llegamos al recinto de taula
+              cuando la luz de la tarde empieza a caer.
             </p>
-            <ul class="excursion-hero__meta">
-              <li>
-                <img src="images/icons/icono-duracion.svg" alt="" width="20" height="20">
-                <span class="visually-hidden">Duración:</span> 3 horas
-              </li>
-              <li>
-                <img src="images/icons/icono-personas.svg" alt="" width="20" height="20">
-                <span class="visually-hidden">Grupo:</span> Máx. 8 personas
-              </li>
-              <li>
-                <img src="images/icons/icono-idioma.svg" alt="" width="20" height="20">
-                <span class="visually-hidden">Idiomas:</span> Español / Inglés
-              </li>
-              <li>
-                <img src="images/icons/icono-ubicacion.svg" alt="" width="20" height="20">
-                <span class="visually-hidden">Punto de inicio:</span> Poblado de Torre d’en Galmés (Alaior)
-              </li>
-            </ul>
+            <dl class="datos excursion-hero__datos">
+              <div><dt>Duración</dt><dd>3 horas</dd></div>
+              <div><dt>Grupo</dt><dd>Máx. 8 personas</dd></div>
+              <div><dt>Idiomas</dt><dd>Español / Inglés</dd></div>
+              <div><dt>Punto de inicio</dt><dd>Torre d’en Galmés, Alaior</dd></div>
+            </dl>
           </div>
 
-          <figure class="excursion-hero__image">
-            <picture>
-              <source
-                type="image/webp"
-                srcset="
-                  images/ruta-talayotica-optimized/ruta-talayotica-v2-mobile-800w.webp 800w,
-                  images/ruta-talayotica-optimized/ruta-talayotica-v2-desktop-1600w.webp 1600w
-                "
-                sizes="(min-width: 72rem) 25vw, (min-width: 64rem) 60vw, 100vw"
-              >
-              <img
-                src="images/ruta-talayotica-optimized/ruta-talayotica-v2-mobile-800w.jpg"
-                srcset="
-                  images/ruta-talayotica-optimized/ruta-talayotica-v2-mobile-800w.jpg 800w,
-                  images/ruta-talayotica-optimized/ruta-talayotica-v2-desktop-1600w.jpg 1600w
-                "
-                sizes="(min-width: 72rem) 25vw, (min-width: 64rem) 60vw, 100vw"
-                alt="Taula de Torre d’en Galmés, dos grandes losas de piedra en forma de T sobre un muro de piedra seca, iluminada por la luz dorada de la tarde"
-                width="800"
-                height="447"
-                fetchpriority="high"
-              >
-            </picture>
+          <figure class="excursion-hero__figure">
+            <div class="excursion-hero__image fig">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="
+                    images/ruta-talayotica-optimized/ruta-talayotica-v2-mobile-800w.webp 800w,
+                    images/ruta-talayotica-optimized/ruta-talayotica-v2-desktop-1600w.webp 1600w
+                  "
+                  sizes="(min-width: 72rem) 25vw, (min-width: 64rem) 60vw, 100vw"
+                >
+                <img
+                  src="images/ruta-talayotica-optimized/ruta-talayotica-v2-mobile-800w.jpg"
+                  srcset="
+                    images/ruta-talayotica-optimized/ruta-talayotica-v2-mobile-800w.jpg 800w,
+                    images/ruta-talayotica-optimized/ruta-talayotica-v2-desktop-1600w.jpg 1600w
+                  "
+                  sizes="(min-width: 72rem) 25vw, (min-width: 64rem) 60vw, 100vw"
+                  alt="Monumento megalítico de grandes losas de piedra entre matorral, iluminado por la luz dorada de la tarde"
+                  width="800"
+                  height="447"
+                  fetchpriority="high"
+                >
+              </picture>
+            </div>
+            <figcaption class="pie">
+              <span>Fig. 01 — Megalitos con la luz de la tarde</span>
+              <span class="pie__coord">39°54′ N · 4°07′ E</span>
+            </figcaption>
           </figure>
         </div>
 
         <div class="excursion__body">
           <section class="excursion-section" aria-labelledby="narrativa-title">
-            <h2 id="narrativa-title">El silencio de la prehistoria bajo la luz de la tarde.</h2>
+            <div class="section-head">
+              <p class="registro">
+                <span class="taula" aria-hidden="true"></span>
+                01 · La ruta
+              </p>
+              <h2 id="narrativa-title">El silencio de la prehistoria bajo la luz de la tarde</h2>
+            </div>
             <div class="excursion-section__prose">
               <p>
                 Hace más de tres mil años, los primeros pobladores de Menorca
@@ -142,43 +146,48 @@
                 magnetismo.
               </p>
               <p>
-                Hemos diseñado esta ruta a última hora de la tarde, cuando los
+                Por eso hacemos esta ruta a última hora de la tarde, cuando los
                 autobuses turísticos abandonan los yacimientos y el campo
-                menorquín recupera su calma original. Lejos de recitar fechas
-                de memoria, leeremos juntos las piedras para entender cómo
-                vivían, qué miraban en el cielo y qué rituales celebraban las
-                comunidades talayóticas antes de que cayera la noche.
+                menorquín recupera la calma. Leeremos juntos las piedras para
+                entender cómo vivían, qué miraban en el cielo y qué rituales
+                celebraban las comunidades talayóticas antes de que cayera la
+                noche.
               </p>
             </div>
 
             <h3 class="excursion-section__subtitle">Lo que hace única esta ruta</h3>
-            <ul class="highlights">
+            <ol class="highlights">
               <li>
-                <strong>Lectura arqueológica de autor.</strong>
+                <strong>Lectura arqueológica de autor</strong>
                 Comprenderás el porqué de la orientación astronómica de las
                 taulas y la ingeniería detrás de cada muro megalítico.
               </li>
               <li>
-                <strong>Atmósfera íntima.</strong>
-                Al caminar en un grupo de máximo 8 personas, el silencio del
-                entorno se convierte en parte fundamental de la experiencia.
+                <strong>Un grupo pequeño</strong>
+                Con ocho personas como máximo, el silencio del entorno forma
+                parte de la experiencia.
               </li>
               <li>
-                <strong>La hora dorada.</strong>
-                El sol bajo proyecta sombras largas sobre la piedra caliza,
-                revelando relieves y grabados imposibles de apreciar a plena
-                luz del día.
+                <strong>La hora dorada</strong>
+                El sol bajo proyecta sombras largas sobre la piedra caliza y
+                revela relieves que a plena luz del día no se aprecian.
               </li>
-            </ul>
+            </ol>
           </section>
 
           <section class="excursion-section" aria-labelledby="itinerario-title">
-            <h2 id="itinerario-title">El recorrido, etapa a etapa.</h2>
+            <div class="section-head">
+              <p class="registro">
+                <span class="taula" aria-hidden="true"></span>
+                02 · Itinerario
+              </p>
+              <h2 id="itinerario-title">El recorrido, etapa a etapa</h2>
+            </div>
             <ol class="itinerary">
               <li class="itinerary__step">
                 <p class="itinerary__time">18:00 h</p>
                 <div>
-                  <h3 class="itinerary__title">Encuentro y contextualización del paisaje</h3>
+                  <h3 class="itinerary__title">Encuentro y lectura del paisaje</h3>
                   <p class="itinerary__text">
                     Nos reunimos junto a la entrada de Torre d’en Galmés. Antes
                     de cruzar el umbral del poblado, situaremos el enclave en el
@@ -199,16 +208,15 @@
                   </p>
                 </div>
               </li>
-              <li class="itinerary__step">
+              <li class="itinerary__step itinerary__step--taula">
                 <p class="itinerary__time">19:30 h</p>
                 <div>
-                  <h3 class="itinerary__title">El recinto de Taula y el mundo simbólico</h3>
+                  <h3 class="itinerary__title">El recinto de taula y el mundo simbólico</h3>
                   <p class="itinerary__text">
-                    Llegamos al corazón espiritual del asentamiento en el
-                    momento en que la luz empieza a teñirse de tonos cálidos.
-                    Debatiremos las principales teorías científicas sobre el
-                    culto y la astronomía talayótica frente a su imponente
-                    monumento central.
+                    Llegamos al corazón ceremonial del poblado cuando la luz
+                    empieza a teñirse de tonos cálidos. Frente al monumento
+                    central, repasaremos las principales teorías científicas
+                    sobre el culto y la astronomía talayótica.
                   </p>
                 </div>
               </li>
@@ -217,11 +225,10 @@
                 <div>
                   <h3 class="itinerary__title">Mirador al atardecer y cierre</h3>
                   <p class="itinerary__text">
-                    Terminamos el paseo en el punto más alto del yacimiento
-                    contemplando la puesta de sol sobre el horizonte marino, con
-                    tiempo abierto para preguntas, recomendaciones
-                    bibliográficas y charla distendida antes de regresar al
-                    punto de inicio (21:00 h).
+                    Terminamos en el punto más alto del yacimiento, viendo
+                    ponerse el sol sobre el mar. Queda tiempo para preguntas y
+                    recomendaciones de lectura antes de volver al punto de
+                    inicio, hacia las 21:00 h.
                   </p>
                 </div>
               </li>
@@ -229,48 +236,65 @@
           </section>
 
           <section class="excursion-section" aria-labelledby="guia-title">
-            <h2 class="excursion-section__label" id="guia-title">Quién te acompaña</h2>
+            <div class="section-head">
+              <p class="registro">
+                <span class="taula" aria-hidden="true"></span>
+                03 · Tu guía
+              </p>
+              <h2 id="guia-title">Quién te acompaña</h2>
+            </div>
             <div class="guide excursion-guide">
-              <picture>
-                <source type="image/webp" srcset="images/guias/aina.webp">
-                <img
-                  class="guide__image"
-                  src="images/guias/aina.jpg"
-                  alt="Retrato de Aina Pons junto a un monumento talayótico de piedra"
-                  width="456"
-                  height="312"
-                  loading="lazy"
-                >
-              </picture>
+              <div class="fig">
+                <picture>
+                  <source type="image/webp" srcset="images/guias/aina.webp">
+                  <img
+                    class="guide__image"
+                    src="images/guias/aina.jpg"
+                    alt="Retrato de Aina Pons junto a un monumento talayótico de piedra"
+                    width="456"
+                    height="312"
+                    loading="lazy"
+                  >
+                </picture>
+              </div>
               <div>
+                <p class="registro">Arqueóloga e investigadora</p>
                 <h3 class="guide__name">Aina Pons</h3>
-                <p class="guide__role">Arqueóloga e investigadora</p>
                 <p class="guide__text">
                   Licenciada en Historia y Arqueología por la Universitat de
-                  les Illes Balears, Aina ha participado durante más de diez
-                  años en campañas de excavación y conservación en yacimientos
-                  talayóticos de Menorca. Su enfoque combina el rigor científico
-                  más actual con una capacidad natural para transformar
-                  estructuras milenarias en relatos humanos cercanos y
-                  comprensibles.
+                  les Illes Balears, lleva más de diez años participando en
+                  campañas de excavación y conservación en yacimientos
+                  talayóticos de Menorca. En la ruta explica cada estructura a
+                  partir de lo que se ha encontrado en ella y de lo que todavía
+                  se discute.
                 </p>
+                <dl class="datos datos--texto excursion-guide__datos">
+                  <div><dt>Especialidad</dt><dd>Cultura talayótica</dd></div>
+                  <div><dt>Experiencia</dt><dd>Más de 10 años en excavaciones</dd></div>
+                </dl>
               </div>
             </div>
           </section>
 
           <section class="excursion-section" aria-labelledby="info-title">
-            <h2 class="visually-hidden" id="info-title">Información práctica</h2>
+            <div class="section-head">
+              <p class="registro">
+                <span class="taula" aria-hidden="true"></span>
+                04 · Antes de ir
+              </p>
+              <h2 id="info-title">Qué incluye y cómo prepararte</h2>
+            </div>
             <div class="practical">
               <div class="practical__column">
                 <h3 class="excursion-section__subtitle">Qué incluye tu reserva</h3>
                 <ul class="practical__list">
-                  <li>Acompañamiento exclusivo durante 3 horas por un arqueólogo especialista.</li>
+                  <li>Acompañamiento durante 3 horas por una arqueóloga especialista.</li>
                   <li>Entrada oficial al recinto arqueológico de Torre d’en Galmés.</li>
-                  <li>Grupo estrictamente limitado a 8 participantes.</li>
+                  <li>Grupo limitado a 8 participantes.</li>
                   <li>Seguro de responsabilidad civil y asistencia.</li>
-                  <li>
+                  <li class="practical__item--no">
                     <strong>No incluye:</strong> traslado hasta el punto de
-                    encuentro (disponible aparcamiento gratuito junto al acceso).
+                    encuentro (hay aparcamiento gratuito junto al acceso).
                   </li>
                 </ul>
               </div>
@@ -283,8 +307,8 @@
                     calcárea irregular. Imprescindible calzado cerrado y cómodo.
                   </li>
                   <li>
-                    <strong>Qué traer:</strong> agua, una prenda ligera de abrigo
-                    para cuando caiga el sol y curiosidad.
+                    <strong>Qué traer:</strong> agua y una prenda ligera de
+                    abrigo para cuando caiga el sol.
                   </li>
                   <li>
                     <strong>Punto de encuentro exacto:</strong> recibirás las
@@ -297,7 +321,13 @@
           </section>
 
           <section class="excursion-section" aria-labelledby="faq-title">
-            <h2 id="faq-title">Preguntas frecuentes.</h2>
+            <div class="section-head">
+              <p class="registro">
+                <span class="taula" aria-hidden="true"></span>
+                05 · Dudas
+              </p>
+              <h2 id="faq-title">Preguntas frecuentes</h2>
+            </div>
             <div class="faq">
               <details class="faq__item">
                 <summary>¿Qué ocurre si llueve o hay mal tiempo?</summary>
@@ -328,6 +358,10 @@
 
         <aside class="booking" id="reserva" aria-labelledby="booking-title">
           <h2 class="visually-hidden" id="booking-title">Reserva tu plaza</h2>
+          <p class="registro booking__registro">
+            <span class="taula" aria-hidden="true"></span>
+            Reserva · Ruta nº 01
+          </p>
           <p class="booking__price">
             <span class="booking__amount">55 €</span>
             <span class="booking__price-note">por persona · Entradas incluidas</span>
@@ -378,63 +412,110 @@
       </div>
 
       <section class="closing" aria-labelledby="closing-title">
-        <h2 id="closing-title">Asegura tu plaza en el próximo grupo.</h2>
+        <span class="taula closing__taula" aria-hidden="true"></span>
+        <h2 id="closing-title">Asegura tu plaza en el próximo grupo</h2>
         <p class="closing__text">
-          Al trabajar con grupos de máximo 8 personas, las plazas para los
-          paseos al atardecer suelen completarse con varios días de antelación.
+          Cada salida tiene ocho plazas. Consulta las fechas disponibles y
+          elige la que mejor te encaje.
         </p>
         <a class="button closing__button" href="#reserva">
           Ver fechas disponibles
         </a>
       </section>
 
-      <section class="routes" aria-labelledby="related-title">
-        <h2 id="related-title">Otras miradas a Menorca.</h2>
+      <div class="banda-cuadricula">
+        <section class="routes excursion-related" aria-labelledby="related-title">
+          <div class="section-head">
+            <p class="registro">
+              <span class="taula" aria-hidden="true"></span>
+              Otras rutas
+            </p>
+            <h2 id="related-title">Otras miradas a Menorca</h2>
+          </div>
 
-        <div class="routes__list">
-          <article class="route-card">
-            <img
-              class="route-card__image"
-              src="images/rutas/ciutadella-secreta-provisional.jpg"
-              alt="Claustro de piedra con arcos y un pozo central en Ciutadella"
-              width="508"
-              height="264"
-              loading="lazy"
-            >
-            <div class="route-card__body">
-              <ul class="route-card__tags" aria-label="Categorías">
-                <li>Arquitectura e Historia</li>
-                <li>Nivel fácil</li>
-              </ul>
-              <h3 class="route-card__title">Ciutadella secreta: palacios y claustros</h3>
-              <ul class="route-card__meta">
-                <li>
-                  <img src="images/icons/icono-duracion.svg" alt="" width="20" height="20">
-                  <span class="visually-hidden">Duración:</span> 2.5 horas
-                </li>
-                <li>
-                  <img src="images/icons/icono-personas.svg" alt="" width="20" height="20">
-                  Máx. 8 personas
-                </li>
-                <li class="route-card__price">
-                  <span class="visually-hidden">Precio:</span> 45 €
-                </li>
-              </ul>
-              <p class="route-card__text">
-                Un recorrido a puerta cerrada por la aristocracia menorquina.
-                Descubre la intimidad de los patios señoriales y la influencia
-                británica grabada en la piedra de sus calles más silenciosas.
-              </p>
-              <a class="button route-card__button" href="ciutadella-secreta.html">
-                Ver itinerario
-                <span class="visually-hidden">: Ciutadella secreta: palacios y claustros</span>
-                <span class="button__arrow" aria-hidden="true"></span>
-              </a>
-            </div>
-          </article>
-        </div>
-      </section>
+          <div class="routes__list">
+            <article class="ficha">
+              <figure class="ficha__figure">
+                <div class="fig">
+                  <img
+                    src="images/rutas/ciutadella-secreta-provisional.jpg"
+                    alt="Claustro de piedra con arcos y un pozo central en Ciutadella"
+                    width="508"
+                    height="264"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption class="pie">
+                  <span>Casco antiguo, Ciutadella</span>
+                  <span class="pie__coord">40°00′ N · 3°50′ E</span>
+                </figcaption>
+              </figure>
+
+              <div class="ficha__body">
+                <p class="registro">Ruta nº 02 · Arquitectura e historia</p>
+                <h3 class="ficha__title">Ciutadella secreta: palacios y claustros</h3>
+                <p class="ficha__text">
+                  Patios señoriales que no abren al público y fachadas de
+                  marés del siglo XVIII, leídas piedra a piedra con un
+                  historiador del arte.
+                </p>
+                <dl class="datos datos--4 ficha__datos">
+                  <div><dt>Duración</dt><dd>2,5 h</dd></div>
+                  <div><dt>Grupo</dt><dd>Máx. 8</dd></div>
+                  <div><dt>Nivel</dt><dd>Fácil</dd></div>
+                  <div><dt>Precio</dt><dd>45 €</dd></div>
+                </dl>
+                <a class="button ficha__button" href="ciutadella-secreta.html">
+                  Ver itinerario
+                  <span class="visually-hidden">: Ciutadella secreta: palacios y claustros</span>
+                  <span class="button__arrow" aria-hidden="true"></span>
+                </a>
+              </div>
+            </article>
+
+            <article class="ficha">
+              <figure class="ficha__figure">
+                <div class="fig">
+                  <img
+                    src="images/hero-image/hero-image-mobile-800w.jpg"
+                    alt="Calle histórica de casas encaladas con balcones de hierro y persianas verdes"
+                    width="800"
+                    height="537"
+                    loading="lazy"
+                  >
+                </div>
+                <figcaption class="pie">
+                  <span>Centro histórico, Maó</span>
+                  <span class="pie__coord">39°53′ N · 4°16′ E</span>
+                </figcaption>
+              </figure>
+
+              <div class="ficha__body">
+                <p class="registro">Ruta nº 03 · Arquitectura e historia</p>
+                <h3 class="ficha__title">Maó británico: el puerto y sus casas</h3>
+                <p class="ficha__text">
+                  Ventanas de guillotina, miradores y fachadas georgianas: el
+                  siglo XVIII británico que todavía se lee en las calles de Maó,
+                  desde el puerto hasta el centro, con un historiador del arte.
+                </p>
+                <dl class="datos datos--4 ficha__datos">
+                  <div><dt>Duración</dt><dd>2 h</dd></div>
+                  <div><dt>Grupo</dt><dd>Máx. 8</dd></div>
+                  <div><dt>Nivel</dt><dd>Fácil</dd></div>
+                  <div><dt>Precio</dt><dd>40 €</dd></div>
+                </dl>
+                <a class="button ficha__button" href="mao-britanico.html">
+                  Ver itinerario
+                  <span class="visually-hidden">: Maó británico: el puerto y sus casas</span>
+                  <span class="button__arrow" aria-hidden="true"></span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
     </main>
+
 
     <!-- Barra de reserva fija: solo en móvil y tableta -->
     <div class="booking-bar">

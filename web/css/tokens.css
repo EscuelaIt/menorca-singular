@@ -14,6 +14,8 @@
   --color-fondo-secundario: var(--color-piedra-mares);
   --color-interactivo: var(--color-terracota);
 
-  --font-titulares: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-interfaz: "Inter", Arial, Helvetica, sans-serif;
+  /* Tipografía: dirección C, «Editorial con oficio» */
+  --font-titulares: "Brygada 1918", Georgia, "Times New Roman", serif;
+  --font-interfaz: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+  --font-registro: "IBM Plex Mono", "Courier New", monospace; /* etiquetas de registro, coordenadas y datos */
 }
