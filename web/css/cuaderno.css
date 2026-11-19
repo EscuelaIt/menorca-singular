@@ -172,7 +172,7 @@
 .notas {
   max-width: 80rem;
   margin-inline: auto;
-  padding: 0 1.5rem 4rem;
+  padding: 0 1.5rem; /* el hueco inferior lo pone el cierre como padding */
 }
 
 .notas__lista {
@@ -204,8 +204,40 @@
 
 /* Cierre ---------------------------------------------------------------- */
 
+/* El espacio que separa el cierre de las notas es padding, no margen,
+   para que el mapa de fondo pueda ocuparlo */
 .closing {
-  padding-top: 2rem;
+  padding-top: 6rem;
+}
+
+/* Silueta de la isla (SVG en línea, decorativo), muy tenue tras el texto.
+   No asoma por arriba: ahí el fondo continúa y parecería una imagen rota.
+   Desde tableta crece y se corta solo por abajo, contra el pie. */
+.closing--mapa {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.mapa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  /* transform y no translate: la animación de entrada ya usa translate */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* La opacidad va en el trazo: la animación de entrada controla la del SVG */
+.mapa__costa {
+  fill: none;
+  stroke: var(--color-jerarquia);
+  stroke-width: 10;
+  stroke-linejoin: round;
+  opacity: 0.12;
 }
 
 /* Tableta --------------------------------------------------------------- */
@@ -236,7 +268,19 @@
   }
 
   .notas {
-    padding: 0 2.5rem 5rem;
+    padding: 0 2.5rem;
+  }
+
+  .closing {
+    padding-top: 7rem;
+  }
+
+  .mapa {
+    top: 1.5rem;
+    width: auto;
+    height: 110%;
+    aspect-ratio: 1000 / 720;
+    transform: translateX(-50%);
   }
 
   .nota {
@@ -331,7 +375,11 @@
 
   .notas {
     width: calc(100% - 5rem);
-    padding: 0 0 6rem;
+    padding: 0;
+  }
+
+  .closing {
+    padding-top: 8rem;
   }
 
   .notas__lista {
