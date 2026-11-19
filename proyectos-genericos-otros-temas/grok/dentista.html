@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental Sonrisa BA | Odontología en Buenos Aires</title>
+    <meta name="description" content="Clínica dental en Buenos Aires. Plan de revisiones anuales y descuentos en tratamientos. Odontología integral, estética y prevención.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0a58ca;
+            --secondary: #20c997;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #1ba87e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+            padding: 90px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Plan Destacado */
+        .plan-destacado {
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(13, 110, 253, 0.25);
+        }
+
+        .plan-destacado h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .plan-destacado .precio {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0 10px;
+        }
+
+        .plan-destacado .precio small {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .plan-beneficios {
+            list-style: none;
+            text-align: left;
+            max-width: 420px;
+            margin: 30px auto;
+        }
+
+        .plan-beneficios li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .plan-beneficios li:last-child {
+            border-bottom: none;
+        }
+
+        /* Servicios */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .servicio-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 35px 28px;
+            text-align: center;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .servicio-icon {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+        }
+
+        .servicio-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .servicio-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Sobre nosotros */
+        .sobre {
+            background: var(--light);
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .sobre-text p {
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        /* Testimonios */
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonio {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .testimonio p {
+            font-style: italic;
+            margin-bottom: 18px;
+            color: var(--gray);
+        }
+
+        .testimonio .autor {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Contacto */
+        .contacto {
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            color: white;
+        }
+
+        .contacto .section-title h2,
+        .contacto .section-title p {
+            color: white;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contacto-info h3 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .contacto-info p {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .formulario input,
+        .formulario textarea,
+        .formulario select {
+            padding: 14px 18px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .formulario textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 40px 0 25px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .sobre-content,
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plan-destacado {
+                padding: 40px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Sonrisa<span>BA</span></a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#plan">Plan Anual</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#contacto" class="btn btn-primary">Reservar turno</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Tu sonrisa en las mejores manos<br>en Buenos Aires</h1>
+            <p>Odontología integral con un Plan de Revisiones Anual y descuentos exclusivos en todos los tratamientos.</p>
+            <div class="hero-buttons">
+                <a href="#plan" class="btn btn-secondary">Conocer el Plan Anual</a>
+                <a href="#contacto" class="btn btn-outline">Pedir turno</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Anual (Destacado) -->
+    <section id="plan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plan de Revisiones Anual</h2>
+                <p>Prevención inteligente + ahorros reales en tus tratamientos</p>
+            </div>
+
+            <div class="plan-destacado">
+                <h3>Plan Sonrisa Protegida</h3>
+                <p>Ideal para mantener tu salud bucal durante todo el año</p>
+                <div class="precio">$89.000 <small>/año</small></div>
+                <p style="opacity: 0.9; margin-bottom: 10px;">o 12 cuotas de $8.500</p>
+
+                <ul class="plan-beneficios">
+                    <li>✓ 2 revisiones completas al año</li>
+                    <li>✓ Limpieza profesional incluida</li>
+                    <li>✓ Radiografías de control</li>
+                    <li>✓ <strong>15% de descuento</strong> en todos los tratamientos</li>
+                    <li>✓ <strong>20% de descuento</strong> en blanqueamiento y estética</li>
+                    <li>✓ Prioridad en turnos de urgencia</li>
+                    <li>✓ Recordatorios personalizados</li>
+                </ul>
+
+                <a href="#contacto" class="btn" style="background: white; color: var(--primary); margin-top: 10px;">Quiero este plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" style="background: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Tratamientos de alta calidad con tecnología moderna</p>
+            </div>
+
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">🦷</div>
+                    <h3>Odontología General</h3>
+                    <p>Diagnóstico, prevención, empastes, extracciones y tratamientos de conducto.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">✨</div>
+                    <h3>Estética Dental</h3>
+                    <p>Blanqueamiento, carillas, diseño de sonrisa y rehabilitación estética.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🦴</div>
+                    <h3>Implantes</h3>
+                    <p>Reposición de piezas dentarias con implantes de última generación.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">😁</div>
+                    <h3>Ortodoncia</h3>
+                    <p>Brackets tradicionales e invisibles (alineadores transparentes).</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">👶</div>
+                    <h3>Odontopediatría</h3>
+                    <p>Atención especializada y amigable para los más chicos.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🛡️</div>
+                    <h3>Prevención</h3>
+                    <p>Controles periódicos, selladores y educación en higiene oral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section class="sobre" id="nosotros">
+        <div class="container">
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h2>Atención personalizada en el corazón de Buenos Aires</h2>
+                    <p>En <strong>Sonrisa BA</strong> creemos que la mejor odontología es la que previene. Por eso diseñamos un Plan de Revisiones Anual que te permite cuidar tu salud bucal de forma constante y acceder a descuentos reales en todos los tratamientos.</p>
+                    <p>Nuestro equipo combina experiencia, tecnología de punta y un trato cálido para que te sientas cómodo en cada visita.</p>
+                    <p><strong>Ubicación:</strong> Palermo / Recoleta – Buenos Aires<br>
+                    (Podés cambiar la dirección exacta cuando quieras)</p>
+                    <a href="#contacto" class="btn btn-primary" style="margin-top: 15px;">Agendar consulta</a>
+                </div>
+                <div style="background: #e0f2fe; border-radius: 20px; height: 320px; display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                    😁
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que dicen nuestros pacientes</h2>
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio">
+                    <p>"Me sumé al plan anual y ya noté la diferencia. Las revisiones son muy completas y los descuentos valen mucho la pena."</p>
+                    <div class="autor">— Laura M., Palermo</div>
+                </div>
+                <div class="testimonio">
+                    <p>"Excelente atención y muy profesionales. El ambiente es tranquilo y el equipo te explica todo con claridad."</p>
+                    <div class="autor">— Martín G., Recoleta</div>
+                </div>
+                <div class="testimonio">
+                    <p>"Llevé a mis hijos y quedaron re contentos. Recomiendo el plan familiar, se nota el ahorro."</p>
+                    <div class="autor">— Carolina R., Villa Crespo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Reservá tu turno</h2>
+                <p>Escribinos y te respondemos a la brevedad</p>
+            </div>
+
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <h3>Datos de contacto</h3>
+                    <p>📍 Av. Santa Fe 3200, Palermo – CABA</p>
+                    <p>📞 +54 11 4567-8901</p>
+                    <p>📱 WhatsApp: +54 9 11 2345-6789</p>
+                    <p>✉️ turnos@sonrisaba.com.ar</p>
+                    <p>🕒 Lun a Vie: 9 a 20 hs | Sáb: 9 a 13 hs</p>
+                    <br>
+                    <a href="https://wa.me/5491123456789" class="btn btn-secondary" target="_blank">Escribir por WhatsApp</a>
+                </div>
+
+                <form class="formulario" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto.');">
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="tel" placeholder="Teléfono / WhatsApp" required>
+                    <input type="email" placeholder="Email">
+                    <select required>
+                        <option value="" disabled selected>Motivo de consulta</option>
+                        <option>Quiero el Plan Anual</option>
+                        <option>Revisión / Control</option>
+                        <option>Tratamiento estético</option>
+                        <option>Dolor / Urgencia</option>
+                        <option>Otro</option>
+                    </select>
+                    <textarea placeholder="Mensaje (opcional)"></textarea>
+                    <button type="submit" class="btn" style="background: var(--secondary); color: white;">Enviar consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>Sonrisa BA</strong> — Odontología Integral en Buenos Aires</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                © 2025 Sonrisa BA. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/5491123456789" class="whatsapp-float" target="_blank" title="Escribinos por WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>

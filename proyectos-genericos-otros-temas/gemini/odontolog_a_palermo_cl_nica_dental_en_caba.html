@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odontología Palermo | Clínica Dental y Plan Preventivo en Buenos Aires</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconografía clínica -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        medical: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#082f49',
+                        },
+                        mint: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-medical-500 selection:text-white">
+
+    <!-- 1. BARRA DE NAVEGACIÓN STICKY -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-medical-600 to-medical-800 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-tooth text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-display font-extrabold text-xl text-medical-900 tracking-tight block leading-none">Odontología</span>
+                        <span class="text-xs font-semibold text-mint-600 uppercase tracking-widest">Palermo · CABA</span>
+                    </div>
+                </a>
+
+                <!-- Enlaces Desktop -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#plan-anual" class="hover:text-medical-600 transition-colors flex items-center gap-1.5 font-semibold text-medical-700">
+                        <span class="w-2 h-2 rounded-full bg-mint-500 animate-pulse"></span>
+                        Plan Anual
+                    </a>
+                    <a href="#calculadora" class="hover:text-medical-600 transition-colors">Calculá tu Ahorro</a>
+                    <a href="#servicios" class="hover:text-medical-600 transition-colors">Servicios</a>
+                    <a href="#nosotros" class="hover:text-medical-600 transition-colors">Nosotros</a>
+                    <a href="#testimonios" class="hover:text-medical-600 transition-colors">Testimonios</a>
+                    <a href="#ubicacion" class="hover:text-medical-600 transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- Botones CTA Header -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/5491155550192?text=Hola%20Odontolog%C3%ADa%20Palermo!%20Quisiera%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 bg-mint-500 hover:bg-mint-600 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm transition-all hover:shadow">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Turnos por WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-6 space-y-2 shadow-lg">
+            <a href="#plan-anual" class="block px-3 py-2.5 rounded-xl text-base font-semibold text-medical-700 bg-medical-50">Plan Anual de Beneficios</a>
+            <a href="#calculadora" class="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50">Calculá tu Ahorro</a>
+            <a href="#servicios" class="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50">Servicios Odontológicos</a>
+            <a href="#nosotros" class="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50">Nosotros</a>
+            <a href="#testimonios" class="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50">Testimonios</a>
+            <a href="#ubicacion" class="block px-3 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-slate-50">Ubicación y Turnos</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5491155550192?text=Hola%20Odontolog%C3%ADa%20Palermo!%20Quisiera%20sacar%20un%20turno." target="_blank" rel="noopener noreferrer" 
+                   class="w-full flex items-center justify-center gap-2 bg-mint-500 hover:bg-mint-600 text-white font-semibold px-4 py-3 rounded-xl shadow">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Turnos por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-medical-50 via-white to-slate-50 pt-10 pb-16 lg:pt-20 lg:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Columna Izquierda: Propuesta de Valor -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-mint-100/80 text-mint-600 text-xs sm:text-sm font-semibold border border-mint-200">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <span>Odontología preventiva y estética en el corazón de Palermo</span>
+                    </div>
+
+                    <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.25rem] text-medical-900 leading-[1.12] tracking-tight">
+                        Cuidá tu sonrisa todo el año sin sorpresas en el presupuesto.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Combinamos tecnología digital sin dolor con un enfoque 100% preventivo. Sumate a nuestro <strong class="text-medical-800">Plan Anual de Revisiones</strong> y accedé a controles completos, limpiezas y hasta un <strong class="text-mint-600">40% de descuento</strong> en tratamientos en CABA.
+                    </p>
+
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#ubicacion" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-medical-600 hover:bg-medical-700 text-white font-semibold px-7 py-4 rounded-2xl shadow-lg shadow-medical-600/20 transition-all hover:-translate-y-0.5">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>Reservá tu turno</span>
+                        </a>
+                        <a href="#plan-anual" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-medical-50 text-medical-800 border-2 border-medical-200 font-semibold px-7 py-4 rounded-2xl transition-all">
+                            <span>Conocé el Plan Anual</span>
+                            <i class="fa-solid fa-arrow-down text-sm text-medical-500"></i>
+                        </a>
+                    </div>
+
+                    <!-- Estadísticas Rápidas -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 max-w-xl mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-display font-extrabold text-2xl sm:text-3xl text-medical-800">+15 años</p>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">De trayectoria en CABA</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-extrabold text-2xl sm:text-3xl text-mint-600">0 min</p>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Turnos puntuales sin espera</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-extrabold text-2xl sm:text-3xl text-medical-800">4.9 ★</p>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">+1.200 pacientes felices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Imagen + Tarjeta Flotante de Confianza -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-medical-100">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/800x1000/e0effe/075985?text=Odontologia+Palermo';"
+                             alt="Consultorio moderno en Odontología Palermo, Buenos Aires" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-medical-950/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-mint-100 text-mint-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-wider text-mint-600">Tecnología Digital 3D</p>
+                                <p class="text-sm font-bold text-slate-800">Escáner intraoral y radiología digital de baja radiación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN DESTACADA: PLAN ANUAL DE REVISIONES Y BENEFICIOS -->
+    <section id="plan-anual" class="py-16 lg:py-24 bg-medical-900 text-white relative overflow-hidden">
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 rounded-full bg-medical-700/30 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 rounded-full bg-mint-500/20 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-mint-500/20 text-mint-400 text-xs font-bold uppercase tracking-widest mb-3 border border-mint-400/30">
+                    Membresía Preventiva Exclusiva
+                </span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight">
+                    Plan Anual de Revisiones y Beneficios
+                </h2>
+                <p class="text-medical-100 text-base sm:text-lg mt-4 leading-relaxed">
+                    Pensado para quienes buscan prevención real, no tienen obra social o prepaga, o quieren evitar los altos copagos y demoras en Buenos Aires.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Detalle de Cobertura (7 columnas) -->
+                <div class="lg:col-span-7 bg-medical-800/60 backdrop-blur-sm border border-medical-700 rounded-3xl p-6 sm:p-10 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-display font-bold text-2xl text-white mb-6 flex items-center gap-3">
+                            <span class="w-9 h-9 rounded-xl bg-mint-500 text-medical-950 flex items-center justify-center text-base">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                            ¿Qué incluye tu membresía anual?
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div class="bg-medical-900/60 p-5 rounded-2xl border border-medical-700/70">
+                                <div class="w-10 h-10 rounded-xl bg-medical-700 text-mint-400 flex items-center justify-center mb-3">
+                                    <i class="fa-solid fa-sparkles"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-base">2 Controles + Limpieza Ultrasónica</h4>
+                                <p class="text-sm text-medical-200 mt-1">Cada 6 meses: diagnóstico integral, destartraje ultrasónico, pulido y topicación con flúor.</p>
+                            </div>
+
+                            <div class="bg-medical-900/60 p-5 rounded-2xl border border-medical-700/70">
+                                <div class="w-10 h-10 rounded-xl bg-medical-700 text-mint-400 flex items-center justify-center mb-3">
+                                    <i class="fa-solid fa-x-ray"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-base">Radiografías Sin Cargo</h4>
+                                <p class="text-sm text-medical-200 mt-1">Radiografías periapicales y panorámica digital incluidas para un diagnóstico preciso.</p>
+                            </div>
+
+                            <div class="bg-medical-900/60 p-5 rounded-2xl border border-medical-700/70">
+                                <div class="w-10 h-10 rounded-xl bg-medical-700 text-mint-400 flex items-center justify-center mb-3">
+                                    <i class="fa-solid fa-kit-medical"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-base">Urgencias Cubiertas 100%</h4>
+                                <p class="text-sm text-medical-200 mt-1">Atención prioritaria en el día ante dolor agudo, caída de arreglos o traumatismos.</p>
+                            </div>
+
+                            <div class="bg-medical-900/60 p-5 rounded-2xl border border-medical-700/70">
+                                <div class="w-10 h-10 rounded-xl bg-medical-700 text-mint-400 flex items-center justify-center mb-3">
+                                    <i class="fa-solid fa-percent"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-base">20% al 40% OFF en Tratamientos</h4>
+                                <p class="text-sm text-medical-200 mt-1">Descuentos directos en ortodoncia invisible, blanqueamiento LED, implantes y estética.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabla rápida de porcentajes de descuento -->
+                    <div class="mt-8 pt-6 border-t border-medical-700 flex flex-wrap gap-3 items-center justify-between text-xs sm:text-sm">
+                        <span class="px-3 py-1.5 rounded-lg bg-mint-500/15 text-mint-300 border border-mint-500/30 font-medium">40% OFF Blanqueamiento</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-mint-500/15 text-mint-300 border border-mint-500/30 font-medium">30% OFF Arreglos y Endodoncia</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-mint-500/15 text-mint-300 border border-mint-500/30 font-medium">20% OFF Alineadores e Implantes</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Precio y Suscripción (5 columnas) -->
+                <div class="lg:col-span-5 bg-white text-slate-800 rounded-3xl p-7 sm:p-10 shadow-2xl border-4 border-mint-400 relative flex flex-col justify-between">
+                    <div class="absolute -top-4 right-6 bg-mint-500 text-white text-xs font-extrabold uppercase tracking-wider px-4 py-1.5 rounded-full shadow">
+                        Más Elegido en CABA
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-medical-600">Membresía Individual · 12 Meses</span>
+                        <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-medical-900 mt-1">Plan Sonrisa Protegida</h3>
+                        <p class="text-sm text-slate-500 mt-2">Pagás una sola vez al año y congelás todos tus beneficios durante 365 días.</p>
+
+                        <div class="my-7 p-5 rounded-2xl bg-medical-50 border border-medical-100">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-sm font-bold text-slate-500">ARS</span>
+                                <span class="font-display font-extrabold text-4xl sm:text-5xl text-medical-900">$145.000</span>
+                                <span class="text-sm font-medium text-slate-500">/ año</span>
+                            </div>
+                            <p class="text-xs font-semibold text-mint-600 mt-2 flex items-center gap-1.5">
+                                <i class="fa-regular fa-credit-card"></i>
+                                <span>O hasta 6 cuotas sin interés de $24.166 con tarjetas bancarias</span>
+                            </p>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-700 mb-8">
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-mint-500"></i>
+                                <span>Sin períodos de carencia: lo usás desde hoy</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-mint-500"></i>
+                                <span>15% de descuento adicional en Plan Familiar (+2 integrantes)</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-mint-500"></i>
+                                <span>Kit de higiene bucal profesional de bienvenida</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3">
+                        <button onclick="seleccionarPlanEnFormulario()" class="w-full bg-medical-600 hover:bg-medical-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-medical-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Adherirme al Plan Anual</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="https://wa.me/5491155550192?text=Hola!%20Quiero%20consultar%20para%20suscribirme%20al%20Plan%20Anual%20de%20Revisiones%20y%20Beneficios." target="_blank" rel="noopener noreferrer"
+                           class="w-full bg-mint-50 hover:bg-mint-100 text-mint-700 font-semibold py-3.5 px-6 rounded-2xl transition-colors flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>Consultar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CALCULADORA INTERACTIVA DE AHORRO DEL PLAN ANUAL -->
+    <section id="calculadora" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-mint-600">Simulador Transparente en ARS</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-medical-900 mt-2">
+                    Calculá cuánto ahorrás con el Plan Anual
+                </h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Seleccioná los controles o tratamientos que pensás realizarte este año y compará el valor particular contra tu tarifa con membresía.
+                </p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Lista de Tratamientos Seleccionables (7 cols) -->
+                    <div class="lg:col-span-7 space-y-3">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-display font-bold text-lg text-medical-900">1. Marcá lo que necesitás este año:</h3>
+                            <button type="button" id="reset-calc-btn" class="text-xs font-semibold text-medical-600 hover:underline">Restablecer</button>
+                        </div>
+
+                        <div id="treatments-list" class="space-y-3">
+                            <!-- Los ítems se renderizan dinámicamente con JS para máxima precisión -->
+                        </div>
+                    </div>
+
+                    <!-- Panel de Resultados (5 cols) -->
+                    <div class="lg:col-span-5 bg-white border-2 border-medical-100 rounded-3xl p-6 sm:p-8 shadow-md sticky top-24">
+                        <h3 class="font-display font-bold text-lg text-medical-900 mb-5">2. Tu comparativa de inversión</h3>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                                <span class="text-slate-500">Valor particular sin plan:</span>
+                                <span id="total-regular" class="font-semibold text-slate-700 line-through">$0</span>
+                            </div>
+
+                            <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                                <span class="text-slate-600">Tratamientos con descuento Plan:</span>
+                                <span id="total-discounted-treatments" class="font-semibold text-medical-800">$0</span>
+                            </div>
+
+                            <div class="flex justify-between items-center py-2 border-b border-slate-100">
+                                <span class="text-slate-600">Cuota única Plan Anual:</span>
+                                <span class="font-semibold text-medical-800">$145.000</span>
+                            </div>
+
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="font-bold text-base text-slate-900">Total final con Plan Anual:</span>
+                                <span id="total-with-plan" class="font-display font-extrabold text-2xl text-medical-900">$145.000</span>
+                            </div>
+                        </div>
+
+                        <!-- Caja destacada de Ahorro Neto -->
+                        <div id="savings-banner" class="mt-6 p-4 rounded-2xl bg-mint-50 border border-mint-200 text-center transition-all">
+                            <p class="text-xs font-bold uppercase tracking-wider text-mint-700">Tu ahorro neto estimado</p>
+                            <p id="net-savings" class="font-display font-extrabold text-3xl text-mint-600 mt-1">$0</p>
+                            <p id="savings-tip" class="text-xs text-slate-600 mt-1.5">Con solo 2 limpiezas anuales ya amortizás gran parte de la membresía.</p>
+                        </div>
+
+                        <button onclick="seleccionarPlanEnFormulario()" class="mt-6 w-full bg-mint-500 hover:bg-mint-600 text-white font-bold py-3.5 px-5 rounded-2xl shadow transition-all flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Quiero aprovechar este ahorro</span>
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. GRILLA DE SERVICIOS ODONTOLÓGICOS -->
+    <section id="servicios" class="py-16 lg:py-24 bg-slate-50 border-t border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-medical-600">Especialidades en un solo lugar</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-medical-900 mt-2">
+                        Servicios Odontológicos Integrales
+                    </h2>
+                </div>
+                <p class="text-slate-600 max-w-md text-sm sm:text-base">
+                    Todos nuestros especialistas trabajan de forma interdisciplinaria en Palermo con materiales importados de primera línea.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 group-hover:bg-medical-600 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-display font-bold text-xl text-medical-900">Odontología General</h3>
+                        <span class="text-xs font-bold bg-mint-100 text-mint-700 px-2.5 py-1 rounded-full">Incluido + 30% OFF</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Controles periódicos, limpiezas ultrasónicas indoloras, restauraciones estéticas con resinas de última generación y tratamiento de conducto mecanizado.
+                    </p>
+                    <a href="#ubicacion" class="text-sm font-semibold text-medical-600 hover:text-medical-800 inline-flex items-center gap-1.5">
+                        <span>Sacar turno</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 group-hover:bg-medical-600 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-face-smile-beam"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-display font-bold text-xl text-medical-900">Ortodoncia y Alineadores</h3>
+                        <span class="text-xs font-bold bg-mint-100 text-mint-700 px-2.5 py-1 rounded-full">20% OFF Plan</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Alineadores invisibles removibles diseñados con escaneo 3D y brackets estéticos de zafiro. Resultados predecibles y cómodos sin afectar tu rutina.
+                    </p>
+                    <a href="#ubicacion" class="text-sm font-semibold text-medical-600 hover:text-medical-800 inline-flex items-center gap-1.5">
+                        <span>Evaluación 3D</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 group-hover:bg-medical-600 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-display font-bold text-xl text-medical-900">Implantes Dentales</h3>
+                        <span class="text-xs font-bold bg-mint-100 text-mint-700 px-2.5 py-1 rounded-full">20% OFF Plan</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Implantes de titanio guiados por computadora para una recuperación rápida. Recuperá la función masticatoria y la estética natural de tus piezas.
+                    </p>
+                    <a href="#ubicacion" class="text-sm font-semibold text-medical-600 hover:text-medical-800 inline-flex items-center gap-1.5">
+                        <span>Consultar especialista</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 group-hover:bg-medical-600 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-wand-sparkles"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-display font-bold text-xl text-medical-900">Estética Dental</h3>
+                        <span class="text-xs font-bold bg-mint-100 text-mint-700 px-2.5 py-1 rounded-full">Hasta 40% OFF</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Blanqueamiento LED clínico sin sensibilidad, carillas de porcelana ultra finas y diseño digital de sonrisa respetando la armonía de tu rostro.
+                    </p>
+                    <a href="#ubicacion" class="text-sm font-semibold text-medical-600 hover:text-medical-800 inline-flex items-center gap-1.5">
+                        <span>Ver opciones</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="bg-white rounded-3xl p-7 border border-slate-200/80 shadow-sm hover:shadow-md transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-medical-50 text-medical-600 group-hover:bg-medical-600 group-hover:text-white transition-colors flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-display font-bold text-xl text-medical-900">Odontopediatría</h3>
+                        <span class="text-xs font-bold bg-mint-100 text-mint-700 px-2.5 py-1 rounded-full">Plan Familiar</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        Atención cálida y lúdica para chicos y adolescentes. Selladores preventivos, control de crecimiento y hábitos saludables desde la primera infancia.
+                    </p>
+                    <a href="#ubicacion" class="text-sm font-semibold text-medical-600 hover:text-medical-800 inline-flex items-center gap-1.5">
+                        <span>Reservar control</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjeta Bruxismo / Placas -->
+                <div class="bg-gradient-to-br from-medical-800 to-medical-900 text-white rounded-3xl p-7 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-white/10 text-mint-400 flex items-center justify-center text-2xl mb-5">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl">Bruxismo y Placas 3D</h3>
+                        <p class="text-sm text-medical-100 leading-relaxed mt-2">
+                            ¿Te despertás con tensión mandibular o dolor de cabeza? Confeccionamos placas miorrelajantes impresas en 3D a medida con 30% OFF en el Plan Anual.
+                        </p>
+                    </div>
+                    <a href="#ubicacion" class="mt-6 inline-flex items-center justify-center gap-2 bg-mint-500 hover:bg-mint-600 text-white font-semibold py-3 px-4 rounded-xl text-sm transition-colors">
+                        <span>Pedir turno de diagnóstico</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOSOTROS Y TESTIMONIOS -->
+    <section id="nosotros" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Equipo / Nosotros -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+                <div class="lg:col-span-5">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100 aspect-[4/3] bg-medical-100">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/800x600/e0effe/075985?text=Equipo+Odontologico';"
+                             alt="Equipo de odontólogos en Palermo, Buenos Aires" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-5">
+                    <span class="text-xs font-bold uppercase tracking-widest text-mint-600">Calidad humana y rigor clínico</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-medical-900">
+                        Un consultorio pensado para que venir al dentista sea una buena experiencia
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Fundada por la <strong>Dra. Valentina Ferreyra (UBA · MN 34.812)</strong> y el <strong>Dr. Martín Etcheverry (UBA · MN 36.109)</strong>, Odontología Palermo nació con una premisa clara: terminar con las esperas interminables y los presupuestos poco claros.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Creemos que la mejor odontología es la que llega antes del dolor. Por eso creamos nuestro Plan Anual de Revisiones, para acompañarte todo el año con seguimiento personalizado.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-shield-virus text-medical-600 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Bioseguridad Hospitalaria</h4>
+                                <p class="text-xs text-slate-500">Esterilización certificada en autoclave para cada paciente.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-comments text-mint-600 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Presupuestos Transparentes</h4>
+                                <p class="text-xs text-slate-500">Te explicamos cada paso en pantalla antes de empezar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonios -->
+            <div id="testimonios" class="pt-8 border-t border-slate-100">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-medical-900">Lo que dicen nuestros pacientes en Buenos Aires</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70">
+                        <div class="flex text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-slate-700 italic leading-relaxed mb-4">
+                            "Soy monotributista y no tenía cobertura dental. Saqué el Plan Anual hace 8 meses, ya me hice las dos limpiezas y un blanqueamiento con el 40% de descuento. ¡Un golazo!"
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-medical-600 text-white font-bold text-xs flex items-center justify-center">LG</div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Lucía Gómez</p>
+                                <p class="text-xs text-slate-500">Vecina de Palermo Soho</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70">
+                        <div class="flex text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-slate-700 italic leading-relaxed mb-4">
+                            "Impecable la puntualidad. Llegás a las 10:00 y a las 10:02 ya estás en el sillón. La Dra. Valentina tiene una mano súper suave, cero dolor."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-mint-600 text-white font-bold text-xs flex items-center justify-center">MR</div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Matías Rodríguez</p>
+                                <p class="text-xs text-slate-500">Recoleta, CABA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200/70">
+                        <div class="flex text-amber-400 text-sm mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-slate-700 italic leading-relaxed mb-4">
+                            "Anotamos a toda la familia en el plan. Nos resolvieron una urgencia de mi hijo un viernes a la tarde en menos de una hora. Súper recomendables."
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-medical-800 text-white font-bold text-xs flex items-center justify-center">CS</div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Carolina Suárez</p>
+                                <p class="text-xs text-slate-500">Belgrano, CABA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. UBICACIÓN EN BUENOS AIRES Y FORMULARIO INTERACTIVO DE TURNOS -->
+    <section id="ubicacion" class="py-16 lg:py-24 bg-medical-50 border-t border-medical-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Información de Ubicación en Palermo (5 columnas) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-medical-600">Dónde estamos</span>
+                        <h2 class="font-display font-extrabold text-3xl text-medical-900 mt-1">
+                            Visitanos en Palermo, CABA
+                        </h2>
+                        <p class="text-slate-600 text-sm mt-2">
+                            A metros de Av. Santa Fe y Alto Palermo, con acceso rápido desde cualquier punto de la ciudad.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-4">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Dirección</h4>
+                                <p class="text-sm text-slate-600">Av. Coronel Díaz 2145, Piso 3° "B"<br>Palermo, Ciudad Autónoma de Buenos Aires</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-mint-100 text-mint-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-train-subway"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Cómo llegar en transporte</h4>
+                                <p class="text-sm text-slate-600">
+                                    <strong>Subte Línea D:</strong> Estación Bulnes (a 2 cuadras).<br>
+                                    <strong>Colectivos:</strong> 12, 29, 39, 64, 68, 92, 111, 152.<br>
+                                    <strong>Estacionamiento:</strong> Garage con descuento frente al edificio.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-medical-100 text-medical-700 flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Horarios de Atención</h4>
+                                <p class="text-sm text-slate-600">
+                                    Lunes a Viernes: 08:30 a 20:00 hs<br>
+                                    Sábados: 09:00 a 14:00 hs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa Ilustrativo de Palermo / Subte D -->
+                    <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-200/80 overflow-hidden">
+                        <div class="relative rounded-2xl bg-medical-100/70 h-52 flex items-center justify-center overflow-hidden">
+                            <!-- Gráfico vectorial esquemático de las calles de Palermo -->
+                            <svg class="w-full h-full" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="200" fill="#e0effe"/>
+                                <!-- Parque Las Heras -->
+                                <rect x="260" y="15" width="120" height="65" rx="12" fill="#d1fae5"/>
+                                <text x="282" y="52" fill="#059669" font-size="10" font-weight="bold" font-family="Inter">Parque Las Heras</text>
+                                <!-- Calles -->
+                                <line x1="0" y1="145" x2="400" y2="145" stroke="#ffffff" stroke-width="14"/>
+                                <text x="25" y="149" fill="#0369a1" font-size="10" font-weight="bold" font-family="Inter">AV. SANTA FE (Subte D - Est. Bulnes)</text>
+                                <line x1="185" y1="0" x2="185" y2="200" stroke="#ffffff" stroke-width="12"/>
+                                <text x="195" y="30" fill="#475569" font-size="10" font-weight="600" font-family="Inter">Av. Coronel Díaz</text>
+                                <!-- Marcador Clínica -->
+                                <circle cx="185" cy="95" r="22" fill="#0284c7" fill-opacity="0.2"/>
+                                <circle cx="185" cy="95" r="10" fill="#0284c7" stroke="#ffffff" stroke-width="3"/>
+                                <rect x="95" y="62" width="180" height="22" rx="6" fill="#082f49"/>
+                                <text x="108" y="76" fill="#ffffff" font-size="10" font-weight="bold" font-family="Inter">📍 Odontología Palermo (2145)</text>
+                            </svg>
+                        </div>
+                        <div class="mt-3 flex justify-between items-center px-1">
+                            <span class="text-xs text-slate-500">Palermo, CABA · Argentina</span>
+                            <a href="https://maps.google.com/?q=Av.+Coronel+Diaz+2145,+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-medical-600 hover:underline">
+                                Abrir en Google Maps ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario Interactivo de Solicitud de Turno (7 columnas) -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-7 sm:p-10 shadow-xl border border-slate-200/80">
+                    <div class="mb-6">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-medical-50 text-medical-700 text-xs font-bold">
+                            <i class="fa-regular fa-calendar"></i> Turnos Online en 1 minuto
+                        </span>
+                        <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-medical-900 mt-2">
+                            Reservá tu turno o suscribite al Plan
+                        </h3>
+                        <p class="text-sm text-slate-600 mt-1">
+                            Completá tus datos y nuestro equipo de recepción te confirma el horario por WhatsApp en minutos.
+                        </p>
+                    </div>
+
+                    <form id="appointment-form" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Nombre y Apellido *</label>
+                                <input type="text" id="nombre" name="nombre" required placeholder="Ej. Sofía Martínez"
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-medical-500 focus:ring-2 focus:ring-medical-200 outline-none text-sm transition-all">
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">WhatsApp / Celular (CABA/GBA) *</label>
+                                <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 11 5555-4321"
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-medical-500 focus:ring-2 focus:ring-medical-200 outline-none text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="motivo" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Motivo de consulta *</label>
+                                <select id="motivo" name="motivo" required
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-medical-500 focus:ring-2 focus:ring-medical-200 outline-none text-sm bg-white transition-all">
+                                    <option value="Plan Anual de Revisiones ($145.000 ARS)">⭐ Adherirme al Plan Anual + 1° Control</option>
+                                    <option value="Control y Limpieza Ultrasónica">Control y Limpieza Ultrasónica</option>
+                                    <option value="Estética / Blanqueamiento LED">Estética / Blanqueamiento LED</option>
+                                    <option value="Ortodoncia / Alineadores Invisibles">Ortodoncia / Alineadores Invisibles</option>
+                                    <option value="Implantes Dentales">Implantes Dentales</option>
+                                    <option value="Urgencia Odontológica">Urgencia Odontológica</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="franja" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Franja horaria preferida</label>
+                                <select id="franja" name="franja"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-medical-500 focus:ring-2 focus:ring-medical-200 outline-none text-sm bg-white transition-all">
+                                    <option value="Mañana (08:30 a 13:00 hs)">Mañana (08:30 a 13:00 hs)</option>
+                                    <option value="Tarde (13:00 a 17:00 hs)">Tarde (13:00 a 17:00 hs)</option>
+                                    <option value="Vespertino (17:00 a 20:00 hs)">Vespertino (17:00 a 20:00 hs)</option>
+                                    <option value="Sábado por la mañana">Sábado por la mañana (09:00 a 14:00 hs)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="comentarios" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Comentarios adicionales (opcional)</label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Contanos si tenés alguna molestia, si venís con alguien más para el Plan Familiar o tus días disponibles..."
+                                      class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-medical-500 focus:ring-2 focus:ring-medical-200 outline-none text-sm transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-medical-600 hover:bg-medical-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-medical-600/20 transition-all flex items-center justify-center gap-2 text-base cursor-pointer">
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span>Confirmar Solicitud de Turno</span>
+                        </button>
+                    </form>
+
+                    <!-- Mensaje de Confirmación Interactivo (oculto hasta enviar) -->
+                    <div id="form-confirmation" class="hidden mt-6 p-6 rounded-2xl bg-mint-50 border-2 border-mint-400 text-slate-800">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-mint-500 text-white flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-display font-extrabold text-xl text-medical-900">¡Solicitud recibida con éxito!</h4>
+                                <p id="confirmation-summary" class="text-sm text-slate-700 leading-relaxed"></p>
+                                <div class="pt-2 flex flex-wrap gap-3">
+                                    <a id="whatsapp-direct-confirm" href="#" target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center gap-2 bg-mint-600 hover:bg-mint-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm">
+                                        <i class="fa-brands fa-whatsapp text-base"></i>
+                                        <span>Acelerar por WhatsApp ahora</span>
+                                    </a>
+                                    <button type="button" onclick="resetearFormulario()" class="text-xs font-semibold text-medical-700 hover:underline px-2 py-2">
+                                        Hacer otra reserva
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER COMPLETO -->
+    <footer class="bg-medical-950 text-medical-200 pt-16 pb-24 sm:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-medical-800">
+                <!-- Columna 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-medical-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-tooth text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="font-display font-extrabold text-lg text-white block leading-none">Odontología</span>
+                            <span class="text-xs font-semibold text-mint-400 uppercase tracking-widest">Palermo · CABA</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-medical-300 leading-relaxed">
+                        Clínica odontológica integral enfocada en prevención, estética dental y bienestar. Atención particular con aranceles transparentes y Plan Anual de Beneficios.
+                    </p>
+                </div>
+
+                <!-- Columna 2 -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Navegación</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#plan-anual" class="hover:text-mint-400 transition-colors">Plan Anual de Revisiones</a></li>
+                        <li><a href="#calculadora" class="hover:text-mint-400 transition-colors">Calculadora de Ahorro ARS</a></li>
+                        <li><a href="#servicios" class="hover:text-mint-400 transition-colors">Servicios Odontológicos</a></li>
+                        <li><a href="#nosotros" class="hover:text-mint-400 transition-colors">Nuestro Equipo</a></li>
+                        <li><a href="#ubicacion" class="hover:text-mint-400 transition-colors">Turnos Online</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Contacto Directo</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-location-dot text-mint-400"></i>
+                            <span>Av. Coronel Díaz 2145, 3° "B", Palermo</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-mint-400"></i>
+                            <span>+54 9 11 5555-0192</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-mint-400"></i>
+                            <span>(011) 4823-9014</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-regular fa-envelope text-mint-400"></i>
+                            <span>turnos@odontologiapalermo.com.ar</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4 -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Medios de Pago</h4>
+                    <p class="text-sm text-medical-300 mb-3">
+                        Aceptamos efectivo, transferencia inmediata, tarjetas de débito y crédito hasta en 6 cuotas sin interés.
+                    </p>
+                    <div class="flex gap-3 text-2xl text-medical-300">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-cc-amex"></i>
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-medical-400">
+                <p>© 2026 Odontología Palermo · Dirección Médica: Dra. Valentina Ferreyra (MN 34.812). Todos los derechos reservados.</p>
+                <p>Ciudad Autónoma de Buenos Aires, República Argentina.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/5491155550192?text=Hola%20Odontolog%C3%ADa%20Palermo!%20Quisiera%20hacer%20una%20consulta." 
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-5 right-5 z-50 flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-4 py-3.5 rounded-full shadow-2xl transition-transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline text-sm pr-1">¿Consultas? Escribinos</span>
+    </a>
+
+    <!-- LÓGICA INTERACTIVA EN JAVASCRIPT -->
+    <script>
+        // 1. Menú móvil responsive
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al tocar cualquier enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Calculadora Interactiva de Ahorro (en ARS)
+        const PLAN_ANNUAL_PRICE = 145000;
+
+        const treatmentsData = [
+            {
+                id: 'limpieza',
+                name: '2 Controles + Limpieza Ultrasónica y Flúor',
+                regularPrice: 110000,
+                discountPercent: 100, // Incluido 100% en el plan
+                badge: '100% Incluido en el Plan',
+                checked: true
+            },
+            {
+                id: 'radiografias',
+                name: 'Radiografía Panorámica + Periapicales',
+                regularPrice: 48000,
+                discountPercent: 100, // Incluido 100% en el plan
+                badge: '100% Incluido en el Plan',
+                checked: true
+            },
+            {
+                id: 'blanqueamiento',
+                name: 'Blanqueamiento Dental LED Clínico',
+                regularPrice: 180000,
+                discountPercent: 40,
+                badge: '40% OFF con Plan',
+                checked: true
+            },
+            {
+                id: 'caries',
+                name: 'Arreglo Estético de Caries (Resina)',
+                regularPrice: 75000,
+                discountPercent: 30,
+                badge: '30% OFF con Plan',
+                checked: false
+            },
+            {
+                id: 'placa',
+                name: 'Placa Miorrelajante 3D para Bruxismo',
+                regularPrice: 130000,
+                discountPercent: 30,
+                badge: '30% OFF con Plan',
+                checked: false
+            },
+            {
+                id: 'alineadores',
+                name: 'Tratamiento de Alineadores Invisibles',
+                regularPrice: 950000,
+                discountPercent: 20,
+                badge: '20% OFF con Plan',
+                checked: false
+            }
+        ];
+
+        const formatARS = (amount) => {
+            return new Intl.NumberFormat('es-AR', {
+                style: 'currency',
+                currency: 'ARS',
+                maximumFractionDigits: 0
+            }).format(amount);
+        };
+
+        function renderTreatments() {
+            const container = document.getElementById('treatments-list');
+            container.innerHTML = '';
+
+            treatmentsData.forEach((item, index) => {
+                const discountedPrice = item.regularPrice * (1 - item.discountPercent / 100);
+                const card = document.createElement('label');
+                card.className = `flex items-center justify-between p-4 rounded-2xl border-2 cursor-pointer transition-all select-none ${
+                    item.checked 
+                    ? 'bg-medical-50/70 border-medical-500 shadow-sm' 
+                    : 'bg-white border-slate-200 hover:border-medical-300'
+                }`;
+
+                card.innerHTML = `
+                    <div class="flex items-start gap-3.5 pr-3">
+                        <input type="checkbox" data-index="${index}" ${item.checked ? 'checked' : ''}
+                               class="mt-1 w-5 h-5 rounded text-medical-600 focus:ring-medical-500 border-slate-300 cursor-pointer">
+                        <div>
+                            <p class="font-bold text-sm sm:text-base text-slate-800">${item.name}</p>
+                            <span class="inline-block mt-1 text-xs font-semibold px-2.5 py-0.5 rounded-full ${
+                                item.discountPercent === 100 
+                                ? 'bg-mint-100 text-mint-700' 
+                                : 'bg-medical-100 text-medical-700'
+                            }">${item.badge}</span>
+                        </div>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <p class="text-xs text-slate-400 line-through">${formatARS(item.regularPrice)}</p>
+                        <p class="font-display font-extrabold text-sm sm:text-base ${
+                            discountedPrice === 0 ? 'text-mint-600' : 'text-medical-900'
+                        }">
+                            ${discountedPrice === 0 ? '$0 (Incluido)' : formatARS(discountedPrice)}
+                        </p>
+                    </div>
+                `;
+
+                const checkbox = card.querySelector('input');
+                checkbox.addEventListener('change', (e) => {
+                    treatmentsData[index].checked = e.target.checked;
+                    renderTreatments();
+                    calculateSavings();
+                });
+
+                container.appendChild(card);
+            });
+        }
+
+        function calculateSavings() {
+            let totalRegular = 0;
+            let totalDiscountedTreatments = 0;
+
+            treatmentsData.forEach(item => {
+                if (item.checked) {
+                    totalRegular += item.regularPrice;
+                    totalDiscountedTreatments += item.regularPrice * (1 - item.discountPercent / 100);
+                }
+            });
+
+            const totalWithPlan = PLAN_ANNUAL_PRICE + totalDiscountedTreatments;
+            const netSavings = totalRegular - totalWithPlan;
+
+            document.getElementById('total-regular').textContent = formatARS(totalRegular);
+            document.getElementById('total-discounted-treatments').textContent = formatARS(totalDiscountedTreatments);
+            document.getElementById('total-with-plan').textContent = formatARS(totalWithPlan);
+
+            const netSavingsEl = document.getElementById('net-savings');
+            const savingsBanner = document.getElementById('savings-banner');
+            const savingsTip = document.getElementById('savings-tip');
+
+            if (netSavings > 0) {
+                netSavingsEl.textContent = formatARS(netSavings);
+                netSavingsEl.className = 'font-display font-extrabold text-3xl text-mint-600 mt-1';
+                savingsBanner.className = 'mt-6 p-4 rounded-2xl bg-mint-50 border border-mint-300 text-center transition-all';
+                savingsTip.textContent = '¡El Plan Anual se paga solo y te deja dinero a favor!';
+            } else {
+                netSavingsEl.textContent = '$0';
+                netSavingsEl.className = 'font-display font-extrabold text-3xl text-medical-700 mt-1';
+                savingsBanner.className = 'mt-6 p-4 rounded-2xl bg-medical-50 border border-medical-200 text-center transition-all';
+                savingsTip.textContent = 'Seleccioná tus controles anuales y algún tratamiento para ver tu ahorro.';
+            }
+        }
+
+        document.getElementById('reset-calc-btn').addEventListener('click', () => {
+            treatmentsData.forEach((item, idx) => {
+                item.checked = idx < 2; // Deja seleccionados los 2 controles base
+            });
+            renderTreatments();
+            calculateSavings();
+        });
+
+        // Inicializar calculadora al cargar
+        renderTreatments();
+        calculateSavings();
+
+        // 3. Selección rápida del Plan Anual hacia el formulario
+        function seleccionarPlanEnFormulario() {
+            const motivoSelect = document.getElementById('motivo');
+            motivoSelect.value = 'Plan Anual de Revisiones ($145.000 ARS)';
+            document.getElementById('ubicacion').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                document.getElementById('nombre').focus();
+            }, 600);
+        }
+
+        // 4. Manejo interactivo del Formulario de Reserva de Turno
+        const appointmentForm = document.getElementById('appointment-form');
+        const formConfirmation = document.getElementById('form-confirmation');
+        const confirmationSummary = document.getElementById('confirmation-summary');
+        const whatsappDirectConfirm = document.getElementById('whatsapp-direct-confirm');
+
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const motivo = document.getElementById('motivo').value;
+            const franja = document.getElementById('franja').value;
+
+            confirmationSummary.innerHTML = `
+                Gracias, <strong>${nombre}</strong>. Registramos tu pedido para <strong>${motivo}</strong> en la franja de <strong>${franja}</strong>. En breve nos comunicamos al <strong>${telefono}</strong> para confirmarte día y hora exacta en Palermo.
+            `;
+
+            const waMessage = encodeURIComponent(
+                `Hola Odontología Palermo! Acabo de reservar online:\n• Nombre: ${nombre}\n• Motivo: ${motivo}\n• Preferencia: ${franja}`
+            );
+            whatsappDirectConfirm.href = `https://wa.me/5491155550192?text=${waMessage}`;
+
+            appointmentForm.classList.add('hidden');
+            formConfirmation.classList.remove('hidden');
+        });
+
+        function resetearFormulario() {
+            appointmentForm.reset();
+            formConfirmation.classList.add('hidden');
+            appointmentForm.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

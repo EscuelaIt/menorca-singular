@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cuidá tu salud bucal todo el año. Plan anual de revisiones odontológicas y beneficios en tratamientos en Buenos Aires.">
+  <title>Sonrisa Todo el Año | Odontología en Buenos Aires</title>
+  <style>
+    :root{--navy:#123b4a;--teal:#159b91;--mint:#e8f6f3;--cream:#fbfaf6;--ink:#20343b;--muted:#63777d;--white:#fff;--line:#dce8e5;--gold:#e7b968}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;background:rgba(251,250,246,.94);backdrop-filter:blur(12px);z-index:10;border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--navy);font-size:1.12rem;letter-spacing:-.03em}
+    .brandmark{width:38px;height:38px;border-radius:13px;background:var(--teal);display:grid;place-items:center;color:white;font-size:21px}
+    .navlinks{display:flex;gap:27px;align-items:center;font-size:.92rem;color:var(--muted)}.navlinks a:hover{color:var(--teal)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:999px;background:var(--teal);color:white;font-weight:700;border:0;cursor:pointer;transition:.2s}
+    .btn:hover{background:#107d76;transform:translateY(-1px)}.btn.outline{background:transparent;color:var(--navy);border:1px solid #b9d4cf}.btn.small{padding:10px 17px;font-size:.9rem}
+    .hero{padding:76px 0 82px;background:radial-gradient(circle at 85% 20%,#d8efea 0,transparent 31%),linear-gradient(120deg,#f6faf7,#fbfaf6 60%)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:#13877f;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem}
+    h1{font-size:clamp(2.8rem,5.5vw,5rem);line-height:1.04;letter-spacing:-.065em;color:var(--navy);margin:18px 0 22px;max-width:650px}
+    h1 span{color:var(--teal)}.hero p{font-size:1.13rem;color:var(--muted);max-width:560px;margin:0 0 29px}.actions{display:flex;gap:13px;flex-wrap:wrap}.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:.86rem}.trust span:before{content:"✓";color:var(--teal);font-weight:900;margin-right:7px}
+    .hero-art{min-height:440px;position:relative;display:grid;place-items:center}.portrait{width:min(100%,460px);height:430px;border-radius:48% 48% 26px 26px;background:linear-gradient(145deg,#c8e7df,#eef5ed);position:relative;overflow:hidden;display:grid;place-items:center}
+    .portrait:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#f8fcf8;top:43px;left:50%;transform:translateX(-50%)}
+    .tooth{position:relative;z-index:1;font-size:180px;color:white;filter:drop-shadow(0 14px 16px rgba(18,59,74,.12));line-height:1}
+    .float-card{position:absolute;background:white;padding:17px 20px;border-radius:18px;box-shadow:0 14px 40px #123b4a18;max-width:210px}.float-card strong{display:block;color:var(--navy);font-size:1.02rem}.float-card small{color:var(--muted)}.float-card.one{top:45px;right:-4px}.float-card.two{bottom:38px;left:-18px}
+    section{padding:86px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 44px}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.05em;line-height:1.1;color:var(--navy);margin:12px 0}.section-head p{color:var(--muted);margin:0}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.benefit{padding:28px;border:1px solid var(--line);border-radius:22px;background:white}.ico{width:48px;height:48px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:23px}.benefit h3{color:var(--navy);margin:18px 0 8px}.benefit p{color:var(--muted);margin:0;font-size:.96rem}
+    .plan-section{background:var(--navy);color:white}.plan-section .section-head h2{color:white}.plan-section .section-head p{color:#c3d4d8}.plan-card{max-width:760px;margin:auto;background:white;color:var(--ink);border-radius:28px;padding:36px;display:grid;grid-template-columns:1fr .9fr;gap:34px;box-shadow:0 20px 60px #061e2738}
+    .plan-card h3{font-size:1.65rem;color:var(--navy);margin:0 0 8px}.plan-card p{color:var(--muted);margin:0 0 20px}.checks{list-style:none;padding:0;margin:0}.checks li{padding:9px 0;border-bottom:1px solid #edf1ef}.checks li:before{content:"✓";color:var(--teal);font-weight:900;margin-right:10px}
+    .pricebox{background:var(--mint);border-radius:20px;padding:25px;display:flex;flex-direction:column;justify-content:center}.pricebox .label{font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:#397a74;font-weight:800}.pricebox strong{font-size:2rem;color:var(--navy);letter-spacing:-.04em;margin:8px 0}.pricebox small{color:var(--muted);margin-bottom:18px}
+    .discount-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.discount{background:white;border:1px solid var(--line);border-radius:20px;padding:25px}.discount .tag{display:inline-block;background:#fff2dc;color:#94631c;padding:5px 10px;border-radius:99px;font-size:.78rem;font-weight:800}.discount h3{color:var(--navy);margin:14px 0 7px}.discount p{color:var(--muted);margin:0;font-size:.94rem}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}.step{padding:8px 10px}.step:before{counter-increment:step;content:"0" counter(step);font-size:2.3rem;font-weight:800;color:var(--teal);letter-spacing:-.06em}.step h3{color:var(--navy);margin:8px 0}.step p{color:var(--muted);margin:0}
+    .faq{max-width:800px;margin:auto}.faq details{padding:20px 0;border-bottom:1px solid var(--line)}.faq summary{font-weight:750;color:var(--navy);cursor:pointer}.faq details p{color:var(--muted);margin:12px 0 0}
+    .contact{background:var(--mint)}.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}.contact h2{font-size:2.7rem;line-height:1.1;letter-spacing:-.05em;color:var(--navy);margin:12px 0}.contact p{color:var(--muted)}.contact-info{margin-top:25px}.contact-info div{margin:13px 0;color:var(--navy);font-weight:650}
+    form{background:white;border-radius:24px;padding:30px;box-shadow:0 14px 40px #123b4a0d}label{display:block;font-size:.87rem;font-weight:700;color:var(--navy);margin:0 0 6px}input,textarea,select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;font:inherit;margin-bottom:16px;background:#fff;color:var(--ink)}textarea{min-height:110px;resize:vertical}form .btn{width:100%}.fineprint{font-size:.78rem;color:var(--muted);margin-top:13px}
+    footer{padding:28px 0;background:#0c2d39;color:#c1d1d5;font-size:.85rem}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-brand{font-weight:800;color:white}
+    @media(max-width:850px){.navlinks{display:none}.hero-grid,.contact-grid{grid-template-columns:1fr}.hero{padding-top:55px}.hero-art{min-height:350px}.portrait{height:350px}.benefits,.discount-grid{grid-template-columns:1fr 1fr}.plan-card{grid-template-columns:1fr}.steps{grid-template-columns:1fr;gap:18px}}
+    @media(max-width:560px){.wrap{width:min(100% - 30px,1160px)}.benefits,.discount-grid{grid-template-columns:1fr}section{padding:65px 0}.hero-art{min-height:300px}.portrait{height:300px}.tooth{font-size:130px}.float-card.one{right:0;top:15px}.float-card.two{left:0;bottom:15px}.plan-card{padding:23px}.nav{height:68px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio"><span class="brandmark">✦</span> Sonrisa Todo el Año</a>
+    <nav class="navlinks"><a href="#plan">Plan anual</a><a href="#beneficios">Beneficios</a><a href="#como-funciona">Cómo funciona</a><a href="#contacto">Contacto</a></nav>
+    <a class="btn small" href="#contacto">Consultar plan</a>
+  </div>
+</header>
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Odontología · Buenos Aires</div>
+        <h1>Tu sonrisa merece cuidado <span>todo el año.</span></h1>
+        <p>Prevenir es la mejor forma de cuidar tu salud bucal. Sumate a nuestro plan anual de revisiones y accedé a beneficios especiales en tratamientos odontológicos.</p>
+        <div class="actions"><a class="btn" href="#contacto">Quiero conocer el plan</a><a class="btn outline" href="#beneficios">Ver beneficios</a></div>
+        <div class="trust"><span>Seguimiento periódico</span><span>Atención personalizada</span><span>Beneficios para socios</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="portrait"><div class="tooth">✧</div></div>
+        <div class="float-card one"><strong>Prevenir es cuidar</strong><small>Revisiones planificadas durante el año</small></div>
+        <div class="float-card two"><strong>Beneficios exclusivos</strong><small>Descuentos en tratamientos incluidos</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Una forma más simple de cuidarte</div><h2>Más prevención. Más tranquilidad.</h2><p>Un programa pensado para que no postergues tus controles y puedas planificar tu salud bucal durante todo el año.</p></div>
+      <div class="benefits">
+        <article class="benefit"><div class="ico">🗓️</div><h3>Revisiones programadas</h3><p>Organizá tus controles odontológicos con anticipación y mantené un seguimiento profesional.</p></article>
+        <article class="benefit"><div class="ico">🦷</div><h3>Prevención personalizada</h3><p>Recibí orientación según tus necesidades y recomendaciones para cuidar tu sonrisa.</p></article>
+        <article class="benefit"><div class="ico">♡</div><h3>Descuentos en tratamientos</h3><p>Accedé a tarifas preferenciales en los tratamientos contemplados en el programa.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="plan-section" id="plan">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow" style="color:#8fe0d5">Tu cuidado, durante 12 meses</div><h2>Un plan anual para sonreír con confianza.</h2><p>Una propuesta clara para acompañarte con controles periódicos y beneficios en tu atención odontológica.</p></div>
+      <div class="plan-card">
+        <div><h3>Plan Sonrisa Anual</h3><p>Tu programa de prevención y beneficios para todo el año.</p>
+          <ul class="checks"><li>Revisiones odontológicas según el calendario del plan</li><li>Seguimiento de tu salud bucal</li><li>Descuentos en tratamientos seleccionados</li><li>Atención personalizada y orientación preventiva</li><li>Vigencia de 12 meses desde el alta</li></ul>
+        </div>
+        <div class="pricebox"><span class="label">Membresía anual</span><strong>Consultá el valor</strong><small>Te contamos el precio, las modalidades de pago y los beneficios vigentes.</small><a class="btn" href="#contacto">Solicitar información</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Beneficios para socios</div><h2>Tratamientos con descuentos especiales.</h2><p>Consultá qué prestaciones están incluidas y qué porcentaje de descuento corresponde a cada una.</p></div>
+      <div class="discount-grid">
+        <article class="discount"><span class="tag">Beneficio del plan</span><h3>Odontología general</h3><p>Condiciones preferenciales en prácticas de atención general contempladas en el programa.</p></article>
+        <article class="discount"><span class="tag">Beneficio del plan</span><h3>Estética dental</h3><p>Descuentos en tratamientos estéticos seleccionados, sujetos a evaluación profesional.</p></article>
+        <article class="discount"><span class="tag">Beneficio del plan</span><h3>Rehabilitación oral</h3><p>Beneficios en tratamientos de rehabilitación incluidos en las condiciones del plan.</p></article>
+      </div>
+      <p class="fineprint" style="text-align:center;margin-top:22px">Los descuentos, prestaciones incluidas y exclusiones deben confirmarse al contratar. Cada tratamiento requiere evaluación y presupuesto profesional.</p>
+    </div>
+  </section>
+
+  <section id="como-funciona" style="background:#f1f6f3">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Simple y práctico</div><h2>Empezá en tres pasos.</h2><p>Un proceso sencillo para poner tu salud bucal en agenda.</p></div>
+      <div class="steps">
+        <article class="step"><h3>Consultá</h3><p>Escribinos y te explicamos el alcance del plan, los valores y los descuentos disponibles.</p></article>
+        <article class="step"><h3>Sumate</h3><p>Confirmá las condiciones, completá el alta y coordiná tu primera revisión.</p></article>
+        <article class="step"><h3>Cuidá tu sonrisa</h3><p>Realizá tus controles y aprovechá los beneficios durante la vigencia de tu plan.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que necesitás saber.</h2></div>
+      <div class="faq">
+        <details><summary>¿Qué incluye el plan anual?</summary><p>Incluye revisiones odontológicas programadas y acceso a descuentos en determinados tratamientos. El detalle exacto de prestaciones, cantidad de controles y exclusiones se informa antes del alta.</p></details>
+        <details><summary>¿Los descuentos se aplican a todos los tratamientos?</summary><p>No necesariamente. Los descuentos se aplican a las prácticas expresamente incluidas en las condiciones vigentes del plan. Consultá por tu tratamiento antes de comenzar.</p></details>
+        <details><summary>¿Puedo contratarlo si ya soy paciente?</summary><p>Podés consultar las condiciones de adhesión tanto si ya atendés con nosotros como si querés comenzar a cuidarte en el consultorio.</p></details>
+        <details><summary>¿El plan reemplaza una cobertura médica u odontológica?</summary><p>No. Es un programa de revisiones y beneficios del consultorio; no debe presentarse como seguro médico ni como cobertura integral.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="wrap contact-grid">
+      <div><div class="eyebrow">Estamos para ayudarte</div><h2>Tu próxima revisión empieza con una consulta.</h2><p>Dejanos tus datos y te contactaremos para contarte cómo funciona el plan anual.</p>
+        <div class="contact-info"><div>📍 Buenos Aires, Argentina</div><div>📞 [Agregar teléfono / WhatsApp]</div><div>✉️ [Agregar correo electrónico]</div><div>📷 [Agregar Instagram]</div></div>
+      </div>
+      <form id="contactForm">
+        <label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" placeholder="Cómo te llamás" required>
+        <label for="telefono">Teléfono / WhatsApp</label><input id="telefono" name="telefono" type="tel" placeholder="+54 9 ..." required>
+        <label for="email">Correo electrónico</label><input id="email" name="email" type="email" placeholder="nombre@correo.com">
+        <label for="interes">¿Qué te interesa conocer?</label><select id="interes" name="interes"><option>Plan anual y revisiones</option><option>Descuentos en tratamientos</option><option>Solicitar un turno</option><option>Otra consulta</option></select>
+        <label for="mensaje">Mensaje (opcional)</label><textarea id="mensaje" name="mensaje" placeholder="Contanos en qué podemos ayudarte"></textarea>
+        <button class="btn" type="submit">Enviar consulta por WhatsApp</button>
+        <p class="fineprint">Al enviar, se abrirá WhatsApp con tu consulta preparada. No compartas información clínica sensible en este formulario.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><div><div class="footer-brand">Sonrisa Todo el Año</div><div>Odontología en Buenos Aires</div></div><div>© <span id="year"></span> · Todos los derechos reservados</div><div>La atención y los tratamientos están sujetos a evaluación profesional.</div></div></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const phone = '5491112345678'; // Reemplazar por el WhatsApp real, con código de país y área, sin + ni espacios.
+    const data = new FormData(this);
+    const message = `Hola, quisiera información sobre el Plan Sonrisa Anual.%0A%0ANombre: ${encodeURIComponent(data.get('nombre'))}%0ATeléfono: ${encodeURIComponent(data.get('telefono'))}%0AEmail: ${encodeURIComponent(data.get('email') || 'No indicado')}%0AConsulta: ${encodeURIComponent(data.get('interes'))}%0AMensaje: ${encodeURIComponent(data.get('mensaje') || 'Sin mensaje adicional')}`;
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  });
+</script>
+</body>
+</html>

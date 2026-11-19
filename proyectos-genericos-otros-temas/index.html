@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Índice de las webs genéricas de otros temas.">
+    <meta name="theme-color" content="#f4efe4">
+    <title>Otros temas genéricos | Índice</title>
+    <style>
+      :root {
+        --fondo: #f4efe4;
+        --papel: #fffdf7;
+        --grafito: #262823;
+        --oliva: #66703d;
+        --linea: #c9c1ae;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: Arial, sans-serif;
+        color: var(--grafito);
+        background: var(--fondo);
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .salto {
+        position: fixed;
+        top: 0;
+        left: 0.75rem;
+        z-index: 10;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        background: var(--grafito);
+        color: white;
+        transform: translateY(-150%);
+      }
+
+      .salto:focus {
+        transform: translateY(0);
+      }
+
+      header,
+      main,
+      footer {
+        width: min(64rem, calc(100% - 2rem));
+        margin-inline: auto;
+      }
+
+      header {
+        min-height: 6rem;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--linea);
+      }
+
+      main {
+        padding-block: 3rem 5rem;
+      }
+
+      h1,
+      h2 {
+        font-family: Georgia, serif;
+      }
+
+      h1 {
+        margin: 0.25rem 0 1.25rem;
+        font-size: clamp(2.25rem, 8vw, 4.5rem);
+        line-height: 1;
+      }
+
+      h2 {
+        margin: 3.5rem 0 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 3px solid var(--oliva);
+        font-size: clamp(1.75rem, 5vw, 2.25rem);
+      }
+
+      .registro {
+        margin: 0;
+        color: var(--oliva);
+        font-family: monospace;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a.enlace {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid var(--linea);
+        background: var(--papel);
+        color: var(--grafito);
+        text-decoration: none;
+      }
+
+      a.enlace::after {
+        content: "↗";
+        color: var(--oliva);
+        font-size: 1.25rem;
+      }
+
+      a.enlace:hover {
+        border-color: var(--oliva);
+        background: white;
+      }
+
+      a.enlace:focus-visible {
+        outline: 3px solid var(--oliva);
+        outline-offset: 3px;
+      }
+
+      footer {
+        min-height: 5rem;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid var(--linea);
+        font-size: 0.875rem;
+      }
+
+      @media (min-width: 48rem) {
+        ul {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        a.enlace {
+          min-height: 5.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+
+    <header>
+      <p class="registro">Otros temas · Índice</p>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+      <h1>Webs genéricas de otros temas</h1>
+
+      <section aria-labelledby="gpt">
+        <h2 id="gpt">GPT</h2>
+        <ul>
+          <li>
+            <a class="enlace" href="gpt/web_dentista_buenos_aires.html">
+              Sonrisa Todo el Año
+            </a>
+          </li>
+          <li>
+            <a class="enlace" href="gpt/taller-madrid.html">
+              Taller Madrid
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="grok">
+        <h2 id="grok">Grok</h2>
+        <ul>
+          <li>
+            <a class="enlace" href="grok/dentista.html">
+              Clínica Dental Sonrisa BA
+            </a>
+          </li>
+          <li>
+            <a class="enlace" href="grok/taller-motor-madrid.html">
+              Taller Motor Madrid
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="gemini">
+        <h2 id="gemini">Gemini</h2>
+        <ul>
+          <li>
+            <a class="enlace" href="gemini/odontolog_a_palermo_cl_nica_dental_en_caba.html">
+              Odontología Palermo
+            </a>
+          </li>
+          <li>
+            <a class="enlace" href="gemini/autobox_madrid_taller_mec_nico_multimarca.html">
+              AutoBox Madrid
+            </a>
+          </li>
+          <li>
+            <a class="enlace" href="gemini/ramiro_cuevas_pintor_en_j_vea_y_d_nia.html">
+              Ramiro Cuevas
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="claude">
+        <h2 id="claude">Claude</h2>
+        <ul>
+          <li>
+            <a class="enlace" href="claude/Ramiro Cuevas Pintor.html">
+              Ramiro Cuevas · Pintor
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Proyectos genéricos · Otros temas</p>
+    </footer>
+  </body>
+</html>

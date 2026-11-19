@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBox Madrid | Taller Mecánico Multimarca de Confianza</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos limpios y profesionales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#162032',
+                            900: '#0f172a',
+                            950: '#080d1a',
+                        },
+                        accent: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden">
+
+    <!-- Barra Superior Informativa (Desktop) -->
+    <div class="hidden md:block bg-slate-950 text-slate-300 text-xs py-2 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-orange-500"></i>
+                    Calle de Alcalá, 518 - 28027 Madrid (San Blas - Canillejas)
+                </span>
+                <span class="flex items-center gap-2">
+                    <i class="fa-regular fa-clock text-orange-500"></i>
+                    Lun - Vie: 08:00 - 19:30 | Sáb: 09:00 - 14:00
+                </span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-emerald-400 font-medium flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Abierto hoy • Cita rápida en 24h
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Barra de Navegación Fija -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-wrench text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-white font-extrabold text-xl tracking-tight block leading-none">
+                            AUTOBOX <span class="text-orange-500">MADRID</span>
+                        </span>
+                        <span class="text-slate-400 text-[11px] uppercase tracking-widest font-semibold">
+                            Taller Multimarca
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Enlaces de navegación Desktop -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#servicios" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Servicios</a>
+                    <a href="#marcas" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Marcas</a>
+                    <a href="#nosotros" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Nosotros</a>
+                    <a href="#opiniones" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Opiniones</a>
+                    <a href="#ubicacion" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- Botones Acción Desktop -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="tel:+34910004820" class="text-slate-200 hover:text-orange-400 font-semibold text-sm px-3 py-2 rounded-xl transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-orange-500"></i>
+                        <span>910 00 48 20</span>
+                    </a>
+                    <a href="#cita" class="bg-orange-500 hover:bg-orange-600 active:scale-95 text-white font-bold text-sm px-5 py-3 rounded-xl shadow-lg shadow-orange-500/25 transition-all flex items-center gap-2">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Pedir Cita</span>
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" aria-label="Abrir menú" class="lg:hidden text-slate-200 hover:text-white p-2.5 rounded-xl bg-slate-800/80 border border-slate-700">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-slate-800 px-4 pt-3 pb-6 space-y-2 shadow-2xl">
+            <a href="#servicios" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-slate-800 font-medium">Servicios</a>
+            <a href="#marcas" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-slate-800 font-medium">Marcas que reparamos</a>
+            <a href="#nosotros" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-slate-800 font-medium">Por qué elegirnos</a>
+            <a href="#opiniones" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-slate-800 font-medium">Opiniones de clientes</a>
+            <a href="#ubicacion" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-slate-800 font-medium">Ubicación y Horario</a>
+            <div class="pt-3 grid grid-cols-2 gap-3">
+                <a href="tel:+34910004820" class="flex items-center justify-center gap-2 bg-slate-800 text-white font-semibold py-3.5 rounded-xl border border-slate-700">
+                    <i class="fa-solid fa-phone text-orange-500"></i> Llamar
+                </a>
+                <a href="#cita" class="mobile-link flex items-center justify-center gap-2 bg-orange-500 text-white font-bold py-3.5 rounded-xl shadow-md">
+                    <i class="fa-regular fa-calendar-check"></i> Pedir Cita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Sección Hero Impactante -->
+    <section class="relative bg-slate-900 text-white overflow-hidden">
+        <!-- Imagen de fondo con superposición oscura degradada -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80" 
+                onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/0f172a/1e293b?text=Taller+Mecanico+AutoBox+Madrid';"
+                alt="Interior profesional del taller mecánico AutoBox Madrid" 
+                class="w-full h-full object-cover object-center opacity-25"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-slate-900/75"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Columna Texto Hero -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-800/90 border border-slate-700/80 text-orange-400 text-xs sm:text-sm font-semibold shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Normativa Europea UE 461/2010 • Sin perder tu garantía oficial</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
+                        Tu Taller Mecánico <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Multimarca</span> de Confianza en Madrid
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl font-normal">
+                        Mantenimiento integral, diagnosis avanzada y reparación para <strong class="text-white font-semibold">todas las marcas y modelos</strong> (turismos, SUV, híbridos y furgonetas). Recambios originales y presupuesto cerrado antes de empezar.
+                    </p>
+
+                    <!-- Llamadas a la Acción -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#cita" class="inline-flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 active:scale-[0.99] text-white font-bold text-base px-8 py-4 rounded-2xl shadow-xl shadow-orange-500/25 transition-all">
+                            <i class="fa-regular fa-calendar-check text-lg"></i>
+                            <span>Pedir Cita Online</span>
+                        </a>
+                        <a href="tel:+34910004820" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 text-white font-bold text-base px-8 py-4 rounded-2xl transition-all">
+                            <i class="fa-solid fa-phone text-orange-400"></i>
+                            <span>Llamar Ahora: 910 00 48 20</span>
+                        </a>
+                    </div>
+
+                    <!-- Indicadores Rápidos de Confianza -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 max-w-xl">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">4.9<span class="text-orange-500">/5</span></p>
+                            <p class="text-xs sm:text-sm text-slate-400">Valoración en Google</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">+15<span class="text-orange-500"> años</span></p>
+                            <p class="text-xs sm:text-sm text-slate-400">Experiencia en Madrid</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">100<span class="text-orange-500">%</span></p>
+                            <p class="text-xs sm:text-sm text-slate-400">Garantía en reparaciones</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Destacada Derecha -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-800/90 backdrop-blur-md border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="bg-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg">
+                                Promoción Madrid
+                            </span>
+                            <span class="text-slate-400 text-xs font-medium">Sin compromiso</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white mb-2">
+                            Revisión Pre-ITV + Diagnosis Electrónica
+                        </h2>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                            Comprobamos más de 40 puntos críticos (frenos, emisiones, luces, suspensión y centralita) para que pases la ITV en Madrid a la primera.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-200 mb-7">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>Lectura completa de fallos OBD2 multimarca</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>Prueba de frenado y control de gases/opacidad</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>Posibilidad de llevar nosotros tu coche a la ITV</span>
+                            </li>
+                        </ul>
+                        <a href="#cita" onclick="seleccionarServicioRapido('Revisión Pre-ITV')" class="w-full block text-center bg-white hover:bg-slate-100 text-slate-900 font-bold py-3.5 px-6 rounded-xl transition-colors shadow-md">
+                            Reservar Revisión Pre-ITV →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sección de Servicios Principales -->
+    <section id="servicios" class="py-20 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">Soluciones Integrales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
+                    Nuestros Servicios Mecánicos
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Equipamiento de última generación para el mantenimiento preventivo y correctivo de cualquier fabricante europeo, asiático o americano.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1: Mecánica General -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-orange-500/40 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mb-6 transition-colors shadow-md">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Mecánica General</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Cambios de aceite y filtros, kits de distribución, embragues, frenos (discos y pastillas), amortiguadores, escapes y mantenimiento oficial según libro del fabricante.
+                        </p>
+                    </div>
+                    <a href="#cita" onclick="seleccionarServicioRapido('Mecánica General y Mantenimiento')" class="inline-flex items-center gap-2 text-sm font-bold text-orange-600 group-hover:text-orange-700">
+                        <span>Solicitar presupuesto</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 2: Revisión Pre-ITV -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-orange-500/40 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mb-6 transition-colors shadow-md">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Revisión Pre-ITV</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Inspección exhaustiva de seguridad, alumbrado, holguras de dirección, frenometría y control de emisiones contaminantes para evitar rechazos en estaciones ITV de Madrid.
+                        </p>
+                    </div>
+                    <a href="#cita" onclick="seleccionarServicioRapido('Revisión Pre-ITV')" class="inline-flex items-center gap-2 text-sm font-bold text-orange-600 group-hover:text-orange-700">
+                        <span>Reservar revisión</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 3: Neumáticos y Alineación -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-orange-500/40 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mb-6 transition-colors shadow-md">
+                            <i class="fa-solid fa-dharmachakra"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Neumáticos y Alineación</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Venta y montaje de primeras marcas (Michelin, Bridgestone, Pirelli, Continental), equilibrado digital de precisión, reparación de pinchazos y alineación de dirección 3D.
+                        </p>
+                    </div>
+                    <a href="#cita" onclick="seleccionarServicioRapido('Neumáticos y Alineación')" class="inline-flex items-center gap-2 text-sm font-bold text-orange-600 group-hover:text-orange-700">
+                        <span>Consultar neumáticos</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 4: Aire Acondicionado -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-orange-500/40 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mb-6 transition-colors shadow-md">
+                            <i class="fa-regular fa-snowflake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Aire Acondicionado</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Carga de gas refrigerante R134a y R1234yf, detección de fugas con contraste UV, reparación de compresores, limpieza de circuitos y sustitución de filtro de habitáculo.
+                        </p>
+                    </div>
+                    <a href="#cita" onclick="seleccionarServicioRapido('Aire Acondicionado y Climatización')" class="inline-flex items-center gap-2 text-sm font-bold text-orange-600 group-hover:text-orange-700">
+                        <span>Pedir cita climatización</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 5: Diagnosis Electrónica -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-orange-500/40 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mb-6 transition-colors shadow-md">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Diagnosis Electrónica</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Máquinas de diagnosis multimarca Bosch y Texa actualizadas. Localización exacta de testigos en cuadro, fallos de motor, ABS, airbag, filtros antipartículas (FAP/DPF) y baterías.
+                        </p>
+                    </div>
+                    <a href="#cita" onclick="seleccionarServicioRapido('Diagnosis Electrónica')" class="inline-flex items-center gap-2 text-sm font-bold text-orange-600 group-hover:text-orange-700">
+                        <span>Solicitar diagnosis</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 6: Chapa y Pintura -->
+                <div class="group bg-slate-50 hover:bg-white border border-slate-200/80 hover:border-orange-500/40 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-slate-900 group-hover:bg-orange-500 text-white flex items-center justify-center text-2xl mb-6 transition-colors shadow-md">
+                            <i class="fa-solid fa-spray-can-sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Chapa y Pintura</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Reparación de golpes, arañazos, abolladuras, bancada y cabina de pintura al horno con igualación exacta de color. Trabajamos con todas las compañías aseguradoras.
+                        </p>
+                    </div>
+                    <a href="#cita" onclick="seleccionarServicioRapido('Chapa y Pintura')" class="inline-flex items-center gap-2 text-sm font-bold text-orange-600 group-hover:text-orange-700">
+                        <span>Valorar reparación</span>
+                        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Sección 'Trabajamos con todas las marcas' -->
+    <section id="marcas" class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">Especialistas Multimarca</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
+                    Trabajamos con todas las marcas
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Contamos con acceso a la información técnica oficial, esquemas eléctricos y utillaje específico para reparar cualquier fabricante del mercado.
+                </p>
+            </div>
+
+            <!-- Cuadrícula limpia de marcas populares -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">SE</span>
+                    <span class="font-bold text-slate-800 text-sm">SEAT / Cupra</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">VW</span>
+                    <span class="font-bold text-slate-800 text-sm">Volkswagen</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">AU</span>
+                    <span class="font-bold text-slate-800 text-sm">Audi</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">BM</span>
+                    <span class="font-bold text-slate-800 text-sm">BMW / Mini</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">MB</span>
+                    <span class="font-bold text-slate-800 text-sm">Mercedes-Benz</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">RE</span>
+                    <span class="font-bold text-slate-800 text-sm">Renault / Dacia</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">PE</span>
+                    <span class="font-bold text-slate-800 text-sm">Peugeot</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">CI</span>
+                    <span class="font-bold text-slate-800 text-sm">Citroën / Opel</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">FO</span>
+                    <span class="font-bold text-slate-800 text-sm">Ford</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">TY</span>
+                    <span class="font-bold text-slate-800 text-sm">Toyota / Lexus</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">HY</span>
+                    <span class="font-bold text-slate-800 text-sm">Hyundai</span>
+                </div>
+                <div class="bg-white border border-slate-200/90 hover:border-orange-500 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all group">
+                    <span class="w-10 h-10 rounded-full bg-slate-100 group-hover:bg-orange-50 text-slate-700 group-hover:text-orange-600 font-black text-sm flex items-center justify-center mb-2 transition-colors">KI</span>
+                    <span class="font-bold text-slate-800 text-sm">Kia / Nissan</span>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-8">
+                ¿Tu coche es de otra marca (Volvo, Mazda, Fiat, Skoda, Alfa Romeo, Jeep, Honda...)? <a href="#cita" class="text-orange-600 font-semibold underline hover:text-orange-700">Consúltanos sin problema, también lo reparamos.</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- 5. Sección de Ventajas / Por qué elegirnos -->
+    <section id="nosotros" class="py-20 sm:py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-orange-400 font-bold text-sm uppercase tracking-wider">Por qué elegir AutoBox Madrid</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+                        Transparencia total, calidad de concesionario y precios justos
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        Sabemos lo importante que es tu vehículo en tu día a día en Madrid. Por eso trabajamos con total claridad: te explicamos cada intervención, te mostramos las piezas sustituidas y cumplimos los plazos acordados.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#cita" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-4 rounded-2xl shadow-lg shadow-orange-500/20 transition-all">
+                            <span>Solicitar Presupuesto Gratis</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                    <!-- Ventaja 1 -->
+                    <div class="bg-slate-800/80 border border-slate-700/80 rounded-3xl p-7">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Mantenimiento sin perder garantía</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Sellamos el libro oficial de mantenimiento de tu vehículo conforme al Reglamento Europeo 461/2010 manteniendo intacta la garantía del fabricante.
+                        </p>
+                    </div>
+
+                    <!-- Ventaja 2 -->
+                    <div class="bg-slate-800/80 border border-slate-700/80 rounded-3xl p-7">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Recambios originales y homologados</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Solo instalamos componentes de primer equipo (Bosch, Valeo, Mann, Brembo, Sachs) con garantía completa en piezas y mano de obra.
+                        </p>
+                    </div>
+
+                    <!-- Ventaja 3 -->
+                    <div class="bg-slate-800/80 border border-slate-700/80 rounded-3xl p-7">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Presupuesto previo sin compromiso</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Nunca realizamos ninguna reparación adicional sin tu autorización expresa. Sabrás exactamente cuánto vas a pagar desde el primer minuto.
+                        </p>
+                    </div>
+
+                    <!-- Ventaja 4 -->
+                    <div class="bg-slate-800/80 border border-slate-700/80 rounded-3xl p-7">
+                        <div class="w-12 h-12 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Vehículo de sustitución</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Disponemos de flota de vehículos de cortesía (sujeto a disponibilidad y reserva previa) para que no te quedes sin movilidad en Madrid.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonios de Clientes de Madrid -->
+    <section id="opiniones" class="py-20 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">Opiniones Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 mb-4">
+                    Lo que dicen los conductores de Madrid
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Más de 1.200 clientes particulares y empresas de la Comunidad de Madrid confían en nuestro equipo cada año.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-6">
+                            "Llevé mi Audi A4 para la revisión oficial y cambio de pastillas de freno. Me dieron presupuesto cerrado por WhatsApp antes de ir, cumplieron la hora de entrega y me ahorré casi un 40% respecto al concesionario oficial."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-11 h-11 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm">
+                            CM
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Carlos Mendoza</p>
+                            <p class="text-xs text-slate-500">Barrio de Salamanca, Madrid • Audi A4</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-6">
+                            "Se me encendió el testigo de fallo motor en mi Peugeot 3008 y en otro taller querían cambiarme medio motor. Aquí hicieron una diagnosis electrónica precisa, era solo un sensor y en el mismo día estaba solucionado. Honestidad de 10."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-11 h-11 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-sm">
+                            LG
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Laura Gómez</p>
+                            <p class="text-xs text-slate-500">Arturo Soria, Madrid • Peugeot 3008</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm leading-relaxed italic mb-6">
+                            "Traemos los tres coches de la familia (un Toyota Yaris híbrido, un Seat León y un BMW Serie 1). Siempre trato cercano, limpios, puntuales y con coche de sustitución cuando lo hemos necesitado. Taller de cabecera en Madrid."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-200/70">
+                        <div class="w-11 h-11 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm">
+                            JR
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Javier Ruiz</p>
+                            <p class="text-xs text-slate-500">Hortaleza, Madrid • Toyota / BMW</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Formulario Interactivo de Cita Previa / Presupuesto + 8. Contacto y Ubicación en Madrid -->
+    <section id="cita" class="py-20 sm:py-24 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Columna Izquierda: Formulario Funcional -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/80">
+                    <div class="mb-8">
+                        <span class="text-orange-600 font-bold text-sm uppercase tracking-wider">Respuesta en menos de 2h</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                            Solicita Cita Previa o Presupuesto
+                        </h2>
+                        <p class="text-slate-600 text-sm mt-2">
+                            Completa los datos de tu vehículo y nos pondremos en contacto contigo para confirmar tu cita o enviarte presupuesto detallado sin compromiso.
+                        </p>
+                    </div>
+
+                    <!-- Formulario -->
+                    <form id="booking-form" class="space-y-5" novalidate>
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <!-- Nombre -->
+                            <div>
+                                <label for="nombre" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                    Nombre completo <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="nombre" name="nombre" required placeholder="Ej. Alejandro Martín"
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-slate-900 text-sm">
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div>
+                                <label for="telefono" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                    Teléfono de contacto <span class="text-red-500">*</span>
+                                </label>
+                                <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 612 34 56 78"
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-slate-900 text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <!-- Matrícula / Marca y Modelo -->
+                            <div>
+                                <label for="vehiculo" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                    Matrícula o Marca y Modelo <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="vehiculo" name="vehiculo" required placeholder="Ej. 1234 LMN / Seat León 1.5 TSI"
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-slate-900 text-sm">
+                            </div>
+
+                            <!-- Fecha preferida -->
+                            <div>
+                                <label for="fecha" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                    Fecha preferida <span class="text-red-500">*</span>
+                                </label>
+                                <input type="date" id="fecha" name="fecha" required
+                                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-slate-900 text-sm">
+                            </div>
+                        </div>
+
+                        <!-- Servicio Necesario -->
+                        <div>
+                            <label for="servicio" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                Servicio necesario <span class="text-red-500">*</span>
+                            </label>
+                            <select id="servicio" name="servicio" required
+                                class="w-full px-4 py-3.5 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-slate-900 text-sm bg-white">
+                                <option value="">Selecciona un servicio...</option>
+                                <option value="Mecánica General y Mantenimiento">Mecánica General y Mantenimiento (Aceite, filtros, frenos, distribución...)</option>
+                                <option value="Revisión Pre-ITV">Revisión Pre-ITV</option>
+                                <option value="Neumáticos y Alineación">Neumáticos y Alineación</option>
+                                <option value="Aire Acondicionado y Climatización">Aire Acondicionado y Climatización</option>
+                                <option value="Diagnosis Electrónica">Diagnosis Electrónica / Testigo en cuadro</option>
+                                <option value="Chapa y Pintura">Chapa y Pintura</option>
+                                <option value="Otro / Consulta General">Otro servicio / Consulta de presupuesto</option>
+                            </select>
+                        </div>
+
+                        <!-- Observaciones opcionales -->
+                        <div>
+                            <label for="comentarios" class="block text-sm font-semibold text-slate-800 mb-1.5">
+                                Observaciones o síntomas del vehículo (opcional)
+                            </label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Cuéntanos brevemente qué necesita tu coche o si necesitas vehículo de sustitución..."
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-slate-900 text-sm"></textarea>
+                        </div>
+
+                        <!-- Mensaje de error inline (sin alert()) -->
+                        <div id="form-error" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-exclamation text-red-500"></i>
+                            <span id="form-error-text">Por favor, completa todos los campos obligatorios.</span>
+                        </div>
+
+                        <!-- Botón Enviar -->
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 active:scale-[0.99] text-white font-bold text-base py-4 px-6 rounded-2xl shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Confirmar Solicitud de Cita</span>
+                        </button>
+                    </form>
+
+                    <!-- Caja de Confirmación al Enviar -->
+                    <div id="booking-confirmation" class="hidden bg-emerald-50 border border-emerald-200 rounded-2xl p-6 sm:p-8 text-center space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl mx-auto shadow-lg shadow-emerald-500/25">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-slate-900">¡Solicitud recibida correctamente!</h3>
+                        <p class="text-slate-700 text-sm max-w-md mx-auto leading-relaxed" id="confirmation-summary">
+                            Gracias por confiar en AutoBox Madrid. Uno de nuestros asesores técnicos te llamará en breve para confirmar tu cita.
+                        </p>
+                        <div class="bg-white rounded-xl p-4 border border-emerald-200/80 text-left text-xs text-slate-600 space-y-1.5 max-w-md mx-auto" id="confirmation-details">
+                        </div>
+                        <div class="pt-2">
+                            <button type="button" id="reset-form-btn" class="text-sm font-bold text-orange-600 hover:text-orange-700 underline">
+                                Hacer otra solicitud
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Columna Derecha: Contacto y Ubicación en Madrid -->
+                <div id="ubicacion" class="lg:col-span-5 space-y-6">
+                    <div class="bg-slate-900 text-white rounded-3xl p-7 sm:p-8 shadow-xl">
+                        <span class="text-orange-400 font-bold text-xs uppercase tracking-wider">Dónde Estamos</span>
+                        <h3 class="text-2xl font-extrabold mt-1 mb-6">Visítanos en Madrid</h3>
+
+                        <div class="space-y-5 text-sm">
+                            <!-- Dirección -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-800 text-orange-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">Dirección del Taller</p>
+                                    <p class="text-slate-300">Calle de Alcalá, 518, Nave 4</p>
+                                    <p class="text-slate-400">28027 Madrid (Zona Suanzes / San Blas - Canillejas)</p>
+                                    <p class="text-xs text-emerald-400 mt-1">• Metro Suanzes (Línea 5) a 3 min • Fácil acceso M-30 y A-2</p>
+                                </div>
+                            </div>
+
+                            <!-- Horario -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-800 text-orange-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">Horario de Atención</p>
+                                    <p class="text-slate-300">Lunes a Viernes: 08:00 – 19:30 (Ininterrumpido)</p>
+                                    <p class="text-slate-300">Sábados: 09:00 – 14:00</p>
+                                    <p class="text-slate-500 text-xs">Domingos y festivos: Cerrado</p>
+                                </div>
+                            </div>
+
+                            <!-- Teléfono y WhatsApp -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-slate-800 text-orange-400 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-headset"></i>
+                                </div>
+                                <div class="w-full">
+                                    <p class="font-bold text-white mb-2">Contacto Directo</p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                        <a href="tel:+34910004820" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-2.5 px-3 rounded-xl border border-slate-700 transition-colors">
+                                            <i class="fa-solid fa-phone text-orange-400"></i>
+                                            <span>910 00 48 20</span>
+                                        </a>
+                                        <a href="https://wa.me/34600112233?text=Hola%20AutoBox%20Madrid,%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20mi%20coche." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2.5 px-3 rounded-xl transition-colors">
+                                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                                            <span>WhatsApp</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa Integrado de Ubicación en Madrid (OpenStreetMap / Google Maps Embed) -->
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-200">
+                        <div class="relative h-64 w-full bg-slate-200">
+                            <iframe 
+                                title="Ubicación AutoBox Madrid en Calle de Alcalá"
+                                class="w-full h-full border-0"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=-3.6350%2C40.4360%2C-3.6150%2C40.4460&amp;layer=mapnik&amp;marker=40.4410%2C-3.6250">
+                            </iframe>
+                        </div>
+                        <div class="p-4 bg-white flex items-center justify-between text-xs">
+                            <span class="text-slate-600 font-medium">
+                                <i class="fa-solid fa-square-parking text-blue-600 mr-1"></i> Zona de recepción de vehículos en puerta
+                            </span>
+                            <a href="https://maps.google.com/?q=Calle+de+Alcala+518+Madrid" target="_blank" rel="noopener noreferrer" class="text-orange-600 font-bold hover:underline">
+                                Cómo llegar →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Profesional -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8 pb-8 border-b border-slate-800/80">
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <span class="text-white font-extrabold text-lg">AUTOBOX <span class="text-orange-500">MADRID</span></span>
+                    </div>
+                    <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+                        Taller mecánico multimarca en Madrid especializado en mantenimiento integral, diagnosis electrónica, neumáticos, climatización y chapa y pintura para todo tipo de vehículos.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#servicios" class="hover:text-orange-400 transition-colors">Servicios Mecánicos</a></li>
+                        <li><a href="#marcas" class="hover:text-orange-400 transition-colors">Marcas que reparamos</a></li>
+                        <li><a href="#nosotros" class="hover:text-orange-400 transition-colors">Garantía Oficial</a></li>
+                        <li><a href="#cita" class="hover:text-orange-400 transition-colors">Pedir Cita Online</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Contacto Madrid</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Calle de Alcalá, 518 - 28027 Madrid</li>
+                        <li>Tel: 910 00 48 20</li>
+                        <li>WhatsApp: 600 11 22 33</li>
+                        <li>citas@autoboxmadrid.es</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>© 2026 AutoBox Madrid Taller Multimarca S.L. Todos los derechos reservados.</p>
+                <div class="flex gap-5">
+                    <span>Nº Registro Industrial Comunidad de Madrid</span>
+                    <span>Política de Privacidad</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp para Móvil/Desktop -->
+    <a href="https://wa.me/34600112233?text=Hola%20AutoBox%20Madrid,%20quisiera%20consultar%20una%20cita%20para%20mi%20veh%C3%ADculo." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-5 right-5 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition-transform hover:scale-110 active:scale-95">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts Interactivos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Control del menú móvil
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+
+            // 2. Establecer fecha mínima en el selector de cita (hoy)
+            const fechaInput = document.getElementById('fecha');
+            if (fechaInput) {
+                const hoy = new Date().toISOString().split('T')[0];
+                fechaInput.setAttribute('min', hoy);
+                fechaInput.value = hoy;
+            }
+
+            // 3. Validación y envío del formulario de Cita Previa
+            const bookingForm = document.getElementById('booking-form');
+            const bookingConfirmation = document.getElementById('booking-confirmation');
+            const confirmationSummary = document.getElementById('confirmation-summary');
+            const confirmationDetails = document.getElementById('confirmation-details');
+            const formError = document.getElementById('form-error');
+            const formErrorText = document.getElementById('form-error-text');
+            const resetFormBtn = document.getElementById('reset-form-btn');
+
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formError.classList.add('hidden');
+
+                const nombre = document.getElementById('nombre').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const vehiculo = document.getElementById('vehiculo').value.trim();
+                const servicio = document.getElementById('servicio').value;
+                const fecha = document.getElementById('fecha').value;
+                const comentarios = document.getElementById('comentarios').value.trim();
+
+                // Validaciones básicas
+                if (!nombre || !telefono || !vehiculo || !servicio || !fecha) {
+                    formErrorText.textContent = 'Por favor, completa todos los campos obligatorios marcados con *.';
+                    formError.classList.remove('hidden');
+                    return;
+                }
+
+                if (telefono.replace(/\s+/g, '').length < 9) {
+                    formErrorText.textContent = 'Introduce un número de teléfono válido de al menos 9 dígitos.';
+                    formError.classList.remove('hidden');
+                    return;
+                }
+
+                // Formatear fecha legible en español
+                const fechaObj = new Date(fecha + 'T00:00:00');
+                const fechaFormateada = fechaObj.toLocaleDateString('es-ES', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                // Mostrar confirmación
+                confirmationSummary.innerHTML = `Gracias, <strong>${escapeHTML(nombre)}</strong>. Hemos registrado tu solicitud de cita en <strong>AutoBox Madrid</strong>. Te llamaremos al <strong>${escapeHTML(telefono)}</strong> en menos de 2 horas laborables.`;
+                
+                confirmationDetails.innerHTML = `
+                    <p><strong>Vehículo:</strong> ${escapeHTML(vehiculo)}</p>
+                    <p><strong>Servicio:</strong> ${escapeHTML(servicio)}</p>
+                    <p><strong>Fecha solicitada:</strong> ${fechaFormateada}</p>
+                    ${comentarios ? `<p><strong>Notas:</strong> ${escapeHTML(comentarios)}</p>` : ''}
+                `;
+
+                bookingForm.classList.add('hidden');
+                bookingConfirmation.classList.remove('hidden');
+            });
+
+            resetFormBtn.addEventListener('click', () => {
+                bookingForm.reset();
+                const hoy = new Date().toISOString().split('T')[0];
+                fechaInput.value = hoy;
+                bookingConfirmation.classList.add('hidden');
+                bookingForm.classList.remove('hidden');
+            });
+        });
+
+        // Función auxiliar para preseleccionar un servicio al pulsar en las tarjetas
+        function seleccionarServicioRapido(nombreServicio) {
+            const selectServicio = document.getElementById('servicio');
+            if (selectServicio) {
+                selectServicio.value = nombreServicio;
+            }
+        }
+
+        // Prevención básica de XSS al mostrar texto ingresado por el usuario
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag]));
+        }
+    </script>
+</body>
+</html>
